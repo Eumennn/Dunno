@@ -9,6 +9,8 @@ site: [eumennn.github.io/dunno](https://eumennn.github.io/Dunno/)
 ## indir
 - **windows 10 / 11 (64 bit):** [Dunno-setup.exe](https://github.com/eumennn/dunno/releases/latest/download/Dunno-setup.exe).
   kurulum yönetici izni istemez (sadece senin kullanıcın için kurulur).
+  "windows bilgisayarınızı korudu" çıkarsa: **daha fazla bilgi** -> **yine de çalıştır**. dunno henüz imzalı değil
+  (imza sertifikası parayla, dunno'nun parası yok). dosya sadece bu sayfadan iner.
 - **mac (apple silicon ve intel, macos 11+):** [Dunno.dmg](https://github.com/eumennn/dunno/releases/latest/download/Dunno.dmg).
   dmg'yi aç, dunno'yu uygulamalar klasörüne sürükle. ilk açılışta sağ tık > aç (henüz apple imzası yok).
 - eski sürümler ve notlar: [releases](https://github.com/eumennn/dunno/releases).
