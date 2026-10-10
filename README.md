@@ -4,7 +4,7 @@ the ai that teaches you nothing.
 
 masaüstünde yaşayan, neredeyse hiçbir soruya doğru cevap vermeyen piksel bir yaratık. günde üç kez doğru söyler, sonra pişman olur.
 
-site: [eumennn.github.io/dunno](https://eumennn.github.io/Dunno/)
+site: [eumennn.github.io/Dunno](https://eumennn.github.io/Dunno/)
 
 ## indir
 - **windows 10 / 11 (64 bit):** [Dunno-setup.exe](https://github.com/eumennn/dunno/releases/latest/download/Dunno-setup.exe).
@@ -12,7 +12,8 @@ site: [eumennn.github.io/dunno](https://eumennn.github.io/Dunno/)
   "windows bilgisayarınızı korudu" çıkarsa: **daha fazla bilgi** -> **yine de çalıştır**. dunno henüz imzalı değil
   (imza sertifikası parayla, dunno'nun parası yok). dosya sadece bu sayfadan iner.
 - **mac (apple silicon ve intel, macos 11+):** [Dunno.dmg](https://github.com/eumennn/dunno/releases/latest/download/Dunno.dmg).
-  dmg'yi aç, dunno'yu uygulamalar klasörüne sürükle. ilk açılışta sağ tık > aç (henüz apple imzası yok).
+  dmg'yi aç, dunno'yu uygulamalar klasörüne sürükle. henüz apple imzası yok: ilk açılışta sağ tık > aç;
+  macos 15 ve sonrasında sistem ayarları > gizlilik ve güvenlik > "yine de aç".
 - eski sürümler ve notlar: [releases](https://github.com/eumennn/dunno/releases).
 
 ## güncellemeler
