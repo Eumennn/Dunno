@@ -12,8 +12,8 @@ site: [eumennn.github.io/Dunno](https://eumennn.github.io/Dunno/)
   "windows bilgisayarınızı korudu" çıkarsa: **daha fazla bilgi** -> **yine de çalıştır**. dunno henüz imzalı değil
   (imza sertifikası parayla, dunno'nun parası yok). dosya sadece bu sayfadan iner.
 - **mac (apple silicon ve intel, macos 11+):** [Dunno.dmg](https://github.com/eumennn/dunno/releases/latest/download/Dunno.dmg).
-  dmg'yi aç, dunno'yu uygulamalar klasörüne sürükle. henüz apple imzası yok: ilk açılışta sağ tık > aç;
-  macos 15 ve sonrasında sistem ayarları > gizlilik ve güvenlik > "yine de aç".
+  dmg'yi aç, "dunno setup"u çalıştır: dunno'yu uygulamalar klasörüne kendisi kurar. henüz apple imzası yok: kurulum programını
+  ilk açışta sağ tık > aç; macos 15 ve sonrasında sistem ayarları > gizlilik ve güvenlik > "yine de aç". dunno'nun kendisi ayrıca sormaz.
 - eski sürümler ve notlar: [releases](https://github.com/eumennn/dunno/releases).
 
 ## güncellemeler
