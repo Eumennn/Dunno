@@ -4,7 +4,7 @@ the ai that teaches you nothing.
 
 masaüstünde yaşayan, neredeyse hiçbir soruya doğru cevap vermeyen piksel bir yaratık. günde üç kez doğru söyler, sonra pişman olur.
 
-site: [eumennn.github.io/dunno](https://eumennn.github.io/dunno/)
+site: [eumennn.github.io/dunno](https://eumennn.github.io/Dunno/)
 
 ## indir
 - **windows 10 / 11 (64 bit):** [Dunno-setup.exe](https://github.com/eumennn/dunno/releases/latest/download/Dunno-setup.exe).
