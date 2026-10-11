@@ -1,5 +1,15 @@
 # sürüm notları
 
+## 0.1.9
+- ispanyolca: üçüncü dil. arayüz, kurulum, laflar, sorular, hatırlatıcılar.
+- hassas sorular: ilk seferde ters cevap, ikincide son uyarı, üçüncüde bir gün küser.
+- gece 00-08 uyur ve susar. dürtersen ya da kaldırırsan uyanır, söylenir. ayarlardan kapanır.
+- özel günler: yılbaşı, cadılar bayramı, sevgililer günü, 1 nisan ve birkaç tane daha. o gün kılık değiştirir.
+- hava durumu: sekmedeki dereceye, yağmura, kara tepki verir. "hava nasıl" sorusuna işe yaramaz cevap verir.
+- yeni laflar: filmler, rekabetçi oyunlar, yayın, kurgu, müzik yapımı, oyun motoru, not ve mesajlaşma uygulamaları.
+- mac: kendi kurulum programı (dunno.dmg içinde "dunno setup"), sekmeler ve preview.txt tıklamaları düzeldi, yazarken fark eder.
+- stats.txt ve about.txt yeni düzende. güncellemeler artık pencere açmadan kurulur.
+
 ## 0.1.0 (ilk sürüm, taslak)
 - windows ve mac (apple silicon + intel).
 - masaüstünde yaşayan pet: yürür, uyur, kenardan bakar, imleçten kaçar, toplantıda susar.
