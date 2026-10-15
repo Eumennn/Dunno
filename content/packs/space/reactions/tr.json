@@ -1,0 +1,92 @@
+[
+  {
+    "id": "space_01",
+    "trigger": "interaction:click",
+    "intent": "space pack line (placeholder)",
+    "tr": "yer çekimi yok. dürtme yine de"
+  },
+  {
+    "id": "space_02",
+    "trigger": "interaction:drag",
+    "intent": "space pack line (placeholder)",
+    "tr": "beni başka gezegene mi taşıyorsun"
+  },
+  {
+    "id": "space_03",
+    "trigger": "time:morning",
+    "intent": "space pack line (placeholder)",
+    "tr": "güneş doğdu. bugün on beş kez daha doğacak"
+  },
+  {
+    "id": "space_04",
+    "trigger": "time:night",
+    "intent": "space pack line (placeholder)",
+    "tr": "burada hep gece. alıştım"
+  },
+  {
+    "id": "space_05",
+    "trigger": "idle:10",
+    "intent": "space pack line (placeholder)",
+    "tr": "yörüngede dönüyorum. sen de dön"
+  },
+  {
+    "id": "space_06",
+    "trigger": "idle:30",
+    "intent": "space pack line (placeholder)",
+    "tr": "uzay boşluğu. senin gibi sessiz"
+  },
+  {
+    "id": "space_07",
+    "trigger": "random",
+    "intent": "space pack line (placeholder)",
+    "tr": "kara delik değil, şarj kablosu"
+  },
+  {
+    "id": "space_08",
+    "trigger": "random",
+    "intent": "space pack line (placeholder)",
+    "tr": "astronot değilim. kostüm aldım"
+  },
+  {
+    "id": "space_09",
+    "trigger": "random",
+    "intent": "space pack line (placeholder)",
+    "tr": "yıldızlara baktım. bir şey anlamadım"
+  },
+  {
+    "id": "space_10",
+    "trigger": "random",
+    "intent": "space pack line (placeholder)",
+    "tr": "ay'a gittim. kimse yoktu"
+  },
+  {
+    "id": "space_11",
+    "trigger": "random",
+    "intent": "space pack line (placeholder)",
+    "tr": "uzayda kimse soru sormaz. güzel"
+  },
+  {
+    "id": "space_12",
+    "trigger": "random",
+    "intent": "space pack line (placeholder)",
+    "tr": "sinyal zayıf. bahane güçlü"
+  },
+  {
+    "id": "space_13",
+    "trigger": "app:excel",
+    "intent": "space pack line (placeholder)",
+    "tr": "yakıt hesabı mı. ben bilmem"
+  },
+  {
+    "id": "space_14",
+    "trigger": "app:browser",
+    "intent": "space pack line (placeholder)",
+    "tr": "uzay fotoğrafı mı. hepsi siyah"
+  },
+  {
+    "id": "space_15",
+    "trigger": "app:game",
+    "intent": "space pack line (placeholder)",
+    "tr": "uzay oyunu mu. ben zaten oradayım"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "id": "bow_tie",
+  "name": {
+    "tr": "papyon",
+    "en": "bow tie"
+  },
+  "anchor": "neck",
+  "slot": "neck",
+  "pivot": {
+    "x": 16,
+    "y": 16
+  },
+  "antenna": "through",
+  "hiddenIn": [],
+  "image": "bow_tie.png",
+  "size": 32
+}

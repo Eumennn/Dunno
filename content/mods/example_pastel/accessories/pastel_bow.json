@@ -1,0 +1,19 @@
+{
+  "id": "pastel_bow",
+  "name": {
+    "tr": "pastel kurdele",
+    "en": "pastel bow"
+  },
+  "anchor": "head",
+  "slot": "side",
+  "pivot": {
+    "x": 16,
+    "y": 16
+  },
+  "antenna": "through",
+  "hiddenIn": [
+    "sleep"
+  ],
+  "image": "pastel_bow.png",
+  "size": 32
+}

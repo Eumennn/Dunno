@@ -1,0 +1,359 @@
+/* Pet penceresi açılır yüzeyleri: yerleşim + ui-kit değiştiricileri. Görsel dil ui-kit/kit.css'te (landing birebir);
+   burada kit sınıfları yeniden yazılmaz, sadece küçük pencereye sığdırılır. Renk sadece token. */
+
+.pet-pop {
+  position: absolute;
+  box-sizing: border-box;
+  color: var(--text);
+  font-family: var(--font-body);
+}
+/* çalışma alanına sığmak için küçültüldü (UP1 shrunk): içerik kaydırılır */
+.pet-pop--scroll {
+  overflow: auto;
+}
+
+/* pencere görünümlü yüzeyler (ask.exe, error.exe, setup.exe): sabit genişlik, ≤ 280 (SPEC 04 UP2) */
+.pet-pop .win {
+  width: 256px;
+  box-sizing: border-box;
+}
+
+/* pet'e bakan piksel kuyruk (UP2/UP3): yön UP1'den (data-tail), konum --tail (yüzey kenarı boyunca) */
+.pet-pop[data-tail]::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--ink);
+}
+.pet-pop[data-tail="bottom"]::after {
+  bottom: -11px;
+  left: calc(var(--tail) - 5px);
+}
+.pet-pop[data-tail="top"]::after {
+  top: -11px;
+  left: calc(var(--tail) - 5px);
+}
+.pet-pop[data-tail="right"]::after {
+  right: -11px;
+  top: calc(var(--tail) - 5px);
+}
+.pet-pop[data-tail="left"]::after {
+  left: -11px;
+  top: calc(var(--tail) - 5px);
+}
+/* kap kuyruğu varken iç .bub kuyruğu çizilmez */
+.pet-pop[data-tail] .bub::after {
+  display: none;
+}
+
+.pet-pad {
+  margin: 0;
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* çizgi roman balonları (SPEC 09 K4, kit .speech-bubble / .thought-bubble). Gölge kapta: balon + kuyruk birlikte, bulanıksız.
+   Konuşma kuyruğu: 12x12 basamaklı piksel üçgen, --ink kontur (::before, balonun altında) + beyaz iç (::after, balonun üstünde);
+   balon kenarına 2 px biner, beyaz iç birleşimde konturu keser. Yön UP1 data-tail, konum --tail. Düşünce: kuyruk yok, 3 piksel daire. */
+.pet-pop:has(.speech-bubble),
+.pet-pop:has(.thought-bubble) {
+  filter: drop-shadow(3px 3px 0 var(--ink));
+}
+.pet-pop .speech-bubble,
+.pet-pop .thought-bubble {
+  filter: none;
+}
+.pet-pop[data-tail]:has(.speech-bubble)::before,
+.pet-pop[data-tail]:has(.speech-bubble)::after {
+  content: "";
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: 12px;
+  height: 12px;
+}
+.pet-pop[data-tail]:has(.speech-bubble)::before {
+  background: var(--ink);
+  clip-path: polygon(0 0, 12px 0, 12px 2px, 11px 2px, 11px 4px, 10px 4px, 10px 6px, 9px 6px, 9px 8px, 8px 8px, 8px 10px, 7px 10px, 7px 12px, 5px 12px, 5px 10px, 4px 10px, 4px 8px, 3px 8px, 3px 6px, 2px 6px, 2px 4px, 1px 4px, 1px 2px, 0 2px);
+}
+.pet-pop[data-tail]:has(.speech-bubble)::after {
+  background: var(--paper);
+  z-index: 1;
+  clip-path: polygon(2px 0, 10px 0, 10px 2px, 9px 2px, 9px 4px, 8px 4px, 8px 6px, 7px 6px, 7px 8px, 5px 8px, 5px 6px, 4px 6px, 4px 4px, 3px 4px, 3px 2px, 2px 2px);
+}
+/* kuyruk aşağı (balon pet'in üstünde) temel çizim; diğer yönler aynı kare döndürülerek */
+.pet-pop[data-tail="bottom"]:has(.speech-bubble)::before,
+.pet-pop[data-tail="bottom"]:has(.speech-bubble)::after {
+  top: calc(100% - 2px);
+  left: calc(var(--tail) - 6px);
+}
+.pet-pop[data-tail="top"]:has(.speech-bubble)::before,
+.pet-pop[data-tail="top"]:has(.speech-bubble)::after {
+  bottom: calc(100% - 2px);
+  left: calc(var(--tail) - 6px);
+  transform: rotate(180deg);
+}
+.pet-pop[data-tail="right"]:has(.speech-bubble)::before,
+.pet-pop[data-tail="right"]:has(.speech-bubble)::after {
+  left: calc(100% - 2px);
+  top: calc(var(--tail) - 6px);
+  transform: rotate(-90deg);
+}
+.pet-pop[data-tail="left"]:has(.speech-bubble)::before,
+.pet-pop[data-tail="left"]:has(.speech-bubble)::after {
+  right: calc(100% - 2px);
+  top: calc(var(--tail) - 6px);
+  transform: rotate(90deg);
+}
+.pet-pop[data-tail]:has(.thought-bubble)::after {
+  display: none;
+}
+
+/* düşünce noktaları: balon kenarından pet'in başına doğru diyagonal, büyükten küçüğe, aralarında 3 px.
+   Kap düşünce balonunda geniş boşluk bırakır (popover.ts THOUGHT_GAP). Son (en küçük) nokta --tail hizasında. */
+.thought-bubble .thought-dots {
+  top: 100%;
+  left: 12px;
+  margin-top: 3px;
+  flex-direction: column;
+}
+.thought-dot:nth-child(2) {
+  margin-left: 4px;
+}
+.thought-dot:nth-child(3) {
+  margin-left: 8px;
+}
+.pet-pop[data-tail="bottom"] .thought-dots {
+  left: calc(var(--tail) - 10px);
+}
+.pet-pop[data-tail="top"] .thought-dots {
+  top: auto;
+  bottom: 100%;
+  margin: 0 0 3px;
+  left: calc(var(--tail) - 10px);
+  flex-direction: column-reverse;
+}
+.pet-pop[data-tail="right"] .thought-dots,
+.pet-pop[data-tail="left"] .thought-dots {
+  top: calc(var(--tail) - 10px);
+  margin: 0;
+  flex-direction: row;
+}
+.pet-pop[data-tail="right"] .thought-dot:nth-child(2),
+.pet-pop[data-tail="left"] .thought-dot:nth-child(2) {
+  margin: 4px 0 0;
+}
+.pet-pop[data-tail="right"] .thought-dot:nth-child(3),
+.pet-pop[data-tail="left"] .thought-dot:nth-child(3) {
+  margin: 8px 0 0;
+}
+.pet-pop[data-tail="right"] .thought-dots {
+  left: 100%;
+  margin-left: 3px;
+}
+.pet-pop[data-tail="left"] .thought-dots {
+  left: auto;
+  right: 100%;
+  margin-right: 3px;
+  flex-direction: row-reverse;
+}
+
+/* toast: kit .toast, satır kırabilir */
+.pet-toast {
+  white-space: normal;
+  font-size: 14px;
+  padding: 8px 12px;
+  width: max-content;
+  max-width: 240px;
+  box-sizing: border-box;
+}
+.pet-toast::after {
+  display: none;
+}
+
+/* ask.exe */
+.pet-ask__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 6px 10px;
+  border-bottom: 2px solid var(--ink);
+  background: var(--cream);
+}
+.pet-ask__log {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background: var(--surface);
+}
+.pet-ask__log .msg {
+  font-size: 14px;
+  padding: 6px 10px;
+}
+.pet-ask__form {
+  display: flex;
+  gap: 6px;
+  margin: 0;
+  padding: 8px;
+  border-top: 2px solid var(--ink);
+  background: var(--surface);
+}
+.pet-ask__form .field {
+  min-height: 36px;
+  font-size: 14px;
+  padding: 0 8px;
+}
+.pet-ask__form .pbtn-sm {
+  min-height: 36px;
+  padding: 4px 12px;
+}
+
+/* ask.exe tempo kilidi: kum saati + biraz bekle (SPEC 06 Q4) */
+.pet-ask__head--end {
+  justify-content: flex-end;
+}
+.pet-ask__wait {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 12px;
+  background: var(--surface);
+}
+.pet-ask__wait p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* setup.exe */
+.pet-setup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pet-setup__q {
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+.pet-setup__label {
+  margin: 4px 0 0;
+  font-size: 11px;
+}
+.pet-setup .seg {
+  min-height: 30px;
+  padding: 4px 10px;
+  font-size: 13px;
+}
+.pet-setup__row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+.pet-setup__row .pbtn-sm {
+  flex: 1 1 auto;
+  min-height: 36px;
+  padding: 4px 6px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.pet-ask__head .seg {
+  min-height: 26px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+/* setup.exe alt açıklama */
+.pet-setup__blurb {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-2);
+  line-height: 1.35;
+}
+.pet-setup .sep-dots {
+  margin: 4px 0;
+}
+
+/* error.exe (landing hata kartı) */
+.pet-err__head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+}
+.pet-err__text {
+  margin: 8px 0 0;
+}
+.pet-err__row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+.pet-err__row .pbtn-sm {
+  min-height: 32px;
+  padding: 2px 12px;
+}
+
+/* geniş ask.exe (SPEC 06 Q3): honest cevap ≤ ~120 karakter 2 satır; UP2'nin 280 sınırının tek istisnası */
+.pet-pop .win.pet-ask--wide {
+  width: 520px;
+}
+.pet-ask--wide .msg-dunno {
+  max-width: 100%;
+}
+
+/* pet üstü düşünme işareti (SPEC 07 FB6): piksel "…" ya da kum saati; tıklamayı yakalamaz */
+.pet-cue {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 5;
+  line-height: 0;
+}
+.pet-cue__dots {
+  display: inline-flex;
+  gap: var(--cue-px, 2px);
+}
+.pet-cue__dots i {
+  display: block;
+  width: calc(var(--cue-px, 2px) * 2);
+  height: calc(var(--cue-px, 2px) * 2);
+  background: var(--ink);
+  animation: cue-dot 1.2s steps(1, end) infinite;
+}
+.pet-cue__dots i:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.pet-cue__dots i:nth-child(3) {
+  animation-delay: 0.6s;
+}
+@keyframes cue-dot {
+  0% {
+    opacity: 0.25;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.25;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pet-cue__dots i {
+    animation: none;
+  }
+}
+/* kum saati sprite piksel ölçeğinde (--cue-px = bir sprite pikseli, pet boyutuyla; SPEC 08), taban penceredeki pay içine sığar */
+.pet-cue .hg-ico {
+  width: calc(var(--cue-px, 2px) * 7);
+  height: calc(var(--cue-px, 2px) * 7);
+}
+
+/* daktilo (SPEC 10 CL3): tam metin ekran okuyucuya bir kez; akan kopyanın henüz gelmeyen kısmı yerinde ama gizli (balon zıplamaz) */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.tw-rest { visibility: hidden; }

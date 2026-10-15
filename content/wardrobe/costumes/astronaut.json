@@ -1,0 +1,89 @@
+{
+  "id": "astronaut",
+  "name": {
+    "tr": "astronot",
+    "en": "astronaut"
+  },
+  "palette": {
+    "body": "#FFFFFF",
+    "shade": "#D2D2D2",
+    "light": "#FFFFFF",
+    "belly": "#F2F2F2"
+  },
+  "hidesTuft": true,
+  "blocks": [
+    "head",
+    "eyes",
+    "side"
+  ],
+  "parts": [
+    {
+      "id": "helmet",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away"
+      ],
+      "image": "astronaut.helmet.png",
+      "size": 32
+    },
+    {
+      "id": "helmet_side",
+      "anchor": "eyes",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "idle",
+        "shrug",
+        "talk",
+        "sleep",
+        "sulk",
+        "peek",
+        "shh",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "astronaut.helmet_side.png",
+      "size": 32
+    },
+    {
+      "id": "pack",
+      "anchor": "ears",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "idle",
+        "shrug",
+        "talk",
+        "sleep",
+        "sulk",
+        "peek",
+        "shh",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "astronaut.pack.png",
+      "size": 32
+    }
+  ],
+  "icon": "astronaut.png"
+}

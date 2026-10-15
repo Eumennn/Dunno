@@ -1,0 +1,216 @@
+/* Dunno UI kiti: Dunno OS landing'in görsel dili. Kaynak: dunno-reference.dc.html <style> (birebir değerler, hex yerine token).
+   Bileşenler kendi CSS'inde bu sınıfları yeniden yazmaz; gerekirse değiştirici sınıf ekler. Önce tokens.css yüklenmeli. */
+
+.px { font-family: var(--font-pixel); letter-spacing: .02em; }
+/* Türkçe harf içeren piksel-font öğesi (kit.ts noPx): gövde fontuna düşer */
+.no-px { font-family: var(--font-body) !important; letter-spacing: normal !important; font-weight: 600; }
+.mono { font-family: var(--font-mono); }
+
+/* pencere */
+.win { background: var(--cream); border: 2px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); }
+.bar {
+  display: flex; align-items: center; gap: 10px; padding: 5px 6px 5px 12px;
+  background: var(--main); border-bottom: 2px solid var(--ink);
+  font-family: var(--font-pixel); font-size: 13px; color: var(--text); min-height: 26px;
+}
+.bar-err { background: var(--pink); }
+.bar-idle { background: var(--light); }
+.bar-blue { background: var(--ice); }
+.bar-ctls { margin-left: auto; display: flex; gap: 4px; }
+
+/* başlık çubuğu piksel kontrolü */
+.ctl {
+  width: 26px; height: 24px; display: inline-flex; align-items: center; justify-content: center;
+  background: var(--light); border: 2px solid var(--ink); box-shadow: inset -2px -2px 0 var(--shade);
+  padding: 0; color: var(--text); box-sizing: border-box;
+  cursor: pointer; pointer-events: auto; user-select: none;
+}
+.ctl:hover {
+  background: var(--pink);
+  color: var(--on-ink);
+}
+.ctl:hover svg path {
+  stroke: var(--on-ink);
+}
+.ctl svg path { stroke: var(--text); }
+
+/* piksel buton */
+.pbtn {
+  font-family: var(--font-body); font-weight: 600; font-size: 16px; color: var(--text);
+  background: var(--light); border: 2px solid var(--ink);
+  box-shadow: inset -4px -4px 0 var(--shade), inset 4px 4px 0 var(--cream);
+  padding: 10px 22px; min-height: 50px; cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-sizing: border-box;
+  border-radius: 0;
+}
+.pbtn:hover { background: var(--main); color: var(--ink); }
+.pbtn:active { box-shadow: inset 4px 4px 0 var(--shade), inset -4px -4px 0 var(--cream); }
+.pbtn-dark { background: var(--ink); color: var(--on-ink); box-shadow: inset -4px -4px 0 var(--pbtn-dark-low), inset 4px 4px 0 var(--ink-2); }
+.pbtn-dark:hover { background: var(--shade); color: var(--ink); }
+.pbtn-blue {
+  background: var(--ice);
+  box-shadow: inset -4px -4px 0 color-mix(in srgb, var(--ink) 28%, transparent),
+    inset 4px 4px 0 color-mix(in srgb, var(--cream) 60%, transparent);
+}
+.pbtn-blue:hover { background: var(--light); }
+.pbtn-sm { min-height: 44px; padding: 6px 16px; font-size: 14px; }
+.pbtn[disabled] { cursor: not-allowed; background: transparent; box-shadow: none; border-style: dashed; }
+.pbtn:focus-visible, .seg:focus-visible, .ctl:focus-visible, .field:focus-visible {
+  outline: 3px solid var(--ink); outline-offset: 3px;
+}
+
+/* etiket ve vurgu */
+.kick {
+  font-family: var(--font-mono); font-size: 13px; letter-spacing: .06em; text-transform: uppercase;
+  background: var(--ink); color: var(--on-ink); padding: 4px 10px;
+}
+/* fosforlu kalem: landing'de gradyanla çizilir (zemin değil, metin altı şerit) */
+.hl { background: linear-gradient(180deg, transparent 58%, var(--main) 58%, var(--main) 92%, transparent 92%); padding: 0 2px; }
+
+/* segmented seçici (ask.exe polite | street ***) */
+.segs { display: flex; }
+.seg {
+  font-family: inherit; font-size: 14px; font-weight: 600; color: var(--ink);
+  background: var(--paper); border: 2px solid var(--ink); padding: 6px 12px; min-height: 36px; cursor: pointer;
+  border-radius: 0;
+}
+.seg + .seg { border-left: 0; }
+.seg-on { background: var(--ink); color: var(--on-ink); }
+
+/* kademeli kaydırıcı (SPEC 09 K8b): kalın kontur ray, kare başparmak; yuvarlak köşe, gölge yok */
+.step { display: flex; flex-direction: column; gap: 4px; min-width: 260px; }
+.step-range { appearance: none; -webkit-appearance: none; width: 100%; height: 22px; background: transparent; margin: 0; cursor: pointer; }
+/* ray ve başparmak --text: klasikte --ink, koyu temada açık renk (zeminde kaybolmaz) */
+.step-range::-webkit-slider-runnable-track { height: 8px; background: var(--paper); border: 2px solid var(--text); border-radius: 0; }
+.step-range::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 20px; margin-top: -8px; background: var(--text); border: 0; border-radius: 0; }
+.step-range::-moz-range-track { height: 4px; background: var(--paper); border: 2px solid var(--text); border-radius: 0; }
+.step-range::-moz-range-thumb { width: 16px; height: 20px; background: var(--text); border: 0; border-radius: 0; }
+.step-range:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+.step-ticks { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-2); }
+.step-tick-on { font-weight: 700; color: var(--text); }
+
+/* piksel kalpler (7x6, 3x) */
+.hearts { display: flex; align-items: center; gap: 6px; }
+.heart { display: block; }
+.heart .k { fill: var(--ink); }
+.heart .f { fill: var(--pink); }
+.heart-empty .f { fill: var(--cream); }
+
+/* konuşma balonu (landing .bub) */
+.bub {
+  position: relative; background: var(--paper); border: 2px solid var(--ink); color: var(--ink);
+  padding: 12px 16px; font-size: 18px; font-weight: 600; line-height: 1.35;
+}
+.bub::after { content: ""; position: absolute; left: 22px; bottom: -10px; width: 10px; height: 10px; background: var(--ink); }
+
+/* ask.exe sohbet satırları */
+.msg { max-width: 85%; border: 2px solid var(--ink); padding: 8px 12px; font-size: 16px; line-height: 1.4; box-sizing: border-box; }
+.msg-you { align-self: flex-end; background: var(--ice); }
+.msg-dunno { align-self: flex-start; background: var(--light); }
+.msg-dunno b, .msg-think b { font-weight: 700; color: var(--text); }
+/* kesik çizgili düşünme balonu */
+.msg-think { align-self: flex-start; background: var(--cream); border-style: dashed; color: var(--ink-2); }
+
+/* düşünme noktaları */
+.dots span { display: inline-block; animation: dot 1.2s steps(1, end) infinite; }
+.dots span:nth-child(2) { animation-delay: .2s; }
+.dots span:nth-child(3) { animation-delay: .4s; }
+@keyframes dot { 0% { opacity: .2; } 30% { opacity: 1; } 100% { opacity: .2; } }
+
+/* metin alanı (ask.exe input) */
+.field {
+  flex: 1 1 auto; min-width: 0; min-height: 44px; box-sizing: border-box;
+  border: 2px solid var(--ink); background: var(--paper); padding: 0 12px;
+  font-family: var(--font-body); font-size: 16px; color: var(--ink); border-radius: 0;
+}
+.field::placeholder { color: var(--ink-2); }
+
+/* piksel anahtar (role=switch): landing .box/.pbtn dili; kapalı krem, açık mavi, kare topuz. Geçiş yok (piksel). */
+.pswitch {
+  position: relative; width: 48px; height: 26px; flex: 0 0 auto; padding: 0; cursor: pointer; box-sizing: border-box;
+  /* dış kontur ve gölge --text: klasikte --ink, koyu temada açık (SPEC 09 K5 bulgusu: gece yarısında anahtar zeminde kayboluyordu) */
+  background: var(--cream); border: 2px solid var(--text); border-radius: 0;
+  box-shadow: inset 2px 2px 0 var(--light), 2px 2px 0 var(--text);
+}
+.pswitch::after {
+  content: ""; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; box-sizing: border-box;
+  background: var(--paper); border: 2px solid var(--ink); box-shadow: inset -2px -2px 0 var(--light);
+}
+.pswitch[aria-checked="true"] { background: var(--ice); box-shadow: inset 2px 2px 0 color-mix(in srgb, var(--ink) 28%, transparent), 2px 2px 0 var(--text); }
+.pswitch[aria-checked="true"]::after { left: auto; right: 3px; background: var(--light); box-shadow: inset -2px -2px 0 var(--shade); }
+.pswitch:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* piksel kilit */
+.lock-ico rect { fill: var(--ink); }
+.lock-ico .lock-hole { fill: var(--light); }
+
+/* kum saati (SPEC 06 Q4): basamaklı dönüş, ara kare yok */
+.hg-ico { flex: none; animation: hg-flip 2s steps(1) infinite; }
+.hg-ico rect { fill: var(--ink); }
+.hg-ico .hg-sand { fill: var(--shade); }
+@keyframes hg-flip { 0% { transform: rotate(0deg); } 50% { transform: rotate(180deg); } }
+@media (prefers-reduced-motion: reduce) { .hg-ico { animation: none; } }
+
+/* noktalı ayraç (landing setup.exe) */
+.sep-dots { border: 0; border-top: 2px dotted var(--shade); margin: 10px 0; height: 0; }
+
+/* uyarı ikon kutusu (landing features.err: pembe kare, piksel ünlem) */
+.alert-ico { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; box-sizing: border-box;
+  background: var(--pink); border: 2px solid var(--ink); }
+.alert-ico rect { fill: var(--ink); }
+
+/* toast (landing görev çubuğu bildirimi) */
+.toast { white-space: nowrap; font-size: 16px; box-shadow: 4px 4px 0 var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .dots span { animation: none; }
+}
+
+/* çizgi roman konuşma / düşünce balonu (SPEC 09 K4). ui.md istisnası: basamaklı piksel köşe sadece burada, border-radius yok.
+   Şekil kit.ts'te bubble.ts çokgeniyle (kontur katmanı + 2 px içeride dolgu); gölge bulanıksız, şekli izler. */
+.speech-bubble,
+.thought-bubble {
+  position: relative;
+  box-sizing: border-box;
+  filter: drop-shadow(3px 3px 0 var(--ink));
+}
+/* SPEC 12 mod balon renkleri: --bubble-ink / --bubble-fill (yoksa --ink / --paper) */
+.bubble-edge {
+  background: var(--bubble-ink, var(--ink));
+  padding: 2px;
+}
+.bubble-fill {
+  background: var(--bubble-fill, var(--paper));
+  padding: 8px 10px;
+  color: var(--bubble-ink, var(--ink));
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  overflow-wrap: anywhere;
+}
+.thought-dots {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  gap: 3px;
+  pointer-events: none;
+}
+.thought-dot {
+  display: block;
+  flex: none;
+  background: var(--ink);
+}
+.thought-dot b {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--paper);
+}
+
+/* SPEC 17 karanlık mod: tema renkli çubuk/buton açık kalır, üstündeki metin koyu */
+[data-dark] .bar,
+[data-dark] .pbtn,
+[data-dark] .bar .ctl {
+  color: var(--on-bar);
+}
+

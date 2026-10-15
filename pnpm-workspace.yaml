@@ -1,0 +1,6 @@
+packages:
+  - "studio"
+  - "apps/*"
+  - "desktop"
+  - "worker"
+  - "packages/*"

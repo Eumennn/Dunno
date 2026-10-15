@@ -1,0 +1,21 @@
+{
+  "fixed": { "outline": "#2B1E2F", "cheek": "#E86A7A" },
+  "themes": [
+    { "id": "classic", "name": { "tr": "klasik", "en": "classic" }, "status": "approved", "colors": { "body": "#F2A65A", "shade": "#D9774A", "light": "#FFD29A", "belly": "#FFF1D6" } },
+    { "id": "mint", "name": { "tr": "nane", "en": "mint" }, "status": "candidate", "colors": { "body": "#7FCFA8", "shade": "#55AE86", "light": "#BDEBD2", "belly": "#FFF1D6" }, "ui": { "accent": "#FFB37A" } },
+    { "id": "lavender", "name": { "tr": "lavanta", "en": "lavender" }, "status": "candidate", "colors": { "body": "#B49AE0", "shade": "#9478C9", "light": "#DCCEF6", "belly": "#FFF1D6" }, "ui": { "accent": "#F7C66B" } },
+    { "id": "night", "name": { "tr": "gece", "en": "night" }, "status": "candidate", "colors": { "body": "#6475B0", "shade": "#4E5D94", "light": "#94A4D8", "belly": "#D9E0F6" }, "ui": { "bar": "#94A4D8", "button": "#C4CEF0", "buttonShade": "#6475B0", "accent": "#F2C46B" } },
+    { "id": "burnt_toast", "name": { "tr": "yanmış tost", "en": "burnt toast" }, "status": "candidate", "colors": { "body": "#B5713F", "shade": "#8E5330", "light": "#DDA470", "belly": "#FFF1D6" }, "ui": { "bar": "#DDA470", "button": "#F0CBA0", "buttonShade": "#B5713F" } },
+    { "id": "strawberry", "name": { "tr": "çilek", "en": "strawberry" }, "status": "candidate", "colors": { "body": "#F4838F", "shade": "#D9576A", "light": "#FFC2C8", "belly": "#FFF1F0" }, "ui": { "accent": "#8FD18F" } },
+    { "id": "lemon", "name": { "tr": "limon", "en": "lemon" }, "status": "candidate", "colors": { "body": "#F2D54E", "shade": "#D1AE2A", "light": "#FFF0A0", "belly": "#FFFBE0" }, "ui": { "accent": "#8FCF6A" } },
+    { "id": "ocean", "name": { "tr": "okyanus", "en": "ocean" }, "status": "candidate", "colors": { "body": "#5FB3D9", "shade": "#3E8FB8", "light": "#A8DCF0", "belly": "#E8F6FB" }, "ui": { "accent": "#FFC46B" } },
+    { "id": "forest", "name": { "tr": "orman", "en": "forest" }, "status": "candidate", "colors": { "body": "#7DB36A", "shade": "#5A9148", "light": "#B9DCA6", "belly": "#F1F7E8" }, "ui": { "accent": "#E8B04E" } },
+    { "id": "peach", "name": { "tr": "şeftali", "en": "peach" }, "status": "candidate", "colors": { "body": "#F7A982", "shade": "#E08560", "light": "#FFD3BC", "belly": "#FFF3EA" }, "ui": { "accent": "#7FC4D9" } },
+    { "id": "gray_cat", "name": { "tr": "gri kedi", "en": "gray cat" }, "status": "candidate", "colors": { "body": "#A9A9A9", "shade": "#888888", "light": "#D2D2D2", "belly": "#F2F2F2" }, "ui": { "accent": "#CFCFCF" } },
+    { "id": "coffee", "name": { "tr": "kahve", "en": "coffee" }, "status": "candidate", "colors": { "body": "#CFA070", "shade": "#A8754A", "light": "#ECD0AE", "belly": "#F7EBDD" }, "ui": { "accent": "#8FC1D4" } },
+    { "id": "midnight", "name": { "tr": "gece yarısı", "en": "midnight" }, "status": "candidate", "colors": { "body": "#6676C2", "shade": "#4C5AA4", "light": "#A5B0E6", "belly": "#E4E8FA" }, "ui": { "bar": "#3A4378", "button": "#4A5694", "buttonShade": "#2A3160", "bg": "#1F2340", "accent": "#2F6E8C", "text": "#F3EEFF", "dark": true } },
+    { "id": "retro_green", "name": { "tr": "retro yeşil", "en": "retro green" }, "status": "candidate", "colors": { "body": "#66CC66", "shade": "#3F9E45", "light": "#A8F0A0", "belly": "#EAFBE6" }, "ui": { "accent": "#FFD24D" } },
+    { "id": "cotton_candy", "name": { "tr": "pamuk şeker", "en": "cotton candy" }, "status": "candidate", "colors": { "body": "#F4A6D7", "shade": "#DB7FBA", "light": "#FFD1EC", "belly": "#FFF2FA" }, "ui": { "accent": "#9AD8F2" } },
+    { "id": "watermelon", "name": { "tr": "karpuz", "en": "watermelon" }, "status": "candidate", "colors": { "body": "#74C26A", "shade": "#4F9A4A", "light": "#B6E6A8", "belly": "#FFF0EE" }, "ui": { "accent": "#F2727F" } }
+  ]
+}

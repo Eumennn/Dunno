@@ -1,3 +1,17 @@
-*.key
+node_modules/
+dist/
+.astro/
+.wrangler/
+.worktrees/
+.dev.vars
 .env
+.env.*
+*.log
+.DS_Store
+orchestrator/notes/next_check_*.txt
+.claude/settings.local.json
+# SPEC 10 CL1: güncelleme imza anahtarı ve yayın çıktısı repoya girmez (docs/RELEASE.md)
+*.key
+*.key.pub
+desktop/release/
 *.exe

@@ -1,0 +1,21 @@
+{
+  "id": "ribbon",
+  "name": {
+    "tr": "kurdele",
+    "en": "ribbon"
+  },
+  "anchor": "head",
+  "slot": "side",
+  "pivot": {
+    "x": 16,
+    "y": 16
+  },
+  "antenna": "through",
+  "hiddenIn": [],
+  "image": "ribbon.png",
+  "size": 32,
+  "overflow": {
+    "top": 1,
+    "side": 3
+  }
+}

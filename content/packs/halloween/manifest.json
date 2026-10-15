@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "id": "halloween",
+  "name": {
+    "tr": "cadılar bayramı",
+    "en": "halloween"
+  },
+  "version": "1.0.0",
+  "author": "dunno",
+  "description": {
+    "tr": "balkabağı rengi, ürkütücü olmayan laflar",
+    "en": "pumpkin colors, not-scary lines"
+  },
+  "permissions": [
+    "themes",
+    "reactions",
+    "bubbles"
+  ],
+  "contents": {
+    "themes": [
+      "themes/halloween_pumpkin.json"
+    ],
+    "reactions": {
+      "tr": "reactions/tr.json",
+      "en": "reactions/en.json"
+    },
+    "bubbles": "bubbles.json"
+  }
+}

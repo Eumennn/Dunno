@@ -1,0 +1,13 @@
+{
+  "id": "cyberpunk_neon",
+  "name": {
+    "tr": "neon gece",
+    "en": "neon night"
+  },
+  "colors": {
+    "body": "#6676C2",
+    "shade": "#4C5AA4",
+    "light": "#6EC5E9",
+    "belly": "#D9E0F6"
+  }
+}

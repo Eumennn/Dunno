@@ -1,0 +1,44 @@
+{
+  "id": "evo_gremlin",
+  "name": {
+    "tr": "gremlin",
+    "en": "gremlin"
+  },
+  "palette": {
+    "body": "#66CC66",
+    "shade": "#3F9E45",
+    "light": "#A8F0A0",
+    "belly": "#EAFBE6"
+  },
+  "hidesTuft": true,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "ears",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "evo_gremlin.ears.png",
+      "size": 32
+    },
+    {
+      "id": "grin",
+      "anchor": "eyes",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away"
+      ],
+      "image": "evo_gremlin.grin.png",
+      "size": 32
+    }
+  ],
+  "icon": "evo_gremlin.png"
+}

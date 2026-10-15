@@ -1,0 +1,73 @@
+{
+  "id": "dino",
+  "name": {
+    "tr": "dinozor",
+    "en": "dino"
+  },
+  "palette": {
+    "body": "#7DB36A",
+    "shade": "#5A9148",
+    "light": "#B9DCA6",
+    "belly": "#F1F7E8"
+  },
+  "hidesTuft": true,
+  "blocks": [
+    "head",
+    "side"
+  ],
+  "parts": [
+    {
+      "id": "spikes",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "dino.spikes.png",
+      "size": 32
+    },
+    {
+      "id": "tail",
+      "anchor": "neck",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away"
+      ],
+      "image": "dino.tail.png",
+      "size": 32
+    },
+    {
+      "id": "tail_side",
+      "anchor": "ears",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "idle",
+        "shrug",
+        "talk",
+        "sleep",
+        "sulk",
+        "peek",
+        "shh",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "dino.tail_side.png",
+      "size": 32
+    }
+  ],
+  "icon": "dino.png"
+}

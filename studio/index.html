@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dunno studio</title>
+  </head>
+  <body>
+    <main id="app" class="studio">
+      <section class="win pool-win" aria-label="pool.exe">
+        <div class="bar"><span>pool.exe</span></div>
+        <div class="pool-body">
+          <div class="toolbar">
+            <div data-role="lang"></div>
+            <input class="field" data-role="search" type="search" placeholder="ara: id, intent, metin" aria-label="ara" />
+            <button type="button" class="pbtn pbtn-sm" data-action="new">yeni laf</button>
+            <span class="status" data-role="status" role="status"></span>
+          </div>
+          <div class="pool-grid">
+            <div data-role="tree"></div>
+            <div data-role="list" class="list" lang="tr"></div>
+          </div>
+        </div>
+      </section>
+      <section class="win edit-win" aria-label="edit.exe" data-role="editor-win" hidden>
+        <div class="bar bar-blue"><span>edit.exe</span></div>
+        <div data-role="editor" class="win-body" lang="tr"></div>
+      </section>
+      <div class="side" data-role="side"></div>
+    </main>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

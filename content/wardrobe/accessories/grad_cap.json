@@ -1,0 +1,21 @@
+{
+  "id": "grad_cap",
+  "name": {
+    "tr": "mezuniyet kepi",
+    "en": "graduation cap"
+  },
+  "anchor": "head",
+  "slot": "head",
+  "pivot": {
+    "x": 16,
+    "y": 16
+  },
+  "antenna": "through",
+  "hiddenIn": [],
+  "image": "grad_cap.png",
+  "size": 32,
+  "overflow": {
+    "top": 5,
+    "side": 2
+  }
+}

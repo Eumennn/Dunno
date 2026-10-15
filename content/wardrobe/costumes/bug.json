@@ -1,0 +1,146 @@
+{
+  "id": "bug",
+  "name": {
+    "tr": "böcek",
+    "en": "bug"
+  },
+  "palette": {
+    "body": "#F4838F",
+    "shade": "#D9576A",
+    "light": "#FFC2C8",
+    "belly": "#FFF1D6"
+  },
+  "hidesTuft": true,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "antennae",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "bug.antennae.png",
+      "size": 32
+    },
+    {
+      "id": "shell",
+      "anchor": "neck",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away"
+      ],
+      "image": "bug.shell.png",
+      "size": 32
+    },
+    {
+      "id": "legs",
+      "anchor": "neck",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away",
+        "peek",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "bug.legs.png",
+      "size": 32
+    },
+    {
+      "id": "shell_side",
+      "anchor": "ears",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "idle",
+        "shrug",
+        "talk",
+        "sleep",
+        "sulk",
+        "peek",
+        "shh",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "bug.shell_side.png",
+      "size": 32
+    },
+    {
+      "id": "shell_sleep",
+      "anchor": "ears",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "idle",
+        "shrug",
+        "walk",
+        "talk",
+        "run_away",
+        "sulk",
+        "peek",
+        "shh",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "bug.shell_sleep.png",
+      "size": 32
+    },
+    {
+      "id": "leg_side",
+      "anchor": "ears",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "idle",
+        "shrug",
+        "talk",
+        "sleep",
+        "sulk",
+        "peek",
+        "shh",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "bug.leg_side.png",
+      "size": 32
+    }
+  ],
+  "icon": "bug.png"
+}

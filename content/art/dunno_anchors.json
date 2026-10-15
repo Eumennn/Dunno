@@ -1,0 +1,1952 @@
+{
+  "size": 32,
+  "points": [
+    "head",
+    "antenna",
+    "eyes",
+    "ears",
+    "neck"
+  ],
+  "note": "üretilir: node scripts/gen-wardrobe.mjs; kare sırası/adı assets/dunno_sheet.json ile aynı",
+  "frames": [
+    {
+      "frame": "dunno 0.aseprite",
+      "index": 0,
+      "tag": "idle",
+      "n": 0,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 1.aseprite",
+      "index": 1,
+      "tag": "idle",
+      "n": 1,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 8
+        },
+        "antenna": {
+          "x": 15,
+          "y": 8
+        },
+        "eyes": {
+          "x": 16,
+          "y": 16
+        },
+        "ears": {
+          "x": 16,
+          "y": 16
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 2.aseprite",
+      "index": 2,
+      "tag": "idle",
+      "n": 2,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 3.aseprite",
+      "index": 3,
+      "tag": "idle",
+      "n": 3,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 4.aseprite",
+      "index": 4,
+      "tag": "shrug",
+      "n": 0,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 5.aseprite",
+      "index": 5,
+      "tag": "shrug",
+      "n": 1,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 6.aseprite",
+      "index": 6,
+      "tag": "shrug",
+      "n": 2,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 7.aseprite",
+      "index": 7,
+      "tag": "shrug",
+      "n": 3,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 8.aseprite",
+      "index": 8,
+      "tag": "walk",
+      "n": 0,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 8
+        },
+        "antenna": {
+          "x": 16,
+          "y": 8
+        },
+        "eyes": {
+          "x": 22,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 18,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 9.aseprite",
+      "index": 9,
+      "tag": "walk",
+      "n": 1,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 16,
+          "y": 7
+        },
+        "eyes": {
+          "x": 22,
+          "y": 14
+        },
+        "ears": {
+          "x": 16,
+          "y": 14
+        },
+        "neck": {
+          "x": 18,
+          "y": 19
+        }
+      }
+    },
+    {
+      "frame": "dunno 10.aseprite",
+      "index": 10,
+      "tag": "walk",
+      "n": 2,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 8
+        },
+        "antenna": {
+          "x": 16,
+          "y": 8
+        },
+        "eyes": {
+          "x": 22,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 18,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 11.aseprite",
+      "index": 11,
+      "tag": "walk",
+      "n": 3,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 8
+        },
+        "antenna": {
+          "x": 16,
+          "y": 8
+        },
+        "eyes": {
+          "x": 22,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 18,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 12.aseprite",
+      "index": 12,
+      "tag": "walk",
+      "n": 4,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 16,
+          "y": 7
+        },
+        "eyes": {
+          "x": 22,
+          "y": 14
+        },
+        "ears": {
+          "x": 16,
+          "y": 14
+        },
+        "neck": {
+          "x": 18,
+          "y": 19
+        }
+      }
+    },
+    {
+      "frame": "dunno 13.aseprite",
+      "index": 13,
+      "tag": "walk",
+      "n": 5,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 8
+        },
+        "antenna": {
+          "x": 16,
+          "y": 8
+        },
+        "eyes": {
+          "x": 22,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 18,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 14.aseprite",
+      "index": 14,
+      "tag": "talk",
+      "n": 0,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 15.aseprite",
+      "index": 15,
+      "tag": "talk",
+      "n": 1,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 16.aseprite",
+      "index": 16,
+      "tag": "talk",
+      "n": 2,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 17.aseprite",
+      "index": 17,
+      "tag": "sleep",
+      "n": 0,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 18
+        },
+        "antenna": {
+          "x": 21,
+          "y": 17
+        },
+        "eyes": {
+          "x": 20,
+          "y": 23
+        },
+        "ears": {
+          "x": 16,
+          "y": 22
+        },
+        "neck": {
+          "x": 16,
+          "y": 25
+        }
+      }
+    },
+    {
+      "frame": "dunno 18.aseprite",
+      "index": 18,
+      "tag": "sleep",
+      "n": 1,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 19
+        },
+        "antenna": {
+          "x": 21,
+          "y": 18
+        },
+        "eyes": {
+          "x": 20,
+          "y": 23
+        },
+        "ears": {
+          "x": 16,
+          "y": 22
+        },
+        "neck": {
+          "x": 16,
+          "y": 25
+        }
+      }
+    },
+    {
+      "frame": "dunno 19.aseprite",
+      "index": 19,
+      "tag": "sleep",
+      "n": 2,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 18
+        },
+        "antenna": {
+          "x": 21,
+          "y": 17
+        },
+        "eyes": {
+          "x": 20,
+          "y": 23
+        },
+        "ears": {
+          "x": 16,
+          "y": 22
+        },
+        "neck": {
+          "x": 16,
+          "y": 25
+        }
+      }
+    },
+    {
+      "frame": "dunno 20.aseprite",
+      "index": 20,
+      "tag": "sleep",
+      "n": 3,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 19
+        },
+        "antenna": {
+          "x": 21,
+          "y": 18
+        },
+        "eyes": {
+          "x": 20,
+          "y": 23
+        },
+        "ears": {
+          "x": 16,
+          "y": 22
+        },
+        "neck": {
+          "x": 16,
+          "y": 25
+        }
+      }
+    },
+    {
+      "frame": "dunno 21.aseprite",
+      "index": 21,
+      "tag": "run_away",
+      "n": 0,
+      "points": {
+        "head": {
+          "x": 18,
+          "y": 8
+        },
+        "antenna": {
+          "x": 18,
+          "y": 8
+        },
+        "eyes": {
+          "x": 23,
+          "y": 15
+        },
+        "ears": {
+          "x": 18,
+          "y": 15
+        },
+        "neck": {
+          "x": 18,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 22.aseprite",
+      "index": 22,
+      "tag": "run_away",
+      "n": 1,
+      "points": {
+        "head": {
+          "x": 18,
+          "y": 7
+        },
+        "antenna": {
+          "x": 18,
+          "y": 7
+        },
+        "eyes": {
+          "x": 23,
+          "y": 14
+        },
+        "ears": {
+          "x": 18,
+          "y": 14
+        },
+        "neck": {
+          "x": 18,
+          "y": 19
+        }
+      }
+    },
+    {
+      "frame": "dunno 23.aseprite",
+      "index": 23,
+      "tag": "run_away",
+      "n": 2,
+      "points": {
+        "head": {
+          "x": 18,
+          "y": 8
+        },
+        "antenna": {
+          "x": 18,
+          "y": 8
+        },
+        "eyes": {
+          "x": 23,
+          "y": 15
+        },
+        "ears": {
+          "x": 18,
+          "y": 15
+        },
+        "neck": {
+          "x": 18,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 24.aseprite",
+      "index": 24,
+      "tag": "run_away",
+      "n": 3,
+      "points": {
+        "head": {
+          "x": 18,
+          "y": 7
+        },
+        "antenna": {
+          "x": 18,
+          "y": 7
+        },
+        "eyes": {
+          "x": 23,
+          "y": 14
+        },
+        "ears": {
+          "x": 18,
+          "y": 14
+        },
+        "neck": {
+          "x": 18,
+          "y": 19
+        }
+      }
+    },
+    {
+      "frame": "dunno 25.aseprite",
+      "index": 25,
+      "tag": "sulk",
+      "n": 0,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "hidden": "back view"
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 26.aseprite",
+      "index": 26,
+      "tag": "sulk",
+      "n": 1,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 8
+        },
+        "antenna": {
+          "x": 15,
+          "y": 8
+        },
+        "eyes": {
+          "hidden": "back view"
+        },
+        "ears": {
+          "x": 16,
+          "y": 16
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 27.aseprite",
+      "index": 27,
+      "tag": "peek",
+      "n": 0,
+      "points": {
+        "head": {
+          "x": 23,
+          "y": 7
+        },
+        "antenna": {
+          "x": 22,
+          "y": 7
+        },
+        "eyes": {
+          "x": 23,
+          "y": 15
+        },
+        "ears": {
+          "x": 23,
+          "y": 15
+        },
+        "neck": {
+          "x": 23,
+          "y": 20
+        }
+      },
+      "clipRight": 26
+    },
+    {
+      "frame": "dunno 28.aseprite",
+      "index": 28,
+      "tag": "peek",
+      "n": 1,
+      "points": {
+        "head": {
+          "x": 23,
+          "y": 7
+        },
+        "antenna": {
+          "x": 22,
+          "y": 7
+        },
+        "eyes": {
+          "x": 23,
+          "y": 15
+        },
+        "ears": {
+          "x": 23,
+          "y": 15
+        },
+        "neck": {
+          "x": 23,
+          "y": 20
+        }
+      },
+      "clipRight": 26
+    },
+    {
+      "frame": "dunno 29.aseprite",
+      "index": 29,
+      "tag": "peek",
+      "n": 2,
+      "points": {
+        "head": {
+          "x": 22,
+          "y": 7
+        },
+        "antenna": {
+          "x": 21,
+          "y": 7
+        },
+        "eyes": {
+          "x": 22,
+          "y": 15
+        },
+        "ears": {
+          "x": 22,
+          "y": 15
+        },
+        "neck": {
+          "x": 22,
+          "y": 20
+        }
+      },
+      "clipRight": 26
+    },
+    {
+      "frame": "dunno 30.aseprite",
+      "index": 30,
+      "tag": "peek",
+      "n": 3,
+      "points": {
+        "head": {
+          "x": 23,
+          "y": 7
+        },
+        "antenna": {
+          "x": 22,
+          "y": 7
+        },
+        "eyes": {
+          "x": 23,
+          "y": 15
+        },
+        "ears": {
+          "x": 23,
+          "y": 15
+        },
+        "neck": {
+          "x": 23,
+          "y": 20
+        }
+      },
+      "clipRight": 26
+    },
+    {
+      "frame": "dunno 31.aseprite",
+      "index": 31,
+      "tag": "shh",
+      "n": 0,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 32.aseprite",
+      "index": 32,
+      "tag": "shh",
+      "n": 1,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 33.aseprite",
+      "index": 33,
+      "tag": "shh",
+      "n": 2,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 34.aseprite",
+      "index": 34,
+      "tag": "dragged",
+      "n": 0,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 35.aseprite",
+      "index": 35,
+      "tag": "dragged",
+      "n": 1,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 8
+        },
+        "antenna": {
+          "x": 15,
+          "y": 8
+        },
+        "eyes": {
+          "x": 16,
+          "y": 16
+        },
+        "ears": {
+          "x": 16,
+          "y": 16
+        },
+        "neck": {
+          "x": 16,
+          "y": 21
+        }
+      }
+    },
+    {
+      "frame": "dunno 36.aseprite",
+      "index": 36,
+      "tag": "fart",
+      "n": 0,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 37.aseprite",
+      "index": 37,
+      "tag": "fart",
+      "n": 1,
+      "points": {
+        "head": {
+          "x": 17,
+          "y": 9
+        },
+        "antenna": {
+          "x": 16,
+          "y": 9
+        },
+        "eyes": {
+          "x": 17,
+          "y": 17
+        },
+        "ears": {
+          "x": 17,
+          "y": 17
+        },
+        "neck": {
+          "x": 17,
+          "y": 21
+        }
+      }
+    },
+    {
+      "frame": "dunno 38.aseprite",
+      "index": 38,
+      "tag": "fart",
+      "n": 2,
+      "points": {
+        "head": {
+          "x": 18,
+          "y": 9
+        },
+        "antenna": {
+          "x": 17,
+          "y": 9
+        },
+        "eyes": {
+          "x": 18,
+          "y": 17
+        },
+        "ears": {
+          "x": 18,
+          "y": 17
+        },
+        "neck": {
+          "x": 18,
+          "y": 21
+        }
+      }
+    },
+    {
+      "frame": "dunno 39.aseprite",
+      "index": 39,
+      "tag": "fart",
+      "n": 3,
+      "points": {
+        "head": {
+          "x": 17,
+          "y": 9
+        },
+        "antenna": {
+          "x": 16,
+          "y": 9
+        },
+        "eyes": {
+          "x": 17,
+          "y": 17
+        },
+        "ears": {
+          "x": 17,
+          "y": 17
+        },
+        "neck": {
+          "x": 17,
+          "y": 21
+        }
+      }
+    },
+    {
+      "frame": "dunno 40.aseprite",
+      "index": 40,
+      "tag": "fart",
+      "n": 4,
+      "points": {
+        "head": {
+          "x": 18,
+          "y": 9
+        },
+        "antenna": {
+          "x": 17,
+          "y": 9
+        },
+        "eyes": {
+          "x": 18,
+          "y": 17
+        },
+        "ears": {
+          "x": 18,
+          "y": 17
+        },
+        "neck": {
+          "x": 18,
+          "y": 21
+        }
+      }
+    },
+    {
+      "frame": "dunno 41.aseprite",
+      "index": 41,
+      "tag": "fart",
+      "n": 5,
+      "points": {
+        "head": {
+          "x": 17,
+          "y": 7
+        },
+        "antenna": {
+          "x": 16,
+          "y": 7
+        },
+        "eyes": {
+          "x": 17,
+          "y": 15
+        },
+        "ears": {
+          "x": 17,
+          "y": 15
+        },
+        "neck": {
+          "x": 17,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 42.aseprite",
+      "index": 42,
+      "tag": "wave",
+      "n": 0,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 43.aseprite",
+      "index": 43,
+      "tag": "wave",
+      "n": 1,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 44.aseprite",
+      "index": 44,
+      "tag": "wave",
+      "n": 2,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 45.aseprite",
+      "index": 45,
+      "tag": "wave",
+      "n": 3,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 46.aseprite",
+      "index": 46,
+      "tag": "jump",
+      "n": 0,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 9
+        },
+        "antenna": {
+          "x": 15,
+          "y": 9
+        },
+        "eyes": {
+          "x": 16,
+          "y": 17
+        },
+        "ears": {
+          "x": 16,
+          "y": 17
+        },
+        "neck": {
+          "x": 16,
+          "y": 21
+        }
+      }
+    },
+    {
+      "frame": "dunno 47.aseprite",
+      "index": 47,
+      "tag": "jump",
+      "n": 1,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 48.aseprite",
+      "index": 48,
+      "tag": "jump",
+      "n": 2,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 49.aseprite",
+      "index": 49,
+      "tag": "jump",
+      "n": 3,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 9
+        },
+        "antenna": {
+          "x": 15,
+          "y": 9
+        },
+        "eyes": {
+          "x": 16,
+          "y": 17
+        },
+        "ears": {
+          "x": 16,
+          "y": 17
+        },
+        "neck": {
+          "x": 16,
+          "y": 21
+        }
+      }
+    },
+    {
+      "frame": "dunno 50.aseprite",
+      "index": 50,
+      "tag": "dance",
+      "n": 0,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 51.aseprite",
+      "index": 51,
+      "tag": "dance",
+      "n": 1,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 8
+        },
+        "antenna": {
+          "x": 15,
+          "y": 8
+        },
+        "eyes": {
+          "x": 16,
+          "y": 16
+        },
+        "ears": {
+          "x": 16,
+          "y": 16
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 52.aseprite",
+      "index": 52,
+      "tag": "dance",
+      "n": 2,
+      "points": {
+        "head": {
+          "x": 17,
+          "y": 7
+        },
+        "antenna": {
+          "x": 16,
+          "y": 7
+        },
+        "eyes": {
+          "x": 17,
+          "y": 15
+        },
+        "ears": {
+          "x": 17,
+          "y": 15
+        },
+        "neck": {
+          "x": 17,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 53.aseprite",
+      "index": 53,
+      "tag": "dance",
+      "n": 3,
+      "points": {
+        "head": {
+          "x": 17,
+          "y": 8
+        },
+        "antenna": {
+          "x": 16,
+          "y": 8
+        },
+        "eyes": {
+          "x": 17,
+          "y": 16
+        },
+        "ears": {
+          "x": 17,
+          "y": 16
+        },
+        "neck": {
+          "x": 17,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 54.aseprite",
+      "index": 54,
+      "tag": "dance",
+      "n": 4,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 55.aseprite",
+      "index": 55,
+      "tag": "dance",
+      "n": 5,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 8
+        },
+        "antenna": {
+          "x": 15,
+          "y": 8
+        },
+        "eyes": {
+          "x": 16,
+          "y": 16
+        },
+        "ears": {
+          "x": 16,
+          "y": 16
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 56.aseprite",
+      "index": 56,
+      "tag": "dance",
+      "n": 6,
+      "points": {
+        "head": {
+          "x": 17,
+          "y": 7
+        },
+        "antenna": {
+          "x": 16,
+          "y": 7
+        },
+        "eyes": {
+          "x": 17,
+          "y": 15
+        },
+        "ears": {
+          "x": 17,
+          "y": 15
+        },
+        "neck": {
+          "x": 17,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 57.aseprite",
+      "index": 57,
+      "tag": "dance",
+      "n": 7,
+      "points": {
+        "head": {
+          "x": 17,
+          "y": 8
+        },
+        "antenna": {
+          "x": 16,
+          "y": 8
+        },
+        "eyes": {
+          "x": 17,
+          "y": 16
+        },
+        "ears": {
+          "x": 17,
+          "y": 16
+        },
+        "neck": {
+          "x": 17,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 58.aseprite",
+      "index": 58,
+      "tag": "yawn",
+      "n": 0,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 59.aseprite",
+      "index": 59,
+      "tag": "yawn",
+      "n": 1,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 60.aseprite",
+      "index": 60,
+      "tag": "yawn",
+      "n": 2,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 8
+        },
+        "antenna": {
+          "x": 15,
+          "y": 8
+        },
+        "eyes": {
+          "x": 16,
+          "y": 16
+        },
+        "ears": {
+          "x": 16,
+          "y": 16
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 61.aseprite",
+      "index": 61,
+      "tag": "yawn",
+      "n": 3,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 62.aseprite",
+      "index": 62,
+      "tag": "yawn",
+      "n": 4,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 63.aseprite",
+      "index": 63,
+      "tag": "sneeze",
+      "n": 0,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 64.aseprite",
+      "index": 64,
+      "tag": "sneeze",
+      "n": 1,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 8
+        },
+        "antenna": {
+          "x": 15,
+          "y": 8
+        },
+        "eyes": {
+          "x": 16,
+          "y": 16
+        },
+        "ears": {
+          "x": 16,
+          "y": 16
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 65.aseprite",
+      "index": 65,
+      "tag": "sneeze",
+      "n": 2,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 8
+        },
+        "antenna": {
+          "x": 15,
+          "y": 8
+        },
+        "eyes": {
+          "x": 16,
+          "y": 16
+        },
+        "ears": {
+          "x": 16,
+          "y": 16
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 66.aseprite",
+      "index": 66,
+      "tag": "sneeze",
+      "n": 3,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 8
+        },
+        "antenna": {
+          "x": 15,
+          "y": 8
+        },
+        "eyes": {
+          "x": 16,
+          "y": 16
+        },
+        "ears": {
+          "x": 16,
+          "y": 16
+        },
+        "neck": {
+          "x": 16,
+          "y": 21
+        }
+      }
+    },
+    {
+      "frame": "dunno 67.aseprite",
+      "index": 67,
+      "tag": "sneeze",
+      "n": 4,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "frame": "dunno 68.aseprite",
+      "index": 68,
+      "tag": "sneeze",
+      "n": 5,
+      "points": {
+        "head": {
+          "x": 16,
+          "y": 7
+        },
+        "antenna": {
+          "x": 15,
+          "y": 7
+        },
+        "eyes": {
+          "x": 16,
+          "y": 15
+        },
+        "ears": {
+          "x": 16,
+          "y": 15
+        },
+        "neck": {
+          "x": 16,
+          "y": 20
+        }
+      }
+    }
+  ],
+  "hidden": {
+    "sulk": {
+      "eyes": "back view (frame 0); back view (frame 1)"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "office_01",
+    "trigger": "interaction:click",
+    "intent": "office pack line (placeholder)",
+    "tr": "toplantıdayım. dürtme"
+  },
+  {
+    "id": "office_02",
+    "trigger": "interaction:drag",
+    "intent": "office pack line (placeholder)",
+    "tr": "beni terfi ettirmeden taşıma"
+  },
+  {
+    "id": "office_03",
+    "trigger": "time:morning",
+    "intent": "office pack line (placeholder)",
+    "tr": "sabah toplantısı. ben gelmeyeceğim"
+  },
+  {
+    "id": "office_04",
+    "trigger": "time:noon",
+    "intent": "office pack line (placeholder)",
+    "tr": "öğle arası. üç saat sürer"
+  },
+  {
+    "id": "office_05",
+    "trigger": "time:evening",
+    "intent": "office pack line (placeholder)",
+    "tr": "mesai bitti. ben hiç başlamadım"
+  },
+  {
+    "id": "office_06",
+    "trigger": "idle:10",
+    "intent": "office pack line (placeholder)",
+    "tr": "verimlilik raporu: sıfır"
+  },
+  {
+    "id": "office_07",
+    "trigger": "idle:30",
+    "intent": "office pack line (placeholder)",
+    "tr": "bu toplantı bir e-posta olabilirdi"
+  },
+  {
+    "id": "office_08",
+    "trigger": "random",
+    "intent": "office pack line (placeholder)",
+    "tr": "strateji değiştirdik. hâlâ bilmiyorum"
+  },
+  {
+    "id": "office_09",
+    "trigger": "random",
+    "intent": "office pack line (placeholder)",
+    "tr": "sinerji. ne demek bilmiyorum"
+  },
+  {
+    "id": "office_10",
+    "trigger": "random",
+    "intent": "office pack line (placeholder)",
+    "tr": "maaşına zam yok. bana var"
+  },
+  {
+    "id": "office_11",
+    "trigger": "random",
+    "intent": "office pack line (placeholder)",
+    "tr": "vizyonum net: öğle yemeği"
+  },
+  {
+    "id": "office_12",
+    "trigger": "random",
+    "intent": "office pack line (placeholder)",
+    "tr": "çeyrek sonu. ben de bittim"
+  },
+  {
+    "id": "office_13",
+    "trigger": "app:excel",
+    "intent": "office pack line (placeholder)",
+    "tr": "bu tabloda kâr yok. bende de"
+  },
+  {
+    "id": "office_14",
+    "trigger": "app:powerpoint",
+    "intent": "office pack line (placeholder)",
+    "tr": "otuz slayt, bir fikir. o da benim değil"
+  },
+  {
+    "id": "office_15",
+    "trigger": "app:browser",
+    "intent": "office pack line (placeholder)",
+    "tr": "pazar araştırması mı, video mu"
+  }
+]

@@ -1,0 +1,193 @@
+# Yayın (REPO-01 + SPEC 19): `v<sürüm>` etiketi atılınca Windows setup.exe ve Mac universal .dmg derlenir,
+# herkese açık kullanıcı reposunun (eumennn/dunno) Releases sayfasına yüklenir. Kaynak kod oraya gitmez.
+# Landing ve README sabit adlara bağlanır: releases/latest/download/Dunno-setup.exe ve Dunno.dmg.
+# Dunno-setup.exe = kendi kurulum programımız (FB9, desktop/setup-tauri): NSIS kurulumunu içine gömer, sessiz çalıştırır.
+# Güncelleyici (latest.json) ham NSIS kurulumunu (Dunno_<sürüm>_x64-setup.exe) kullanır.
+#
+# Gereken sırlar (Settings > Secrets and variables > Actions; repoya ASLA yazılmaz):
+#   DUNNO_RELEASE_TOKEN                 sadece eumennn/dunno'ya "Contents: read and write" izinli fine-grained token (zorunlu)
+#   TAURI_SIGNING_PRIVATE_KEY           güncelleme imza anahtarı (docs/RELEASE.md 1); yoksa latest.json yazılmaz, otomatik güncelleme olmaz
+#   TAURI_SIGNING_PRIVATE_KEY_PASSWORD  anahtarın şifresi
+# Değişken: VITE_API_BASE (canlı worker adresi).
+#
+# Kullanım: sürümü tauri.conf.json / Cargo.toml / package.json / worker releases.json'da yükselt, commit, sonra
+#   git tag v0.1.1 && git push origin v0.1.1
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  PUBLIC_REPO: eumennn/dunno
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.v.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: v
+        name: etiket == tauri.conf.json sürümü
+        run: |
+          v=$(node -p "require('./desktop/src-tauri/tauri.conf.json').version")
+          if [ "v$v" != "${GITHUB_REF_NAME}" ]; then
+            echo "::error::etiket ${GITHUB_REF_NAME} ama tauri.conf.json sürümü $v"
+            exit 1
+          fi
+          echo "version=$v" >> "$GITHUB_OUTPUT"
+
+  windows:
+    needs: version
+    runs-on: windows-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: desktop
+        shell: bash
+    env:
+      TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+      TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+      VITE_API_BASE: ${{ vars.VITE_API_BASE }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: |
+            desktop/src-tauri
+            desktop/setup-tauri
+      - run: npm ci
+      - name: kaldırıcı (FB11, kendi programımız, içi boş derleme; NSIS kurulumuna girer)
+        run: |
+          npx vite build --config vite.setup.config.ts
+          DUNNO_VERSION="${{ needs.version.outputs.version }}" cargo build --release --manifest-path setup-tauri/Cargo.toml
+          cp setup-tauri/target/release/dunno-setup.exe dunno-uninstall.exe
+          # installer.nsi bunu $%DUNNO_UNINSTALLER% ile alır (Ayarlar > Uygulamalar > Kaldır bunu açar)
+          echo "DUNNO_UNINSTALLER=$(cygpath -w "$PWD/dunno-uninstall.exe")" >> "$GITHUB_ENV"
+      - name: build (anahtar varsa imzalı güncelleme dosyasıyla)
+        run: |
+          if [ -n "$TAURI_SIGNING_PRIVATE_KEY" ]; then
+            npx tauri build --bundles nsis --config src-tauri/tauri.release.conf.json
+          else
+            echo "::warning::TAURI_SIGNING_PRIVATE_KEY yok: imzasız, latest.json yazılmayacak"
+            npx tauri build --bundles nsis
+          fi
+      - name: kurulum programı (NSIS'i gömer)
+        run: |
+          payload=$(ls src-tauri/target/release/bundle/nsis/*-setup.exe | head -1)
+          DUNNO_SETUP_PAYLOAD="$(cygpath -w "$PWD/$payload")" DUNNO_VERSION="${{ needs.version.outputs.version }}" \
+            cargo build --release --manifest-path setup-tauri/Cargo.toml
+      - uses: actions/upload-artifact@v4
+        with:
+          name: win
+          path: |
+            desktop/src-tauri/target/release/bundle/nsis/*.exe
+            desktop/src-tauri/target/release/bundle/nsis/*.sig
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: winsetup
+          path: desktop/setup-tauri/target/release/dunno-setup.exe
+          if-no-files-found: error
+
+  macos:
+    needs: version
+    runs-on: macos-14
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: desktop
+    env:
+      TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+      TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+      VITE_API_BASE: ${{ vars.VITE_API_BASE }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin,x86_64-apple-darwin
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: desktop/src-tauri
+      - run: npm ci
+      - name: build (universal; anahtar varsa .app.tar.gz + .sig)
+        run: |
+          if [ -n "$TAURI_SIGNING_PRIVATE_KEY" ]; then
+            npx tauri build --target universal-apple-darwin --bundles app,dmg --config src-tauri/tauri.release.conf.json
+          else
+            npx tauri build --target universal-apple-darwin --bundles app,dmg
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mac
+          path: |
+            desktop/src-tauri/target/universal-apple-darwin/release/bundle/dmg/*.dmg
+            desktop/src-tauri/target/universal-apple-darwin/release/bundle/macos/*.tar.gz
+            desktop/src-tauri/target/universal-apple-darwin/release/bundle/macos/*.sig
+          if-no-files-found: warn
+
+  publish:
+    needs: [version, windows, macos]
+    runs-on: ubuntu-latest
+    env:
+      V: ${{ needs.version.outputs.version }}
+      GH_TOKEN: ${{ secrets.DUNNO_RELEASE_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: dl
+      - name: dosyaları sabit ve sürümlü adlarla hazırla
+        run: |
+          set -euo pipefail
+          if [ -z "$GH_TOKEN" ]; then echo "::error::DUNNO_RELEASE_TOKEN sırrı yok"; exit 1; fi
+          mkdir out
+          # upload-artifact ortak üst klasörü atar: dosyalar alt klasörlerde olabilir (dl/mac/dmg/..., dl/mac/macos/...)
+          pick() { find dl/"$1" -type f -name "$2" | sort | head -1; }
+          exe=$(pick win '*-setup.exe'); dmg=$(pick mac '*.dmg')
+          [ -n "$exe" ] || { echo "::error::Windows kurulumu yok"; exit 1; }
+          [ -n "$dmg" ] || { echo "::error::Mac dmg yok"; exit 1; }
+          cp "$exe" "out/Dunno_${V}_x64-setup.exe"
+          # insanlar için: kendi kurulum programımız (yoksa ham NSIS)
+          own=$(pick winsetup 'dunno-setup.exe')
+          if [ -n "$own" ]; then cp "$own" out/Dunno-setup.exe; else cp "$exe" out/Dunno-setup.exe; fi
+          cp "$dmg" "out/Dunno_${V}_universal.dmg"
+          cp "$dmg" out/Dunno.dmg
+          base="https://github.com/${PUBLIC_REPO}/releases/download/v${V}"
+          winsig=$(pick win '*-setup.exe.sig')
+          if [ -n "$winsig" ]; then
+            mac_args=()
+            macsig=$(pick mac '*.app.tar.gz.sig')
+            if [ -n "$macsig" ]; then
+              cp "$(pick mac '*.app.tar.gz')" "out/Dunno_${V}_universal.app.tar.gz"
+              mac_args=(--mac-sig "$macsig" --mac-url "$base/Dunno_${V}_universal.app.tar.gz")
+            fi
+            node desktop/scripts/make-latest.mjs --sig "$winsig" \
+              --url "$base/Dunno_${V}_x64-setup.exe" --out out "${mac_args[@]}"
+          else
+            echo "::warning::imza yok: latest.json yazılmadı (otomatik güncelleme bu sürümü görmez)"
+          fi
+          ls -la out
+      - name: herkese açık repoda release
+        run: |
+          notes=$(node -p "require('./worker/src/data/releases.json').notes")
+          gh release create "v${V}" out/* --repo "$PUBLIC_REPO" --title "dunno ${V}" --notes "$notes"

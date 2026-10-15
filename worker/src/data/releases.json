@@ -1,0 +1,9 @@
+{
+  "version": "0.1.6",
+  "size": "[FILE SIZE]",
+  "notes": "nothing was fixed. some things broke more, on purpose.",
+  "urls": {
+    "windows": "https://github.com/eumennn/dunno/releases/download/v0.1.6/Dunno_0.1.6_x64-setup.exe",
+    "mac": "https://github.com/eumennn/dunno/releases/download/v0.1.6/Dunno_0.1.6_universal.dmg"
+  }
+}

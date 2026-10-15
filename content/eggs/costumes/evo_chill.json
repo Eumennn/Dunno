@@ -1,0 +1,29 @@
+{
+  "id": "evo_chill",
+  "name": {
+    "tr": "sakin",
+    "en": "chill"
+  },
+  "palette": {
+    "body": "#7FCFA8",
+    "shade": "#55AE86",
+    "light": "#BDEBD2",
+    "belly": "#FFF1D6"
+  },
+  "hidesTuft": true,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "sprout",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "evo_chill.sprout.png",
+      "size": 32
+    }
+  ],
+  "icon": "evo_chill.png"
+}

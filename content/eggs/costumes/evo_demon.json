@@ -1,0 +1,70 @@
+{
+  "id": "evo_demon",
+  "name": {
+    "tr": "iblis",
+    "en": "demon"
+  },
+  "palette": {
+    "body": "#F4838F",
+    "shade": "#D9576A",
+    "light": "#FFC2C8",
+    "belly": "#FFF1F0"
+  },
+  "hidesTuft": true,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "horns",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "evo_demon.horns.png",
+      "size": 32
+    },
+    {
+      "id": "tail",
+      "anchor": "neck",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away"
+      ],
+      "image": "evo_demon.tail.png",
+      "size": 32
+    },
+    {
+      "id": "tail_side",
+      "anchor": "ears",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "idle",
+        "shrug",
+        "talk",
+        "sleep",
+        "sulk",
+        "peek",
+        "shh",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "evo_demon.tail_side.png",
+      "size": 32
+    }
+  ],
+  "icon": "evo_demon.png"
+}

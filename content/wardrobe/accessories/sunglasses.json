@@ -1,0 +1,22 @@
+{
+  "id": "sunglasses",
+  "name": {
+    "tr": "güneş gözlüğü",
+    "en": "sunglasses"
+  },
+  "anchor": "eyes",
+  "slot": "eyes",
+  "pivot": {
+    "x": 16,
+    "y": 16
+  },
+  "antenna": "through",
+  "hiddenIn": [
+    "sulk"
+  ],
+  "image": "sunglasses.png",
+  "size": 32,
+  "overflow": {
+    "side": 1
+  }
+}

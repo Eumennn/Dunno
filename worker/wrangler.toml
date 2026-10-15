@@ -1,0 +1,36 @@
+name = "dunno-worker"
+main = "src/index.ts"
+compatibility_date = "2026-09-01"
+
+# Üst seviye = yerel geliştirme (`npx wrangler dev`). Canlı: `npx wrangler deploy --env production`.
+# Canlı bölümünde ENVIRONMENT="dev" YOK: RL_SALT secret'ı yoksa kota + LLM kapanır, sadece havuz.
+
+# sayaçlar + günlük laflar. id yer tutucu; wrangler dev bu id'den bağımsız olarak yerel KV kullanır.
+[[kv_namespaces]]
+binding = "DUNNO_KV"
+id = "00000000000000000000000000000000"
+
+# günlük laf üretimi (W4), UTC 06:00 (env'ler devralır)
+[triggers]
+crons = ["0 6 * * *"]
+
+# sırlar (OPENROUTER_API_KEY, RL_SALT, ALERT_WEBHOOK) burada değil: yerelde .dev.vars, canlıda wrangler secret
+[vars]
+ENVIRONMENT = "dev"
+DUNNO_MODEL = "moonshotai/kimi-k2.6"
+LLM_DAILY_PER_DEVICE = "3"
+DAILY_SPEND_CAP_REQUESTS = "1000"
+
+[env.production]
+name = "dunno-worker"
+
+# canlı namespace id'si deploy öncesi girilecek (docs/agents/backend.md "Canlıya çıkış kontrol listesi")
+[[env.production.kv_namespaces]]
+binding = "DUNNO_KV"
+id = "00000000000000000000000000000000"
+
+[env.production.vars]
+ENVIRONMENT = "production"
+DUNNO_MODEL = "moonshotai/kimi-k2.6"
+LLM_DAILY_PER_DEVICE = "3"
+DAILY_SPEND_CAP_REQUESTS = "1000"

@@ -1,0 +1,42 @@
+{
+  "id": "skeleton",
+  "name": {
+    "tr": "iskelet",
+    "en": "skeleton"
+  },
+  "palette": {
+    "body": "#F2F2F2",
+    "shade": "#D2D2D2",
+    "light": "#FFFFFF",
+    "belly": "#FFFFFF"
+  },
+  "bands": [
+    {
+      "anchor": "neck",
+      "rows": [
+        1,
+        3,
+        5
+      ],
+      "color": "#2B1E2F"
+    }
+  ],
+  "hidesTuft": true,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "sockets",
+      "anchor": "eyes",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "sulk"
+      ],
+      "image": "skeleton.sockets.png",
+      "size": 32
+    }
+  ],
+  "icon": "skeleton.png"
+}

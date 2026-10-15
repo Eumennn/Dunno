@@ -1,0 +1,32 @@
+{
+  "id": "mushroom",
+  "name": {
+    "tr": "mantar",
+    "en": "mushroom"
+  },
+  "palette": {
+    "body": "#ECD0AE",
+    "shade": "#CFA070",
+    "light": "#F7EBDD",
+    "belly": "#FFF1D6"
+  },
+  "hidesTuft": true,
+  "blocks": [
+    "head",
+    "side"
+  ],
+  "parts": [
+    {
+      "id": "cap",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "mushroom.cap.png",
+      "size": 32
+    }
+  ],
+  "icon": "mushroom.png"
+}

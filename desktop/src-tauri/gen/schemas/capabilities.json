@@ -1,0 +1,1 @@
+{"default":{"identifier":"default","description":"pet penceresi ve dunno.exe için asgari izinler: olay dinle/yay (event), ayar dosyası (store). Uygulama komutları (invoke_handler) izin gerektirmez; autostart sadece Rust'ta (tray).","local":true,"windows":["main","app"],"permissions":["core:event:default","store:default"]}}

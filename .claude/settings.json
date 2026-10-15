@@ -1,0 +1,47 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status:*)",
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git merge:*)",
+      "Bash(git tag:*)",
+      "Bash(git branch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git switch:*)",
+      "Bash(git show:*)",
+      "Bash(git worktree list:*)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(node:*)",
+      "Bash(tmux:*)",
+      "Bash(orchestrator/send-claude-message.sh:*)",
+      "Bash(orchestrator/schedule_with_note.sh:*)",
+      "Bash(orchestrator/status.sh:*)",
+      "Bash(./orchestrator/send-claude-message.sh:*)",
+      "Bash(./orchestrator/schedule_with_note.sh:*)",
+      "Bash(./orchestrator/status.sh:*)",
+      "Bash(curl -s http://localhost:*)",
+      "Bash(curl -s http://127.0.0.1:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(grep:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(sleep:*)",
+      "WebSearch",
+      "WebFetch"
+    ],
+    "deny": [
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(rm -rf /:*)",
+      "Read(**/.dev.vars)",
+      "Read(**/.env)"
+    ]
+  }
+}

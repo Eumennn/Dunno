@@ -1,0 +1,45 @@
+{
+  "id": "robot",
+  "name": {
+    "tr": "robot",
+    "en": "robot"
+  },
+  "palette": {
+    "body": "#A9A9A9",
+    "shade": "#888888",
+    "light": "#D2D2D2",
+    "belly": "#F2F2F2"
+  },
+  "hidesTuft": true,
+  "blocks": [
+    "head",
+    "eyes"
+  ],
+  "parts": [
+    {
+      "id": "antenna",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "robot.antenna.png",
+      "size": 32
+    },
+    {
+      "id": "visor",
+      "anchor": "eyes",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "sulk"
+      ],
+      "image": "robot.visor.png",
+      "size": 32
+    }
+  ],
+  "icon": "robot.png"
+}

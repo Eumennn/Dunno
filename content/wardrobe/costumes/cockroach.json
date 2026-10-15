@@ -1,0 +1,131 @@
+{
+  "id": "cockroach",
+  "name": {
+    "tr": "hamamböceği",
+    "en": "cockroach"
+  },
+  "palette": {
+    "body": "#B5713F",
+    "shade": "#8E5330",
+    "light": "#DDA470",
+    "belly": "#FFF1D6"
+  },
+  "hidesTuft": true,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "antennae",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "cockroach.antennae.png",
+      "size": 32
+    },
+    {
+      "id": "legs",
+      "anchor": "neck",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away",
+        "peek",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "cockroach.legs.png",
+      "size": 32
+    },
+    {
+      "id": "wing_side",
+      "anchor": "ears",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "idle",
+        "shrug",
+        "talk",
+        "sleep",
+        "sulk",
+        "peek",
+        "shh",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "cockroach.wing_side.png",
+      "size": 32
+    },
+    {
+      "id": "wing_sleep",
+      "anchor": "ears",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "idle",
+        "shrug",
+        "walk",
+        "talk",
+        "run_away",
+        "sulk",
+        "peek",
+        "shh",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "cockroach.wing_sleep.png",
+      "size": 32
+    },
+    {
+      "id": "leg_side",
+      "anchor": "ears",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "idle",
+        "shrug",
+        "talk",
+        "sleep",
+        "sulk",
+        "peek",
+        "shh",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "cockroach.leg_side.png",
+      "size": 32
+    }
+  ],
+  "icon": "cockroach.png"
+}

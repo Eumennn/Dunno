@@ -1,0 +1,21 @@
+{
+  "id": "cowboy_hat",
+  "name": {
+    "tr": "kovboy şapkası",
+    "en": "cowboy hat"
+  },
+  "anchor": "head",
+  "slot": "head",
+  "pivot": {
+    "x": 16,
+    "y": 16
+  },
+  "antenna": "through",
+  "hiddenIn": [],
+  "image": "cowboy_hat.png",
+  "size": 32,
+  "overflow": {
+    "top": 5,
+    "side": 4
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": "evo_chaos",
+  "name": {
+    "tr": "kaos",
+    "en": "chaos"
+  },
+  "palette": {
+    "body": "#F7A982",
+    "shade": "#E08560",
+    "light": "#FFD3BC",
+    "belly": "#FFF3EA"
+  },
+  "hidesTuft": true,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "spikes",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "evo_chaos.spikes.png",
+      "size": 32
+    }
+  ],
+  "icon": "evo_chaos.png"
+}

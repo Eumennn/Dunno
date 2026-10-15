@@ -1,0 +1,46 @@
+{
+  "id": "mini_monster",
+  "name": {
+    "tr": "mini canavar",
+    "en": "mini monster"
+  },
+  "palette": {
+    "body": "#B49AE0",
+    "shade": "#9478C9",
+    "light": "#DCCEF6",
+    "belly": "#FFF1D6"
+  },
+  "hidesTuft": true,
+  "blocks": [
+    "head"
+  ],
+  "parts": [
+    {
+      "id": "horns",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "mini_monster.horns.png",
+      "size": 32
+    },
+    {
+      "id": "teeth",
+      "anchor": "eyes",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away"
+      ],
+      "image": "mini_monster.teeth.png",
+      "size": 32
+    }
+  ],
+  "icon": "mini_monster.png"
+}

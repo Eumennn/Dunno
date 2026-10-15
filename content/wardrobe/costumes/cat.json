@@ -1,0 +1,95 @@
+{
+  "id": "cat",
+  "name": {
+    "tr": "kedi",
+    "en": "cat"
+  },
+  "palette": {
+    "body": "#A9A9A9",
+    "shade": "#888888",
+    "light": "#D2D2D2",
+    "belly": "#F2F2F2"
+  },
+  "hidesTuft": true,
+  "blocks": [
+    "head"
+  ],
+  "parts": [
+    {
+      "id": "ears",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "cat.ears.png",
+      "size": 32
+    },
+    {
+      "id": "whiskers",
+      "anchor": "eyes",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away",
+        "sulk",
+        "peek",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "cat.whiskers.png",
+      "size": 32
+    },
+    {
+      "id": "tail",
+      "anchor": "neck",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away"
+      ],
+      "image": "cat.tail.png",
+      "size": 32
+    },
+    {
+      "id": "tail_side",
+      "anchor": "ears",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "idle",
+        "shrug",
+        "talk",
+        "sleep",
+        "sulk",
+        "peek",
+        "shh",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "cat.tail_side.png",
+      "size": 32
+    }
+  ],
+  "icon": "cat.png"
+}

@@ -1,0 +1,8 @@
+# worker/.dev.vars olarak kopyala (git'e girmez). Gerçek değerleri sadece .dev.vars'a yaz.
+# OPENROUTER_API_KEY boşsa /v1/ask LLM'i atlar, havuzdan cevap döner.
+OPENROUTER_API_KEY=
+RL_SALT=
+ALERT_WEBHOOK=
+# Sadece yerel elle test: 1 iken cron laf üretimi sahte sabit çıktı kullanır (anahtar/harcama yok).
+# Canlıda asla tanımlanmaz, wrangler.toml'da yok. Sonra: npx wrangler dev --test-scheduled
+DUNNO_FAKE_LLM=

@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "id": "office",
+  "name": {
+    "tr": "ofis dünyası",
+    "en": "office world"
+  },
+  "version": "1.0.0",
+  "author": "dunno",
+  "description": {
+    "tr": "dunno bir şirketin başında. toplantı yapıyor",
+    "en": "dunno runs a company. holds meetings"
+  },
+  "permissions": [
+    "themes",
+    "reactions",
+    "bubbles"
+  ],
+  "contents": {
+    "themes": [
+      "themes/office_ceo.json"
+    ],
+    "reactions": {
+      "tr": "reactions/tr.json",
+      "en": "reactions/en.json"
+    },
+    "bubbles": "bubbles.json"
+  }
+}

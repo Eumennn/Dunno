@@ -1,0 +1,13 @@
+{
+  "id": "pastel_sky",
+  "name": {
+    "tr": "pastel gök",
+    "en": "pastel sky"
+  },
+  "colors": {
+    "body": "#7FB2E5",
+    "shade": "#5E92C8",
+    "light": "#C4DCF5",
+    "belly": "#FFF1D6"
+  }
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "space_01",
+    "trigger": "interaction:click",
+    "intent": "space pack line (placeholder)",
+    "en": "zero gravity. still no poking"
+  },
+  {
+    "id": "space_02",
+    "trigger": "interaction:drag",
+    "intent": "space pack line (placeholder)",
+    "en": "moving me to another planet"
+  },
+  {
+    "id": "space_03",
+    "trigger": "time:morning",
+    "intent": "space pack line (placeholder)",
+    "en": "sunrise. fifteen more today"
+  },
+  {
+    "id": "space_04",
+    "trigger": "time:night",
+    "intent": "space pack line (placeholder)",
+    "en": "it's always night here. used to it"
+  },
+  {
+    "id": "space_05",
+    "trigger": "idle:10",
+    "intent": "space pack line (placeholder)",
+    "en": "orbiting. you should too"
+  },
+  {
+    "id": "space_06",
+    "trigger": "idle:30",
+    "intent": "space pack line (placeholder)",
+    "en": "the void. as quiet as you"
+  },
+  {
+    "id": "space_07",
+    "trigger": "random",
+    "intent": "space pack line (placeholder)",
+    "en": "not a black hole, a charging cable"
+  },
+  {
+    "id": "space_08",
+    "trigger": "random",
+    "intent": "space pack line (placeholder)",
+    "en": "not an astronaut. bought the suit"
+  },
+  {
+    "id": "space_09",
+    "trigger": "random",
+    "intent": "space pack line (placeholder)",
+    "en": "looked at the stars. understood nothing"
+  },
+  {
+    "id": "space_10",
+    "trigger": "random",
+    "intent": "space pack line (placeholder)",
+    "en": "went to the moon. nobody home"
+  },
+  {
+    "id": "space_11",
+    "trigger": "random",
+    "intent": "space pack line (placeholder)",
+    "en": "nobody asks questions in space. nice"
+  },
+  {
+    "id": "space_12",
+    "trigger": "random",
+    "intent": "space pack line (placeholder)",
+    "en": "weak signal. strong excuse"
+  },
+  {
+    "id": "space_13",
+    "trigger": "app:excel",
+    "intent": "space pack line (placeholder)",
+    "en": "fuel math. not my thing"
+  },
+  {
+    "id": "space_14",
+    "trigger": "app:browser",
+    "intent": "space pack line (placeholder)",
+    "en": "space photos. all black"
+  },
+  {
+    "id": "space_15",
+    "trigger": "app:game",
+    "intent": "space pack line (placeholder)",
+    "en": "space game. i'm already there"
+  }
+]

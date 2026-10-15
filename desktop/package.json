@@ -1,0 +1,46 @@
+{
+  "name": "dunno-desktop",
+  "private": true,
+  "version": "0.1.6",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && npm run typecheck:node && vite build",
+    "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "test": "vitest run",
+    "gen:icon": "node scripts/gen-placeholder-icon.mjs",
+    "gen:sheet": "node scripts/gen-sheet.mjs",
+    "wardrobe:shots": "node scripts/wardrobe-shots.mjs",
+    "check:release": "node scripts/check-release.mjs",
+    "release:build": "tauri build --config src-tauri/tauri.release.conf.json",
+    "release:latest": "node scripts/make-latest.mjs",
+    "setup:dev": "vite --config vite.setup.config.ts",
+    "setup:ui": "vite build --config vite.setup.config.ts",
+    "update:serve": "node scripts/serve-update.mjs",
+    "kit:demo": "vite ../ui-kit --port 1431 --strictPort",
+    "gen:placeholder-sheet": "node scripts/gen-placeholder-sheet.mjs",
+    "e2e": "vitest run --config e2e/vitest.e2e.config.ts",
+    "pool:sync": "node scripts/sync-pool.mjs",
+    "pool:check": "vitest run --config scripts/pool.vitest.config.ts",
+    "ask:samples": "vitest run --config scripts/ask.vitest.config.ts",
+    "pool:coverage": "vitest run --config scripts/pool.vitest.config.ts --mode write-coverage",
+    "predev": "node scripts/sync-pool.mjs",
+    "prebuild": "node scripts/sync-pool.mjs",
+    "pretest": "node scripts/sync-pool.mjs",
+    "gen:installer": "node scripts/gen-installer-art.mjs",
+    "gen:packs": "node scripts/gen-packs.mjs"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.12.1",
+    "@types/node": "^24.19.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.2",
+    "vitest": "^5.0.3"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.12.1",
+    "@tauri-apps/plugin-store": "^2.5.0"
+  }
+}

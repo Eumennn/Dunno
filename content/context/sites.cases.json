@@ -1,0 +1,162 @@
+[
+  {
+    "title": "Funny cats compilation - YouTube - Google Chrome",
+    "category": "web_youtube",
+    "silent": false
+  },
+  {
+    "title": "Netflix",
+    "category": "web_netflix",
+    "silent": false
+  },
+  {
+    "title": "Spotify – Liked Songs",
+    "category": "music",
+    "silent": false
+  },
+  {
+    "title": "YouTube Music - Mozilla Firefox",
+    "category": "music",
+    "silent": false
+  },
+  {
+    "title": "Google Maps",
+    "category": "maps",
+    "silent": false
+  },
+  {
+    "title": "Gelen Kutusu (3) - ali@example.com - Gmail",
+    "category": "mail",
+    "silent": false
+  },
+  {
+    "title": "Inbox - Outlook",
+    "category": "mail",
+    "silent": false
+  },
+  {
+    "title": "ChatGPT",
+    "category": "ai_chat",
+    "silent": false
+  },
+  {
+    "title": "Pull Request #42 · acme/widgets · GitHub",
+    "category": "code",
+    "silent": false
+  },
+  {
+    "title": "Bütçe 2026 - Google Sheets",
+    "category": "docs",
+    "silent": false
+  },
+  {
+    "title": "Steam Mağazası",
+    "category": "game_store",
+    "silent": false
+  },
+  {
+    "title": "Amazon.com.tr: Sepetim",
+    "category": "shopping",
+    "silent": false
+  },
+  {
+    "title": "TRENDYOL | En Trend Ürünler",
+    "category": "shopping",
+    "silent": false
+  },
+  {
+    "title": "SON DAKİKA: yağmur yağdı",
+    "category": "news",
+    "silent": false
+  },
+  {
+    "title": "Kedi - Vikipedi",
+    "category": "web_wikipedia",
+    "silent": false
+  },
+  {
+    "title": "Instagram",
+    "category": "web_instagram",
+    "silent": false
+  },
+  {
+    "title": "reddit: the front page of the internet",
+    "category": "web_reddit",
+    "silent": false
+  },
+  {
+    "title": "dunno - DuckDuckGo",
+    "category": "search",
+    "silent": false
+  },
+  {
+    "title": "porn videos",
+    "category": "adult",
+    "silent": true
+  },
+  {
+    "title": "+18 İçerik",
+    "category": "adult",
+    "silent": true
+  },
+  {
+    "title": "Untitled - Notepad",
+    "category": null,
+    "silent": false
+  },
+  {
+    "title": "Better Call Saul notes.txt",
+    "category": null,
+    "silent": false
+  },
+  {
+    "title": "",
+    "category": null,
+    "silent": false
+  },
+  {
+    "title": "   ---   ",
+    "category": null,
+    "silent": false
+  },
+  {
+    "title": "League of Legends (TM) Client",
+    "category": "game_lol",
+    "silent": false
+  },
+  {
+    "title": "VALORANT  ",
+    "category": "game_valorant",
+    "silent": false
+  },
+  {
+    "title": "Minecraft 1.21.4 - Singleplayer",
+    "category": "game_minecraft",
+    "silent": false
+  },
+  {
+    "title": "Counter-Strike 2",
+    "category": "game_cs2",
+    "silent": false
+  },
+  {
+    "title": "Lofi beats - YouTube Music",
+    "category": "music",
+    "silent": false
+  },
+  {
+    "title": "r/pcgaming - Reddit",
+    "category": "web_reddit",
+    "silent": false
+  },
+  {
+    "title": "(3) WhatsApp",
+    "category": "web_whatsapp",
+    "silent": false
+  },
+  {
+    "title": "Grand Theft Auto V",
+    "category": "game_gta",
+    "silent": false
+  }
+]

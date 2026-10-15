@@ -1,0 +1,16 @@
+{
+  "name": "dunno-monorepo",
+  "private": true,
+  "version": "0.1.6",
+  "type": "module",
+  "scripts": {
+    "dev": "npm --prefix studio run studio",
+    "studio": "npm --prefix studio run studio",
+    "desktop": "npm --prefix desktop run dev",
+    "desktop:build": "npm --prefix desktop run build",
+    "desktop:release": "npm --prefix desktop run release:build",
+    "worker": "npm --prefix worker run dev",
+    "test": "npm --prefix studio test && npm --prefix worker test",
+    "typecheck": "npm --prefix studio run typecheck && npm --prefix desktop run typecheck:node && npm --prefix worker run typecheck"
+  }
+}

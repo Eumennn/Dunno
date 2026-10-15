@@ -1,0 +1,59 @@
+{
+  "id": "duck",
+  "name": {
+    "tr": "ördek",
+    "en": "duck"
+  },
+  "palette": {
+    "body": "#F2D54E",
+    "shade": "#D1AE2A",
+    "light": "#FFF0A0",
+    "belly": "#FFFBE0"
+  },
+  "hidesTuft": false,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "beak",
+      "anchor": "eyes",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away"
+      ],
+      "image": "duck.beak.png",
+      "size": 32
+    },
+    {
+      "id": "beak_side",
+      "anchor": "eyes",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "idle",
+        "shrug",
+        "talk",
+        "sleep",
+        "sulk",
+        "peek",
+        "shh",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "duck.beak_side.png",
+      "size": 32
+    }
+  ],
+  "icon": "duck.png"
+}

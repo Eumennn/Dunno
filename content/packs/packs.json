@@ -1,0 +1,52 @@
+{
+  "packs": [
+    {
+      "id": "halloween",
+      "requires": "pack",
+      "name": {
+        "tr": "cadılar bayramı",
+        "en": "halloween"
+      },
+      "description": {
+        "tr": "balkabağı rengi, ürkütücü olmayan laflar",
+        "en": "pumpkin colors, not-scary lines"
+      }
+    },
+    {
+      "id": "cyberpunk",
+      "requires": "pack",
+      "name": {
+        "tr": "siberpunk",
+        "en": "cyberpunk"
+      },
+      "description": {
+        "tr": "neon gece rengi, krom laflar",
+        "en": "neon night colors, chrome lines"
+      }
+    },
+    {
+      "id": "space",
+      "requires": "pro",
+      "name": {
+        "tr": "uzay dünyası",
+        "en": "space world"
+      },
+      "description": {
+        "tr": "dunno yörüngede. hâlâ bir şey bilmiyor",
+        "en": "dunno in orbit. still knows nothing"
+      }
+    },
+    {
+      "id": "office",
+      "requires": "pro",
+      "name": {
+        "tr": "ofis dünyası",
+        "en": "office world"
+      },
+      "description": {
+        "tr": "dunno bir şirketin başında. toplantı yapıyor",
+        "en": "dunno runs a company. holds meetings"
+      }
+    }
+  ]
+}

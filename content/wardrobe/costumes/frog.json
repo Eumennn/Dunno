@@ -1,0 +1,33 @@
+{
+  "id": "frog",
+  "name": {
+    "tr": "kurbağa",
+    "en": "frog"
+  },
+  "palette": {
+    "body": "#66CC66",
+    "shade": "#3F9E45",
+    "light": "#A8F0A0",
+    "belly": "#EAFBE6"
+  },
+  "hidesTuft": true,
+  "blocks": [
+    "head"
+  ],
+  "parts": [
+    {
+      "id": "eye_bumps",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "sulk"
+      ],
+      "image": "frog.eye_bumps.png",
+      "size": 32
+    }
+  ],
+  "icon": "frog.png"
+}

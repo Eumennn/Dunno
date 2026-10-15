@@ -1,0 +1,21 @@
+{
+  "id": "chef_hat",
+  "name": {
+    "tr": "aşçı şapkası",
+    "en": "chef hat"
+  },
+  "anchor": "head",
+  "slot": "head",
+  "pivot": {
+    "x": 16,
+    "y": 16
+  },
+  "antenna": "through",
+  "hiddenIn": [],
+  "image": "chef_hat.png",
+  "size": 32,
+  "overflow": {
+    "top": 7,
+    "side": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  // Node'da koşan TS (e2e/, scripts/*.ts, vite/vitest config'leri): sessiz kırılma olmasın (SPEC 06 Q6c).
+  // Uygulama kodu tsconfig.json'da; burada sadece tip kontrolü, çıktı yok.
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": ["node", "vite/client"]
+  },
+  "include": ["e2e", "scripts/*.ts", "*.config.ts", "src", "../ui-kit"],
+  "exclude": ["../ui-kit/**/*.test.ts"]
+}

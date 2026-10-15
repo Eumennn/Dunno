@@ -1,0 +1,124 @@
+/* Dunno Studio düzeni. Renkler sadece token (ui-kit/tokens.css); katı tasarım dili. */
+body {
+  margin: 0;
+  background: var(--light);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.studio {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(380px, 440px);
+  grid-template-areas: "pool side" "edit side";
+  align-items: start;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1720px;
+  margin: 0 auto;
+}
+.pool-win { grid-area: pool; }
+.edit-win { grid-area: edit; }
+.side { grid-area: side; display: grid; gap: 20px; }
+.win-body, .pool-body { padding: 14px; }
+
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 14px; }
+.toolbar .field { flex: 1 1 240px; font-size: 14px; }
+.status { font-size: 14px; color: var(--ink-2); font-weight: 500; }
+
+.pool-grid { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 16px; }
+.list { max-height: 76vh; overflow-y: auto; padding-right: 6px; }
+
+/* trigger ağacı */
+.tree { max-height: 76vh; overflow-y: auto; padding-right: 4px; }
+.tree ul { list-style: none; margin: 0; padding: 0; }
+.tree-group { margin-top: 14px; }
+.tree-cat {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+  padding: 4px 6px; border-bottom: 2px solid var(--ink); background: var(--cream);
+}
+.tree-item {
+  display: flex; justify-content: space-between; align-items: center; width: 100%;
+  padding: 5px 8px; border: 0; background: transparent; color: var(--ink);
+  font: inherit; font-size: 13px; text-align: left; cursor: pointer;
+  transition: background 0.1s ease;
+}
+.tree-item:hover { background: var(--main); }
+.tree-on { background: var(--ink); color: var(--cream); }
+.tree-on:hover { background: var(--ink); }
+.tree-count {
+  font-family: var(--font-mono); font-size: 11px;
+  background: rgba(0,0,0,0.06); padding: 2px 5px; border-radius: 2px;
+}
+.tree-on .tree-count {
+  background: rgba(255,255,255,0.2); color: var(--cream);
+}
+.under, .tree-cat.under { color: var(--pink); }
+.tree-on.under { background: var(--pink); color: var(--ink); }
+
+/* laf satırları */
+.rows { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.row {
+  background: var(--paper); border: 2px solid var(--ink); padding: 10px 12px;
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+}
+.row:hover {
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.row-err { border-color: var(--pink); box-shadow: 3px 3px 0 var(--pink); }
+.row-head { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; color: var(--ink-2); align-items: center; }
+.row-id { font-weight: 600; color: var(--ink); }
+.row-trigger {
+  font-family: var(--font-mono); font-size: 11px;
+  background: var(--cream); padding: 1px 6px; border: 1px solid var(--ink);
+}
+.row-prev { margin-top: 6px; font-size: 15px; line-height: 1.4; }
+.row-prev .kick { margin-right: 6px; }
+.row-intent { margin-top: 6px; font-size: 12px; color: var(--ink-2); font-style: italic; }
+.row-actions { display: flex; gap: 8px; margin-top: 10px; }
+.row-issues { margin: 8px 0 0; padding: 6px 10px 6px 24px; background: var(--cream); border: 2px dashed var(--pink); font-size: 13px; color: var(--pink); }
+.empty { color: var(--ink-2); font-style: italic; padding: 20px 0; }
+
+/* editör */
+.editor { display: grid; gap: 10px; }
+.editor label { display: grid; gap: 4px; font-size: 13px; font-weight: 500; }
+.editor .field { width: 100%; box-sizing: border-box; }
+.ok { margin: 0; font-size: 13px; color: var(--ink-2); }
+
+@media (max-width: 1200px) {
+  .studio { grid-template-columns: minmax(0, 1fr); grid-template-areas: "pool" "side" "edit"; }
+  .list, .tree { max-height: 50vh; }
+}
+
+/* S3 try.exe / S4 ask.exe */
+.try-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.try-controls label { display: grid; gap: 4px; font-size: 12px; font-weight: 600; }
+.try-controls .check { display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; }
+.try-segs { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+.try-controls .pbtn { grid-column: 1 / -1; justify-self: start; }
+.stage { position: relative; height: 230px; margin-top: 14px; background: var(--cream); border: 2px dashed var(--ink-2); overflow: hidden; }
+.stage .pet { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); image-rendering: pixelated; }
+.try-result { font-size: 13px; margin-top: 10px; }
+.try-result p { margin: 8px 0 4px; }
+.cands, .draws { margin: 6px 0; padding-left: 20px; font-size: 13px; max-height: 160px; overflow-y: auto; }
+.cands .mono { color: var(--ink-2); margin-right: 6px; }
+
+/* Chat ask.exe */
+.chat {
+  display: flex; flex-direction: column; gap: 10px;
+  max-height: 320px; min-height: 180px; overflow-y: auto;
+  margin-bottom: 12px; padding: 8px; background: var(--paper); border: 1px solid var(--ink);
+}
+.chat .bubble {
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+}
+.ask-form { display: flex; gap: 8px; }
+.ask-form .field { flex: 1; font-size: 14px; }
+.note { margin: 8px 0 0; font-size: 12px; color: var(--ink-2); line-height: 1.4; }
+
+/* başlık çubuğu: .exe adı Silkscreen (sayfa lang=en), sağda .ctl; katlanan pencerede sadece bar kalır */
+.ctl-slot { margin-left: auto; display: inline-flex; }
+.ctl { cursor: pointer; }
+.win-collapsed > :not(.bar) { display: none; }
+.toolbar .pbtn, .row-actions .pbtn, .ask-form .pbtn { flex: 0 0 auto; }

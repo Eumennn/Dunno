@@ -1,0 +1,32 @@
+# FB9: Dunno'nun kendi kurulum programı (dunno-setup.exe). Arayüz dunno.exe ile aynı piksel dil (../src/setup),
+# iş Tauri'nin NSIS kurulumu: içine gömülü, sessiz (/S) çalıştırılır. Güncelleyici ve kaldırma yine NSIS'ten.
+[package]
+name = "dunno-setup"
+version = "0.1.6"
+description = "dunno setup"
+edition = "2021"
+publish = false
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[target.'cfg(windows)'.dependencies]
+# kurulu dunno.exe'nin yeri: NSIS'in Kaldır kaydı (HKCU ...\Uninstall\Dunno DisplayIcon), salt okunur
+windows = { version = "0.62", features = ["Win32_Foundation", "Win32_System_Registry"] }
+
+[features]
+# her derleme dist-setup'ı gömer (geliştirme sunucusu yok)
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"

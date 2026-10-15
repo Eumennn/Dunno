@@ -1,0 +1,59 @@
+{
+  "id": "evo_glitchling",
+  "name": {
+    "tr": "bozukçuk",
+    "en": "glitchling"
+  },
+  "palette": {
+    "body": "#B49AE0",
+    "shade": "#9478C9",
+    "light": "#DCCEF6",
+    "belly": "#FFF1D6"
+  },
+  "bands": [
+    {
+      "anchor": "neck",
+      "rows": [
+        -8,
+        -1
+      ],
+      "color": "#6EC5E9"
+    },
+    {
+      "anchor": "neck",
+      "rows": [
+        2
+      ],
+      "color": "#66CC66"
+    }
+  ],
+  "hidesTuft": false,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "noise_a",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "frames": "even",
+      "image": "evo_glitchling.noise_a.png",
+      "size": 32
+    },
+    {
+      "id": "noise_b",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "frames": "odd",
+      "image": "evo_glitchling.noise_b.png",
+      "size": 32
+    }
+  ],
+  "icon": "evo_glitchling.png"
+}

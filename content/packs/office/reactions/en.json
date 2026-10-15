@@ -1,0 +1,92 @@
+[
+  {
+    "id": "office_01",
+    "trigger": "interaction:click",
+    "intent": "office pack line (placeholder)",
+    "en": "in a meeting. no poking"
+  },
+  {
+    "id": "office_02",
+    "trigger": "interaction:drag",
+    "intent": "office pack line (placeholder)",
+    "en": "don't move me without a promotion"
+  },
+  {
+    "id": "office_03",
+    "trigger": "time:morning",
+    "intent": "office pack line (placeholder)",
+    "en": "morning meeting. i won't attend"
+  },
+  {
+    "id": "office_04",
+    "trigger": "time:noon",
+    "intent": "office pack line (placeholder)",
+    "en": "lunch break. three hours"
+  },
+  {
+    "id": "office_05",
+    "trigger": "time:evening",
+    "intent": "office pack line (placeholder)",
+    "en": "shift is over. i never started"
+  },
+  {
+    "id": "office_06",
+    "trigger": "idle:10",
+    "intent": "office pack line (placeholder)",
+    "en": "productivity report: zero"
+  },
+  {
+    "id": "office_07",
+    "trigger": "idle:30",
+    "intent": "office pack line (placeholder)",
+    "en": "this meeting could've been an email"
+  },
+  {
+    "id": "office_08",
+    "trigger": "random",
+    "intent": "office pack line (placeholder)",
+    "en": "new strategy. still no idea"
+  },
+  {
+    "id": "office_09",
+    "trigger": "random",
+    "intent": "office pack line (placeholder)",
+    "en": "synergy. no idea what it means"
+  },
+  {
+    "id": "office_10",
+    "trigger": "random",
+    "intent": "office pack line (placeholder)",
+    "en": "no raise for you. one for me"
+  },
+  {
+    "id": "office_11",
+    "trigger": "random",
+    "intent": "office pack line (placeholder)",
+    "en": "my vision is clear: lunch"
+  },
+  {
+    "id": "office_12",
+    "trigger": "random",
+    "intent": "office pack line (placeholder)",
+    "en": "quarter end. so am i"
+  },
+  {
+    "id": "office_13",
+    "trigger": "app:excel",
+    "intent": "office pack line (placeholder)",
+    "en": "no profit in this sheet. none in me"
+  },
+  {
+    "id": "office_14",
+    "trigger": "app:powerpoint",
+    "intent": "office pack line (placeholder)",
+    "en": "thirty slides, one idea. not mine"
+  },
+  {
+    "id": "office_15",
+    "trigger": "app:browser",
+    "intent": "office pack line (placeholder)",
+    "en": "market research or videos"
+  }
+]

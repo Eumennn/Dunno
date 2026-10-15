@@ -1,0 +1,60 @@
+{
+  "id": "egg_glitch",
+  "name": {
+    "tr": "glitch",
+    "en": "glitch"
+  },
+  "palette": {
+    "body": "#F4A6D7",
+    "shade": "#DB7FBA",
+    "light": "#FFD1EC",
+    "belly": "#EAFBE6"
+  },
+  "bands": [
+    {
+      "anchor": "neck",
+      "rows": [
+        -6,
+        1
+      ],
+      "color": "#66CC66"
+    },
+    {
+      "anchor": "neck",
+      "rows": [
+        -3,
+        4
+      ],
+      "color": "#5FB3D9"
+    }
+  ],
+  "hidesTuft": false,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "noise_a",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "frames": "even",
+      "image": "egg_glitch.noise_a.png",
+      "size": 32
+    },
+    {
+      "id": "noise_b",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "frames": "odd",
+      "image": "egg_glitch.noise_b.png",
+      "size": 32
+    }
+  ],
+  "icon": "egg_glitch.png"
+}

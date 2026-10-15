@@ -1,0 +1,12 @@
+{
+  "name": "studio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npm --prefix ../../studio run dev",
+    "studio": "npm --prefix ../../studio run studio",
+    "test": "npm --prefix ../../studio test",
+    "typecheck": "npm --prefix ../../studio run typecheck"
+  }
+}

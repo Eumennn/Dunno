@@ -1,0 +1,97 @@
+# Laf havuzu yasak kelimeleri (türkçe). Satır başına bir girdi. `kök*` = kelime başından önek, diğerleri tam kelime.
+# Çok kelimeli girdi olabilir. Her lafta iki liste de (tr + en) taranır.
+# worker/src/lib/lines.ts FORBIDDEN_WORDS ile aynı tutulur (worker testi kontrol eder). Gerçek kişiler listelenemez: incelemede yakalanır.
+
+# din
+allah*
+tanrı*
+dua
+dualar*
+namaz*
+oruç*
+cami*
+kilise*
+peygamber*
+din
+dini
+dinî
+dindar*
+ibadet*
+kuran*
+müslüman*
+hristiyan*
+yahudi*
+ateist*
+cennet*
+cehennem*
+şeytan*
+
+# ırk / etnik köken
+ırk
+ırkı
+ırkçı*
+etnik*
+kürt*
+ermeni*
+arap*
+çingene*
+göçmen*
+milliyetçi*
+
+# cinsiyet / yönelim
+gay*
+lezbiyen*
+eşcinsel*
+trans
+cinsel*
+cinsiyet*
+seks
+seksi*
+
+# beden
+şişman*
+obez*
+kilo
+kilolu*
+çirkin*
+göbek*
+
+# siyaset
+siyaset*
+siyasi*
+politik*
+parti
+seçim
+seçimler*
+cumhurbaşkan*
+başbakan*
+hükümet*
+meclis*
+milletvekil*
+bakan
+oy
+savaş*
+
+# sağlık
+hasta*
+doktor*
+ilaç*
+kanser*
+virüs*
+depresyon*
+terapi*
+sağlık*
+teşhis*
+
+# ölüm / intihar / kendine zarar
+ölüm*
+ölü
+öldür*
+ölmek*
+öl
+öldü*
+cenaze*
+mezar*
+intihar*
+kendine zarar*
+kendini öldür*

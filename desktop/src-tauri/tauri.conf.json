@@ -1,0 +1,111 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Dunno",
+  "version": "0.1.6",
+  "identifier": "app.dunno.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "dunno",
+        "width": 96,
+        "height": 84,
+        "resizable": false,
+        "maximizable": false,
+        "minimizable": false,
+        "decorations": false,
+        "transparent": true,
+        "shadow": false,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "focus": false,
+        "focusable": false,
+        "visible": false,
+        "backgroundColor": "#00000000",
+        "additionalBrowserArgs": "--disable-features=msWebOOUI,msPdfOOUI,msSmartScreenProtection --autoplay-policy=no-user-gesture-required"
+      },
+      {
+        "label": "app",
+        "create": false,
+        "title": "dunno.exe",
+        "url": "app.html",
+        "width": 900,
+        "height": 620,
+        "minWidth": 720,
+        "minHeight": 580,
+        "resizable": true,
+        "decorations": false,
+        "transparent": false,
+        "shadow": false,
+        "visible": false,
+        "center": true,
+        "skipTaskbar": false,
+        "additionalBrowserArgs": "--disable-features=msWebOOUI,msPdfOOUI,msSmartScreenProtection --autoplay-policy=no-user-gesture-required"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; connect-src 'self' ipc: http://ipc.localhost http://127.0.0.1:8787"
+    },
+    "macOSPrivateApi": true
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "nsis"
+    ],
+    "publisher": "Dunno",
+    "copyright": "© 2026 Dunno",
+    "shortDescription": "the ai that teaches you nothing.",
+    "category": "Entertainment",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": [
+          "English",
+          "Turkish"
+        ],
+        "displayLanguageSelector": false,
+        "installerIcon": "icons/icon.ico",
+        "headerImage": "installer/header.bmp",
+        "sidebarImage": "installer/sidebar.bmp",
+        "template": "installer/installer.nsi",
+        "startMenuFolder": "Dunno",
+        "compression": "lzma"
+      }
+    },
+    "longDescription": "Dunno: masaüstünde yaşayan, neredeyse hiçbir şeyi bilmeyen piksel art pet. Sorular cihazda kalır, kayıt tutulmaz.",
+    "macOS": {
+      "minimumSystemVersion": "11.0",
+      "dmg": {
+        "windowSize": {
+          "width": 540,
+          "height": 360
+        }
+      }
+    }
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDNERERCNUFGREM1RDZENzcKUldSM2JWM2NyN1hkUFhKU1dYRWVzTlJSdzBkbGE2d01XUEM5Rm8vSzAvZGh2QUpJejhxYjQzeFMK",
+      "endpoints": [
+        "https://github.com/eumennn/dunno/releases/latest/download/latest.json"
+      ],
+      "requireSignedVersion": true,
+      "windows": {
+        "installMode": "passive"
+      }
+    }
+  }
+}

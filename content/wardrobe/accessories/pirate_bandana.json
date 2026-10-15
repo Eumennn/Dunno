@@ -1,0 +1,21 @@
+{
+  "id": "pirate_bandana",
+  "name": {
+    "tr": "korsan bandanası",
+    "en": "pirate bandana"
+  },
+  "anchor": "head",
+  "slot": "head",
+  "pivot": {
+    "x": 16,
+    "y": 16
+  },
+  "antenna": "through",
+  "hiddenIn": [],
+  "image": "pirate_bandana.png",
+  "size": 32,
+  "overflow": {
+    "top": 1,
+    "side": 5
+  }
+}

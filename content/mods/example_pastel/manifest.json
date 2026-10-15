@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "id": "pastel",
+  "name": {
+    "tr": "pastel örnek",
+    "en": "pastel example"
+  },
+  "version": "1.0.0",
+  "author": "dunno",
+  "description": {
+    "tr": "örnek mod: tema, kurdele, iki laf, ses, balon, davranış",
+    "en": "example mod: theme, bow, two lines, sound, bubble, behavior"
+  },
+  "permissions": [
+    "themes",
+    "accessories",
+    "reactions",
+    "sounds",
+    "bubbles",
+    "behavior"
+  ],
+  "contents": {
+    "themes": [
+      "themes/pastel_sky.json"
+    ],
+    "accessories": [
+      "accessories/pastel_bow.json"
+    ],
+    "reactions": {
+      "tr": "reactions/tr.json",
+      "en": "reactions/en.json"
+    },
+    "sounds": "sounds.json",
+    "bubbles": "bubbles.json",
+    "behavior": "behavior.json"
+  }
+}

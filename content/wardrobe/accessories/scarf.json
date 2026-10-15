@@ -1,0 +1,17 @@
+{
+  "id": "scarf",
+  "name": {
+    "tr": "atkı",
+    "en": "scarf"
+  },
+  "anchor": "neck",
+  "slot": "neck",
+  "pivot": {
+    "x": 16,
+    "y": 16
+  },
+  "antenna": "through",
+  "hiddenIn": [],
+  "image": "scarf.png",
+  "size": 32
+}

@@ -1,0 +1,49 @@
+/* Dunno token'ları: tek kaynak (masaüstü, studio). Değerler docs/agents/ui.md + dunno-reference.dc.html.
+   Hex sadece bu dosyada. */
+:root {
+  --ink: #2B1E2F;      /* kontur, metin, gölge */
+  --main: #F2A65A;     /* ana turuncu */
+  --shade: #D9774A;    /* gölge */
+  --light: #FFD29A;    /* ışık, butonlar */
+  --cream: #FFF1D6;    /* krem zemin */
+  --pink: #E86A7A;     /* yanak, kalp, uyarı */
+  --ice: #6EC5E9;      /* vurgu, seçim. karakterde yok */
+  --paper: #FFFFFF;    /* konuşma balonu, input */
+  --ink-2: #5C4560;    /* ikincil metin */
+  /* metin rengi (SPEC 09 K5): temada değişir (koyu temada açık); kontur/gölge --ink sabit. Balon/input (--paper) metni --ink. */
+  --text: var(--ink);
+  --text-2: var(--ink-2);
+  /* koyu --ink zemin üstündeki metin (seçili segment, .kick, koyu buton): her temada sabit açık */
+  --on-ink: #FFF1D6;
+  /* içerik zemini (dunno.exe gövdesi, ask.exe sohbet alanı, seçili sekme): beyaz; koyu temada tema zemini */
+  --surface: var(--paper);
+  /* landing .pbtn-dark iç gölgesi birebir #000000 (ui.md "saf siyah yok" kuralıyla çelişiyor; PM/tasarımcı kararı bekliyor) */
+  --pbtn-dark-low: #000000;
+
+  /* landing ile aynı gövde yığını; Inter gömülü yedek (Windows dışı / Segoe yoksa) */
+  --font-body: 'Segoe UI Variable Text', 'Segoe UI', 'Open Sans', 'Inter', system-ui, sans-serif;
+  /* başlık çubuğu, küçük etiket */
+  --font-pixel: 'Silkscreen', ui-monospace, monospace;
+  /* .kick, .mono (IBM Plex Mono gömülü değil: sistem monospace'e düşer) */
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+/* Silkscreen Türkçe glifleri (ı ş ğ İ ç ö ü) desteklemiyor: sadece o harfleri içeren öğe gövde fontuna düşer,
+   öğe bazında (kit.ts noPx / .no-px). "dunno.exe", "home" gibi öğeler Silkscreen kalır. */
+
+/* SPEC 17 karanlık mod (settings.exe): zemin, metin, kontur koyu; tema rengi başlık çubuğu, buton ve vurguda kalır.
+   Koyu zemin ana paletin mürekkep tonundan; kontur/gölge zeminden koyu ki kutular ayrışsın. Çubuk/buton metni koyu kalır. */
+:root[data-dark] {
+  --surface: #241A28;
+  --cream: #2B1E2F;
+  --paper: #3A2C3E;
+  --text: #FFF1D6;
+  --text-2: #CDB9C9;
+  --ink: #120C14;
+  --on-ink: #FFF1D6;
+  --on-bar: #2B1E2F;
+  /* konuşma balonu: koyu dolgu, açık metin ve kenar */
+  --bubble-ink: #FFF1D6;
+  color-scheme: dark;
+}
+

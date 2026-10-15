@@ -1,0 +1,43 @@
+{
+  "id": "pizza",
+  "name": {
+    "tr": "pizza dilimi",
+    "en": "pizza slice"
+  },
+  "palette": {
+    "body": "#F2D54E",
+    "shade": "#D1AE2A",
+    "light": "#FFF0A0",
+    "belly": "#FFFBE0"
+  },
+  "bands": [
+    {
+      "anchor": "head",
+      "rows": [
+        1,
+        2
+      ],
+      "color": "#B5713F"
+    }
+  ],
+  "hidesTuft": true,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "pepperoni",
+      "anchor": "neck",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away"
+      ],
+      "image": "pizza.pepperoni.png",
+      "size": 32
+    }
+  ],
+  "icon": "pizza.png"
+}

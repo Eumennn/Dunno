@@ -1,0 +1,112 @@
+# Banned words for pool lines (english). One entry per line. `root*` = prefix match at word start, others = whole word.
+# Multi-word entries are allowed. Both lists (tr + en) are checked against every line.
+# Kept in sync with worker/src/lib/lines.ts FORBIDDEN_WORDS (worker test checks it). Real people cannot be listed: catch in review.
+
+# religion
+god
+gods
+jesus*
+allah*
+church*
+mosque*
+temple*
+pray*
+relig*
+bible*
+quran*
+islam*
+christ*
+jew*
+muslim*
+hindu*
+buddh*
+atheis*
+heaven*
+hell
+satan*
+devil*
+
+# race / ethnicity
+race
+races
+racis*
+ethnic*
+black people
+white people
+immigrant*
+nationalis*
+
+# gender / orientation
+gay*
+lesbian*
+trans
+transgender*
+queer*
+sexual*
+sex
+sexy
+gender*
+bisexual*
+
+# body
+fat
+fatty
+obese*
+skinny
+ugly
+weight
+body
+bodies
+
+# politics
+politic*
+president*
+election*
+elected
+vote*
+voting
+democra*
+republican*
+government*
+parliament*
+minister*
+senat*
+congress*
+war
+wars
+
+# health
+sick*
+disease*
+cancer*
+doctor*
+hospital*
+medic*
+pill
+pills
+drug*
+virus*
+covid*
+depress*
+anxiety
+therap*
+diagnos*
+illness*
+
+# death / suicide / self-harm
+death*
+dead
+die
+dies
+died
+dying
+kill*
+murder*
+suicid*
+self harm*
+self-harm*
+funeral*
+grave
+graves
+corpse*
+cut yourself

@@ -1,0 +1,29 @@
+{
+  "id": "evo_cloud",
+  "name": {
+    "tr": "bulut",
+    "en": "cloud"
+  },
+  "palette": {
+    "body": "#5FB3D9",
+    "shade": "#3E8FB8",
+    "light": "#A8DCF0",
+    "belly": "#E8F6FB"
+  },
+  "hidesTuft": true,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "puffs",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "evo_cloud.puffs.png",
+      "size": 32
+    }
+  ],
+  "icon": "evo_cloud.png"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "alien",
+  "name": {
+    "tr": "uzaylı",
+    "en": "alien"
+  },
+  "palette": {
+    "body": "#66CC66",
+    "shade": "#3F9E45",
+    "light": "#A8F0A0",
+    "belly": "#EAFBE6"
+  },
+  "hidesTuft": true,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "antennae",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "alien.antennae.png",
+      "size": 32
+    }
+  ],
+  "icon": "alien.png"
+}

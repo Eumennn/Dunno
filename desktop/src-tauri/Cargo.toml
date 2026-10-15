@@ -1,0 +1,49 @@
+[package]
+name = "dunno"
+version = "0.1.6"
+description = "the ai that teaches you nothing."
+edition = "2021"
+rust-version = "1.90"
+
+[lib]
+name = "dunno_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "macos-private-api"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+base64 = "0.22"
+# Pro lisansı (SPEC 15): çevrimdışı imza doğrulama; saf Rust (Windows'ta C derleyicisi gerekmez)
+ed25519-dalek = { version = "2", default-features = false, features = ["std"] }
+tauri-plugin-store = "2"
+tauri-plugin-autostart = "2"
+tauri-plugin-single-instance = "2"
+# native-tls: Windows'ta schannel (C derleyicisi gerektirmez, sistem sertifikaları); NSIS için zip gerekmez
+tauri-plugin-updater = { version = "2", default-features = false, features = ["native-tls", "system-proxy"] }
+
+# SPEC 19 macOS: öndeki uygulama (NSWorkspace) ve yerel saat; Tauri'nin kendi objc2 sürümleriyle aynı aile
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2 = "0.6"
+objc2-foundation = { version = "0.3", features = ["NSString", "NSURL", "NSArray"] }
+objc2-app-kit = { version = "0.3", features = ["NSWorkspace", "NSRunningApplication", "libc"] }
+libc = "0.2"
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.61", features = [
+  "Win32_Foundation",
+  "Win32_UI_WindowsAndMessaging",
+  # context/windows.rs: süreç adı + süreç listesi, boşta kalma (sadece GetLastInputInfo), pil
+  "Win32_System_ProcessStatus",
+  "Win32_System_Threading",
+  "Win32_System_SystemInformation",
+  "Win32_System_Power",
+  "Win32_UI_Input_KeyboardAndMouse",
+  # media.rs: sistem medya denetimi (çalan şarkının sadece karması, isteğe bağlı)
+  "Foundation",
+  "Media",
+  "Media_Control",
+] }

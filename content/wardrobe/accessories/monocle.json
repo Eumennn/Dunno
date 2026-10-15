@@ -1,0 +1,22 @@
+{
+  "id": "monocle",
+  "name": {
+    "tr": "monokl",
+    "en": "monocle"
+  },
+  "anchor": "eyes",
+  "slot": "eyes",
+  "pivot": {
+    "x": 16,
+    "y": 16
+  },
+  "antenna": "through",
+  "hiddenIn": [
+    "sulk"
+  ],
+  "image": "monocle.png",
+  "size": 32,
+  "overflow": {
+    "side": 1
+  }
+}

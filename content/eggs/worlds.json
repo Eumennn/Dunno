@@ -1,0 +1,26 @@
+{
+  "fixed": { "outline": "#2B1E2F", "cheek": "#E86A7A" },
+  "themes": [
+    {
+      "id": "egg_paper",
+      "name": { "tr": "kağıt dünya", "en": "paper world" },
+      "status": "candidate",
+      "colors": { "body": "#D2D2D2", "shade": "#A9A9A9", "light": "#F2F2F2", "belly": "#FFFFFF" },
+      "ui": { "bar": "#F2F2F2", "button": "#FFFFFF", "buttonShade": "#A9A9A9", "bg": "#FFFFFF", "accent": "#5FB3D9" }
+    },
+    {
+      "id": "egg_glitch",
+      "name": { "tr": "glitch dünya", "en": "glitch world" },
+      "status": "candidate",
+      "colors": { "body": "#F4A6D7", "shade": "#DB7FBA", "light": "#FFD1EC", "belly": "#EAFBE6" },
+      "ui": { "bar": "#3A4378", "button": "#4A5694", "buttonShade": "#2A3160", "bg": "#1F2340", "accent": "#4E5D94", "text": "#A8F0A0", "dark": true }
+    },
+    {
+      "id": "egg_monster",
+      "name": { "tr": "canavar", "en": "monster" },
+      "status": "candidate",
+      "colors": { "body": "#6475B0", "shade": "#4E5D94", "light": "#94A4D8", "belly": "#D9E0F6" },
+      "ui": { "bar": "#3A4378", "button": "#4A5694", "buttonShade": "#2A3160", "bg": "#1F2340", "accent": "#2F6E8C", "text": "#F3EEFF", "dark": true }
+    }
+  ]
+}

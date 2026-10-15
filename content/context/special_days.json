@@ -1,0 +1,122 @@
+{
+  "note": "Özel günler: tarih (ay-gün) veya mevsim bazlı. Dunno kendi takvimiyle çalışır; kullanıcının yerel takvimini sorgulamaz.",
+  "days": [
+    {
+      "id": "halloween",
+      "name": { "tr": "cadılar bayramı", "en": "halloween" },
+      "dates": { "start": "10-25", "end": "11-01" },
+      "theme": "halloween_pumpkin",
+      "costume": "ghost",
+      "lines_trigger": "special:halloween",
+      "priority": 2
+    },
+    {
+      "id": "new_year",
+      "name": { "tr": "yılbaşı", "en": "new year" },
+      "dates": { "start": "12-28", "end": "01-03" },
+      "theme": "midnight",
+      "costume": null,
+      "lines_trigger": "special:new_year",
+      "priority": 2
+    },
+    {
+      "id": "valentines",
+      "name": { "tr": "sevgililer günü", "en": "valentine's day" },
+      "dates": { "start": "02-12", "end": "02-15" },
+      "theme": "strawberry",
+      "costume": null,
+      "lines_trigger": "special:valentines",
+      "priority": 1
+    },
+    {
+      "id": "april_fools",
+      "name": { "tr": "1 nisan", "en": "april fools" },
+      "dates": { "start": "04-01", "end": "04-01" },
+      "theme": null,
+      "costume": null,
+      "lines_trigger": "special:april_fools",
+      "priority": 3
+    },
+    {
+      "id": "summer",
+      "name": { "tr": "yaz", "en": "summer" },
+      "dates": { "start": "06-21", "end": "09-22" },
+      "theme": "lemon",
+      "costume": null,
+      "lines_trigger": "special:summer",
+      "priority": 0
+    },
+    {
+      "id": "winter",
+      "name": { "tr": "kış", "en": "winter" },
+      "dates": { "start": "12-21", "end": "03-20" },
+      "theme": "night",
+      "costume": null,
+      "lines_trigger": "special:winter",
+      "priority": 0
+    },
+    {
+      "id": "spring",
+      "name": { "tr": "bahar", "en": "spring" },
+      "dates": { "start": "03-21", "end": "06-20" },
+      "theme": "mint",
+      "costume": null,
+      "lines_trigger": "special:spring",
+      "priority": 0
+    },
+    {
+      "id": "autumn",
+      "name": { "tr": "sonbahar", "en": "autumn" },
+      "dates": { "start": "09-23", "end": "12-20" },
+      "theme": "burnt_toast",
+      "costume": null,
+      "lines_trigger": "special:autumn",
+      "priority": 0
+    },
+    {
+      "id": "world_pet_day",
+      "name": { "tr": "dünya evcil hayvan günü", "en": "world pet day" },
+      "dates": { "start": "04-11", "end": "04-11" },
+      "theme": null,
+      "costume": "cat",
+      "lines_trigger": "special:pet_day",
+      "priority": 2
+    },
+    {
+      "id": "programmers_day",
+      "name": { "tr": "programcılar günü", "en": "programmers' day" },
+      "dates": { "start": "09-13", "end": "09-13" },
+      "theme": "retro_green",
+      "costume": "robot",
+      "lines_trigger": "special:programmers_day",
+      "priority": 2
+    },
+    {
+      "id": "star_wars_day",
+      "name": { "tr": "star wars günü", "en": "star wars day" },
+      "dates": { "start": "05-04", "end": "05-04" },
+      "theme": null,
+      "costume": "astronaut",
+      "lines_trigger": "special:star_wars",
+      "priority": 1
+    },
+    {
+      "id": "pi_day",
+      "name": { "tr": "pi günü", "en": "pi day" },
+      "dates": { "start": "03-14", "end": "03-14" },
+      "theme": null,
+      "costume": null,
+      "lines_trigger": "special:pi_day",
+      "priority": 1
+    },
+    {
+      "id": "friday_13th",
+      "name": { "tr": "13. cuma", "en": "friday the 13th" },
+      "dates": "dynamic",
+      "theme": "midnight",
+      "costume": "skeleton",
+      "lines_trigger": "special:friday_13th",
+      "priority": 2
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "space_orbit",
+  "name": {
+    "tr": "yörünge",
+    "en": "orbit"
+  },
+  "colors": {
+    "body": "#6475B0",
+    "shade": "#4E5D94",
+    "light": "#94A4D8",
+    "belly": "#D9E0F6"
+  }
+}

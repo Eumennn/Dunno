@@ -1,0 +1,14 @@
+[
+  {
+    "id": "pastel_excel_01",
+    "trigger": "app:excel",
+    "intent": "pastel mod sample about spreadsheets",
+    "en": "paint it pastel, still a spreadsheet"
+  },
+  {
+    "id": "pastel_click_01",
+    "trigger": "interaction:click",
+    "intent": "pastel mod sample poke reaction",
+    "en": "you made me pastel. still no poking"
+  }
+]

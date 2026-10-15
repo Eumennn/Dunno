@@ -1,0 +1,20 @@
+{
+  "id": "crown",
+  "name": {
+    "tr": "taç",
+    "en": "crown"
+  },
+  "anchor": "head",
+  "slot": "head",
+  "pivot": {
+    "x": 16,
+    "y": 16
+  },
+  "antenna": "behind",
+  "hiddenIn": [],
+  "image": "crown.png",
+  "size": 32,
+  "overflow": {
+    "top": 5
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "id": "space",
+  "name": {
+    "tr": "uzay dünyası",
+    "en": "space world"
+  },
+  "version": "1.0.0",
+  "author": "dunno",
+  "description": {
+    "tr": "dunno yörüngede. hâlâ bir şey bilmiyor",
+    "en": "dunno in orbit. still knows nothing"
+  },
+  "permissions": [
+    "themes",
+    "reactions",
+    "bubbles"
+  ],
+  "contents": {
+    "themes": [
+      "themes/space_orbit.json"
+    ],
+    "reactions": {
+      "tr": "reactions/tr.json",
+      "en": "reactions/en.json"
+    },
+    "bubbles": "bubbles.json"
+  }
+}

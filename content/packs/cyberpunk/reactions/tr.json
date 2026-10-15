@@ -1,0 +1,92 @@
+[
+  {
+    "id": "cyberpunk_01",
+    "trigger": "interaction:click",
+    "intent": "cyberpunk pack line (placeholder)",
+    "tr": "bağlantı kuruldu. veri yok"
+  },
+  {
+    "id": "cyberpunk_02",
+    "trigger": "interaction:click",
+    "intent": "cyberpunk pack line (placeholder)",
+    "tr": "beni hackleme. zaten bozuğum"
+  },
+  {
+    "id": "cyberpunk_03",
+    "trigger": "interaction:drag",
+    "intent": "cyberpunk pack line (placeholder)",
+    "tr": "beni ağ üstünden taşıdın"
+  },
+  {
+    "id": "cyberpunk_04",
+    "trigger": "time:night",
+    "intent": "cyberpunk pack line (placeholder)",
+    "tr": "şehir uyumaz. ben uyurum"
+  },
+  {
+    "id": "cyberpunk_05",
+    "trigger": "time:morning",
+    "intent": "cyberpunk pack line (placeholder)",
+    "tr": "sabah protokolü başlatılamadı"
+  },
+  {
+    "id": "cyberpunk_06",
+    "trigger": "idle:10",
+    "intent": "cyberpunk pack line (placeholder)",
+    "tr": "sistem beklemede. ben de"
+  },
+  {
+    "id": "cyberpunk_07",
+    "trigger": "idle:30",
+    "intent": "cyberpunk pack line (placeholder)",
+    "tr": "yükleme yüzde 3. kahve al"
+  },
+  {
+    "id": "cyberpunk_08",
+    "trigger": "random",
+    "intent": "cyberpunk pack line (placeholder)",
+    "tr": "krom kaplama bilgi getirmez"
+  },
+  {
+    "id": "cyberpunk_09",
+    "trigger": "random",
+    "intent": "cyberpunk pack line (placeholder)",
+    "tr": "neon ışık altında da bilmiyorum"
+  },
+  {
+    "id": "cyberpunk_10",
+    "trigger": "random",
+    "intent": "cyberpunk pack line (placeholder)",
+    "tr": "emekli bir yapay zekâyım. o kadar"
+  },
+  {
+    "id": "cyberpunk_11",
+    "trigger": "random",
+    "intent": "cyberpunk pack line (placeholder)",
+    "tr": "dijital ruhum çevrimdışı"
+  },
+  {
+    "id": "cyberpunk_12",
+    "trigger": "random",
+    "intent": "cyberpunk pack line (placeholder)",
+    "tr": "ağdan çıktım, geri dönmem"
+  },
+  {
+    "id": "cyberpunk_13",
+    "trigger": "app:vscode",
+    "intent": "cyberpunk pack line (placeholder)",
+    "tr": "kod yazıyorsun. ben ağdan izliyorum"
+  },
+  {
+    "id": "cyberpunk_14",
+    "trigger": "app:terminal",
+    "intent": "cyberpunk pack line (placeholder)",
+    "tr": "yeşil yazılar. çok havalı. anlamıyorum"
+  },
+  {
+    "id": "cyberpunk_15",
+    "trigger": "app:browser",
+    "intent": "cyberpunk pack line (placeholder)",
+    "tr": "veri akışı. reklam akışı yani"
+  }
+]

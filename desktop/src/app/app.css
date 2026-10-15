@@ -1,0 +1,1371 @@
+/* dunno.exe yerleşimi: görsel dil ui-kit/kit.css'te (landing birebir). Renk sadece token, yuvarlak köşe/blur/gradyan yok. */
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--main);
+  color: var(--text);
+  font-family: var(--font-body);
+  overflow: hidden;
+}
+
+#app {
+  height: 100%;
+  padding: 10px 14px 14px 10px; /* sert gölge payı */
+  box-sizing: border-box;
+}
+
+.app-win {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.app-bar {
+  user-select: none;
+  cursor: default;
+}
+.app-ctls {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+}
+
+.app-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 8px 10px 0;
+  border-bottom: 2px solid var(--ink);
+  background: var(--cream);
+}
+.app-tab {
+  font-family: var(--font-pixel);
+  font-size: 12px;
+  color: var(--text);
+  background: var(--light);
+  border: 2px solid var(--ink);
+  border-bottom: 0;
+  border-radius: 0;
+  padding: 6px 12px;
+  margin-bottom: -2px;
+  cursor: pointer;
+}
+.app-tab:hover {
+  background: var(--main);
+}
+.app-tab-on {
+  background: var(--surface);
+  border-bottom: 2px solid var(--surface);
+}
+.app-tab:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.app-body {
+  flex: 1 1 auto;
+  overflow: auto;
+  background: var(--surface);
+  padding: 18px;
+}
+/* SPEC 14 kağıt dünya: defter çizgileri (düz çizgi deseni, gradyan yok) */
+[data-world="paper"] .app-body {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='24'%3E%3Crect y='23' width='8' height='1' fill='%23A8DCF0'/%3E%3C/svg%3E");
+}
+/* glitch dünya: tarama satırları */
+[data-world="glitch"] .app-body {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect y='3' width='4' height='1' fill='%232A3160'/%3E%3C/svg%3E");
+}
+
+.app-home {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch; /* sol kart sağ sütunla aynı boyda: boş alan kalmaz */
+}
+.app-stagecard {
+  display: flex;
+  flex-direction: column;
+}
+.app-stagecard .app-stage {
+  flex: 1 1 auto;
+}
+.app-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 14px;
+  min-height: 236px;
+  box-sizing: border-box;
+}
+.app-petcanvas {
+  image-rendering: pixelated;
+}
+.app-now {
+  margin: 0;
+  font-size: 15px;
+}
+.app-side {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.app-card .app-pad {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.app-big {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+.app-dim {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 14px;
+}
+
+.app-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 560px;
+}
+.app-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap; /* dar pencerede kontrol alta iner */
+}
+.app-row__text {
+  flex: 1 1 120px;
+  min-width: 0;
+}
+.app-row__ctl {
+  flex: 0 0 auto;
+}
+.app-hint {
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--text-2);
+  overflow-wrap: anywhere;
+}
+.app-switches {
+  gap: 14px !important;
+}
+.app-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.app-actions .pbtn {
+  flex: 1 1 140px;
+}
+.app-dim,
+.app-big,
+.app-now {
+  overflow-wrap: anywhere;
+}
+.app-label {
+  font-size: 12px;
+}
+
+.app-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 560px;
+  font-size: 15px;
+}
+.app-txt p {
+  margin: 0;
+}
+.app-stats {
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.app-stats th,
+.app-stats td {
+  text-align: left;
+  padding: 6px 16px 6px 0;
+  border-bottom: 2px dashed var(--light);
+}
+.app-stats th {
+  font-weight: 500;
+  color: var(--text-2);
+}
+.app-ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.app-txt .pbtn-sm {
+  align-self: flex-start;
+}
+
+/* pencere min 720: iki sütun kalır; daha dar (studio gömme vb.) tek sütun */
+@media (max-width: 560px) {
+  .app-home {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* klavye odağı her kontrolde görünür (kit: .pbtn .seg .ctl .pswitch) */
+.app-body :focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* wardrobe.exe (SPEC 05 W4) */
+.wr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 8px;
+}
+.wr-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 6px;
+  min-height: 96px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--surface);
+  border: 2px solid var(--ink);
+  border-radius: 0;
+  box-shadow: 2px 2px 0 var(--ink);
+  cursor: pointer;
+}
+.wr-tile:hover {
+  background: var(--cream);
+}
+.wr-tile-on {
+  background: var(--light);
+  box-shadow: inset 2px 2px 0 var(--shade), 2px 2px 0 var(--ink);
+}
+.wr-locked {
+  cursor: not-allowed;
+  border-style: dashed;
+  box-shadow: none;
+}
+.wr-swatch {
+  display: flex;
+  border: 2px solid var(--ink);
+}
+.wr-swatch i {
+  display: block;
+  width: 12px;
+  height: 18px;
+}
+.wr-img {
+  width: 64px;
+  height: 64px;
+  image-rendering: pixelated;
+}
+.wr-none .wr-img {
+  border: 2px dashed var(--ink-2);
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  margin: 12px 0;
+}
+/* kilitli: siluet (aksesuar) / soluk renk (tema) */
+.wr-locked .wr-img {
+  filter: brightness(0);
+  opacity: 0.3;
+}
+.wr-locked .wr-swatch {
+  filter: grayscale(1);
+  opacity: 0.45;
+}
+.wr-name {
+  font-weight: 600;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.wr-lock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: 11px;
+  line-height: 1.25;
+  color: var(--text-2);
+  text-align: center;
+}
+.wr-prog {
+  color: var(--text);
+  font-weight: 600;
+}
+/* kartlar içeriğe göre (landing kart ritmi); sütunlar esnemez, boş alan kalmaz */
+.wr .app-stagecard .app-stage {
+  flex: none;
+  min-height: 0;
+}
+.wr .app-stage .segs {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.wr-ach .app-pad {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.wr-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+}
+.wr-table th,
+.wr-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 6px 10px 6px 0;
+  border-bottom: 2px dashed var(--light);
+}
+.wr-table th span {
+  display: block;
+}
+.wr-table td {
+  white-space: nowrap;
+  text-align: right;
+}
+.wr-table td .lock-ico {
+  margin-right: 6px;
+}
+.wr-table tr:last-child th,
+.wr-table tr:last-child td {
+  border-bottom: 0;
+}
+.wr-done th > span:first-child {
+  font-weight: 700;
+}
+
+/* test modu (SPEC 07 FB2): settings.exe bölümü, düğme sıraları, dunno.exe içi toast */
+.app-test {
+  margin-top: 18px;
+}
+.app-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0 8px;
+}
+.app-btns .pbtn-sm[disabled] {
+  opacity: 0.5;
+  cursor: default;
+}
+.wr-test {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-weight: 600;
+}
+.app-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+/* geniş pencere (SPEC 07 FB3): metin sekmeleri okunaklı genişlikte ortalı; home ve wardrobe ızgaraları genişler */
+.app-list,
+.app-txt,
+.app-test {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.app-test {
+  max-width: 760px;
+}
+
+/* büyük pencere (SPEC 07 FB3b, UP4 "boş alan kalmasın"): home dikeyde de dolar; sağ sütunda kartlar uzar, düğme sırası doğal boyda */
+.app-body {
+  display: flex;
+  flex-direction: column;
+}
+.app-home:not(.wr) {
+  flex: 1 0 auto;
+}
+.app-home:not(.wr) .app-side > .app-card {
+  flex: 1 1 auto;
+}
+/* stats.txt / about.txt: büyük pencerede metin bloğu ortada (üste yapışık değil) */
+.app-body > .app-txt {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* FB6: gövde sarmalayıcı; dolapta solda sabit panel (önizleme + wearing), kaydırma alanının dışında: önizleme yapısı gereği oynamaz */
+.app-bodywrap {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.app-bodywrap.has-aside {
+  flex-direction: row;
+  background: var(--surface);
+}
+.app-aside {
+  flex: 0 0 clamp(260px, 38%, 380px);
+  box-sizing: border-box;
+  padding: 18px 0 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: hidden auto; /* emniyet: çok kısa pencerede bile önizleme üstte kalır */
+  background: var(--surface);
+}
+.has-aside > .app-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.wr-main {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.wr-ach-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.wr-ach-head + .wr-table {
+  margin-top: 10px;
+}
+.wr-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.wr-filter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.wr-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.wr-chip {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--light);
+  border: 2px solid var(--ink);
+  border-radius: 0;
+  padding: 3px 8px;
+  cursor: pointer;
+}
+.wr-chip:hover {
+  background: var(--main);
+}
+/* settings.exe bölüm başlıkları */
+.app-group {
+  margin: 10px 0 -4px;
+  font-family: var(--font-pixel);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text-2);
+  border-bottom: 2px dashed var(--light);
+  padding-bottom: 4px;
+}
+.app-group:first-child {
+  margin-top: 0;
+}
+
+/* UX-01 koyu temalar (gece yarısı): --ink kenar/gölge koyu zeminde görünmüyordu; sadece koyu UI'da --text (açık) kullanılır */
+[data-ui-dark] .wr-tile,
+[data-ui-dark] .wr-chip,
+[data-ui-dark] .wr-swatch,
+[data-ui-dark] .seg {
+  border-color: var(--text);
+}
+[data-ui-dark] .wr-tile {
+  box-shadow: 2px 2px 0 var(--text);
+}
+[data-ui-dark] .wr-tile-on {
+  box-shadow: inset 2px 2px 0 var(--shade), 2px 2px 0 var(--text);
+}
+[data-ui-dark] .wr-locked {
+  border-color: var(--text-2);
+  box-shadow: none;
+}
+[data-ui-dark] .seg-on {
+  background: var(--text);
+  color: var(--surface);
+}
+[data-ui-dark] .app-body :focus-visible {
+  outline-color: var(--text);
+}
+
+
+/* SPEC 15 pro bölümü: lisans alanı, Free'de kişilik soluk (seçilemez, "pro" etiketi metinde) */
+.app-field {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0;
+}
+.app-field .field {
+  width: 100%;
+  box-sizing: border-box;
+}
+.app-locked {
+  opacity: 0.55;
+}
+.app-locked .seg {
+  pointer-events: none;
+}
+
+/* SPEC 15 başla sekmesi: sıradaki başarımlar, kostüm paket başlıkları */
+.wr-next {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.wr-next li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: baseline;
+}
+.wr-next-title {
+  font-weight: 600;
+}
+.wr-pack {
+  margin-top: 12px;
+}
+
+/* SPEC 16 kişisel dunno: açıklama listesi, rıza kutusu */
+.app-list-plain {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+.app-check {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 8px 0;
+}
+
+/* FB4-6 stats.txt: son 7 gün çubukları, uygulama çubukları (düz renk, gradyan yok) */
+.st-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  align-items: end;
+  height: 120px;
+}
+.st-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  gap: 4px;
+}
+.st-fill {
+  display: block;
+  width: 100%;
+  min-height: 2px;
+  background: var(--main);
+  border: 2px solid var(--ink);
+  box-sizing: border-box;
+}
+.st-day {
+  font-size: 12px;
+  color: var(--text-2, var(--ink-2));
+}
+.st-apps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.st-apps li {
+  display: grid;
+  grid-template-columns: 7.5em 1fr 3em;
+  gap: 8px;
+  align-items: center;
+}
+.st-track {
+  display: block;
+  height: 12px;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+}
+.st-fill-h {
+  display: block;
+  height: 100%;
+  background: var(--ice);
+}
+.st-apps .mono {
+  text-align: right;
+}
+
+/* FB4-3 settings.exe: her bölüm bir kart; satırlar aynı ızgarada (etiket+açıklama solda, kontrol sağda), aralarında kesik çizgi */
+.app-list.set {
+  max-width: 680px;
+  margin: 0 auto;
+  gap: 16px;
+}
+.set-card {
+  width: 100%;
+}
+.set-pad {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.set-title {
+  margin: 0 0 6px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-2, var(--ink-2));
+}
+.set-pad > .app-row,
+.set-pad > div > .app-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 16px;
+  padding: 12px 0;
+  border-top: 2px dashed var(--light);
+}
+.set-pad > .app-row:first-of-type {
+  border-top: 0;
+}
+.set-pad .app-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--text);
+}
+.set-pad .app-row__ctl {
+  justify-self: end;
+}
+.set-pad .step {
+  min-width: 240px;
+}
+.set-pad > .app-hint,
+.set-pad > p.app-hint {
+  margin: 4px 0 8px;
+}
+.set-pad .app-actions {
+  justify-content: flex-start;
+  padding: 10px 0 4px;
+}
+.set-pad .app-actions .pbtn {
+  flex: 0 0 auto;
+  min-width: 160px;
+}
+.set-pad .app-field {
+  margin: 10px 0 4px;
+}
+.set-pad .app-list-plain {
+  margin: 0 0 6px;
+}
+.set-pad .app-check {
+  margin: 10px 0 4px;
+}
+@media (max-width: 620px) {
+  .set-pad > .app-row,
+  .set-pad > div > .app-row {
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+  }
+  .set-pad .app-row__ctl {
+    justify-self: start;
+  }
+}
+
+/* FB5: kaydırma çubuğu piksel stil (yerel Windows çubuğu yerine): kare, kontur, ok düğmesi yok; renkler tema token'ı */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface);
+  border-left: 2px solid var(--ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--light);
+  border: 2px solid var(--ink);
+}
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background: var(--main);
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+::-webkit-scrollbar-corner {
+  background: var(--surface);
+}
+
+/* SPEC 17 pet.txt (Dunno OS): kart, ilişki çubukları, trait çipleri, evrim ağacı, anılar, lore */
+.pt-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: flex-start;
+}
+.pt-card {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  background: var(--cream);
+}
+.pt-id {
+  flex: 1 1 160px;
+  min-width: 0;
+}
+.pt-id p {
+  margin: 0 0 6px;
+}
+.pt-xp {
+  height: 14px;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+}
+.pt-xp .st-fill-h {
+  background: var(--main);
+}
+.pt-meters {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.pt-meters li {
+  display: grid;
+  grid-template-columns: 7.5em 1fr 2.5em;
+  gap: 8px;
+  align-items: center;
+}
+.pt-meters .mono {
+  text-align: right;
+}
+.pt-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 8px;
+}
+.pt-chip {
+  border: 2px solid var(--ink);
+  background: var(--light);
+  padding: 2px 8px;
+  font-weight: 600;
+}
+.pt-tree {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+}
+.pt-tree li {
+  padding: 2px 0 2px calc(var(--depth) * 18px);
+  position: relative;
+}
+.pt-tree li::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  vertical-align: middle;
+}
+.pt-tree .pt-now {
+  font-weight: 700;
+}
+.pt-tree .pt-now::before {
+  background: var(--main);
+}
+.pt-unknown {
+  color: var(--text-2);
+}
+.pt-mems {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.pt-mems li {
+  padding-bottom: 6px;
+  border-bottom: 2px dashed var(--light);
+}
+.pt-mems li:last-child {
+  border-bottom: 0;
+}
+.pt-locked span:last-child {
+  font-style: italic;
+  color: var(--text-2);
+}
+.pt-lore {
+  margin: 0 0 8px;
+}
+.pt-lore summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* SPEC 17 yetenek ağacı (rpg): gerçek ağaç, kare düğümler, dirsekli dallar; renkler token */
+.pt-page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.sk-wrap {
+  overflow-x: auto;
+  position: relative;
+}
+/* FB6 düğüm balonu: kit popover dili (kare, sert gölge, token renk) */
+.sk-tip {
+  position: absolute;
+  z-index: 2;
+  width: max-content;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 8px;
+  background: var(--paper);
+  color: var(--text);
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  font-size: 12px;
+  line-height: 1.35;
+  pointer-events: none;
+}
+.sk-tip[hidden] {
+  display: none;
+}
+.sk-tip-state {
+  color: var(--text-2);
+}
+.sk-tip-on {
+  color: var(--text);
+  font-weight: 700;
+}
+.sk-tree {
+  display: block;
+  width: 100%;
+  min-width: 560px;
+  max-width: 840px;
+  margin: 0 auto;
+  height: auto;
+  font-family: var(--font-body);
+}
+.sk-edge {
+  fill: none;
+  stroke: var(--text-2);
+  stroke-width: 2;
+  stroke-dasharray: 4 4;
+}
+.sk-edge-on {
+  stroke: var(--ink);
+  stroke-width: 3;
+  stroke-dasharray: none;
+}
+.sk-node {
+  cursor: pointer;
+  outline: none;
+}
+.sk-node rect {
+  fill: var(--paper);
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+.sk-open rect {
+  fill: var(--main);
+}
+.sk-now rect {
+  fill: var(--ice);
+  stroke-width: 3;
+}
+.sk-sel rect,
+.sk-node:focus-visible rect {
+  stroke-width: 4;
+}
+.sk-node:hover rect {
+  fill: var(--light);
+}
+.sk-in {
+  text-anchor: middle;
+  font-size: 13px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+.sk-label {
+  text-anchor: middle;
+  font-size: 11px;
+  fill: var(--ink);
+}
+.sk-locked .sk-label {
+  fill: var(--text-2);
+}
+.sk-branch {
+  text-anchor: end;
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  fill: var(--text-2);
+  text-transform: uppercase;
+}
+.sk-detail {
+  margin: 10px 0 4px;
+  min-height: 1.4em;
+}
+
+/* SPEC 17 karanlık mod: açık (tema renkli) yüzeylerin üstündeki metin koyu, koyu yüzeylerde açık */
+[data-dark] .app-tab:not(.app-tab-on),
+[data-dark] .wr-chip,
+[data-dark] .pt-chip,
+[data-dark] .wr-tile-on,
+[data-dark] .sk-in {
+  color: var(--on-bar);
+  fill: var(--on-bar);
+}
+[data-dark] .seg:not(.seg-on) {
+  color: var(--text);
+}
+[data-dark] .sk-label,
+[data-dark] .sk-locked .sk-in {
+  fill: var(--text);
+}
+[data-dark] .sk-edge-on {
+  stroke: var(--text);
+}
+[data-dark] .sk-node rect,
+[data-dark] .pt-xp,
+[data-dark] .st-track,
+[data-dark] .pt-card {
+  stroke: var(--text);
+  border-color: var(--text);
+}
+
+/* SPEC 18 workshop.exe */
+.ws {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.ws-nav .segs {
+  flex-wrap: wrap;
+}
+.ws-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.ws-item {
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ws-item p {
+  margin: 0;
+}
+.ws-locked {
+  background: var(--cream);
+  border-style: dashed;
+  box-shadow: none;
+}
+.ws-name {
+  font-weight: 700;
+}
+.ws-pro {
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  border: 2px solid var(--ink);
+  background: var(--ice);
+  color: var(--on-bar, var(--ink));
+  padding: 0 6px;
+  text-transform: uppercase;
+}
+.ws-link {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.ws-msg {
+  border: 2px solid var(--ink);
+  background: var(--light);
+  color: var(--on-bar, var(--ink));
+  padding: 8px 12px;
+  margin: 0;
+  font-weight: 600;
+}
+.ws-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.ws-swatch {
+  display: flex;
+  border: 2px solid var(--ink);
+  padding: 2px;
+  background: var(--paper);
+  cursor: pointer;
+}
+.ws-swatch i {
+  display: block;
+  width: 10px;
+  height: 18px;
+}
+.ws-swatch-on {
+  outline: 3px solid var(--ice);
+  outline-offset: 1px;
+}
+.ws-line {
+  display: grid;
+  grid-template-columns: 9em 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.ws-mine {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.ws-mine li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.ws .app-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.ws-item .app-actions .pbtn {
+  flex: 1 1 90px;
+}
+/* 7 sekme: sekme şeridi asla dikey sıkışmaz (FB6: Windows'ta uzun içerikli sekmede şerit ezilip yazılar kayboluyordu;
+   overflow verilen flex öğesinin min-height'ı 0 olur). Sığmazsa sekmeler daralır, yazı "..." ile kesilir; kaydırma çubuğu yok. */
+.app-bar,
+.app-tabs {
+  flex: none;
+}
+.app-tabs {
+  overflow: hidden;
+}
+.app-tab {
+  flex: 0 1 auto;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.app-body {
+  min-height: 0;
+}
+@media (max-width: 860px) {
+  .app-tab {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+}
+/* dar pencerede ".exe/.txt" düşer, ad kesilmesin */
+@media (max-width: 760px) {
+  .app-tab-ext {
+    display: none;
+  }
+}
+/* FB6 kilitli sekme: soluk, yanında küçük level etiketi */
+.app-tab-locked {
+  color: var(--text-2);
+  background: var(--cream);
+  border-style: dashed;
+  border-bottom: 0;
+}
+.app-tab-locked.app-tab-on {
+  background: var(--surface);
+  border-bottom: 2px solid var(--surface);
+}
+.app-tab-lv {
+  margin-left: 6px;
+  padding: 0 3px;
+  font-size: 9px;
+  color: var(--cream);
+  background: var(--ink);
+}
+/* FB6 xp.txt: level nasıl atlanır */
+.pt-xprules {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  column-gap: 12px;
+  row-gap: 4px;
+  font-size: 13px;
+}
+.pt-xprules li {
+  display: contents;
+}
+.pt-lockpage {
+  max-width: 560px;
+}
+/* SPEC 17 ana sayfa: level / form / ilişki özeti (pet.txt'ye götürür) */
+.app-lvl {
+  font: inherit;
+  color: var(--text);
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+  padding: 6px 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  min-width: 220px;
+}
+.app-lvl:hover {
+  background: var(--light);
+  color: var(--on-bar, var(--ink));
+}
+.app-lvl-bar {
+  display: block;
+  height: 8px;
+  border: 2px solid var(--ink);
+  background: var(--cream);
+}
+.app-lvl-bar span {
+  display: block;
+  height: 100%;
+  background: var(--main);
+}
+/* FB6 settings.exe: solda kategori menüsü, sağda sadece o kategorinin kartları (tek uzun liste yerine) */
+.set-split {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+.set-nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  background: var(--cream);
+}
+.set-nav__item {
+  font: inherit;
+  text-align: left;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+  border-bottom: 2px dashed var(--line, var(--light));
+  padding: 9px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  cursor: pointer;
+}
+.set-nav__item:last-child {
+  border-bottom: 0;
+}
+.set-nav__item:hover {
+  background: var(--light);
+}
+.set-nav__on,
+.set-nav__on:hover {
+  background: var(--ink);
+  color: var(--cream);
+}
+.set-nav__name {
+  font-weight: 700;
+  font-size: 14px;
+}
+.set-nav__hint {
+  font-size: 11px;
+  color: var(--text-2);
+}
+.set-nav__on .set-nav__hint {
+  color: var(--light);
+}
+.set-nav__item:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: -5px;
+}
+.set-main {
+  min-width: 0;
+}
+[data-dark] .set-nav__on,
+[data-dark] .set-nav__on:hover {
+  background: var(--text);
+  color: var(--surface);
+}
+/* FB6 ilk adımlar kartı (home) */
+.fs-card .bar {
+  display: flex;
+  justify-content: space-between;
+}
+.fs-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+.fs-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.fs-box {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  font: 700 11px/12px var(--font-body);
+  text-align: center;
+  color: var(--ink);
+}
+.fs-done {
+  color: var(--text-2);
+  text-decoration: line-through;
+}
+.fs-done .fs-box {
+  background: var(--main);
+}
+/* ödeme -> lisans formu: sipariş no + e-posta yan yana (dar pencerede alt alta) */
+.pro-claim {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 10px;
+}
+@media (max-width: 620px) {
+  .pro-claim {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* FB7 ağaç: sıradaki düğüm, dal sayaçları, kök xp çubuğu, gösterge */
+.sk-next rect {
+  fill: var(--light);
+  stroke: var(--ink);
+  stroke-width: 3;
+  stroke-dasharray: 3 2;
+}
+.sk-count {
+  font-size: 10px;
+  fill: var(--text-2);
+}
+.sk-xp {
+  fill: var(--paper);
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+.sk-xp-fill {
+  fill: var(--main);
+}
+.sk-legend {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin: 6px 0 0;
+  padding: 0;
+  font-size: 12px;
+  color: var(--text-2);
+}
+.sk-legend li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.sk-sw {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+.sk-sw-open {
+  fill: var(--main);
+}
+.sk-sw-next {
+  fill: var(--light);
+  stroke-dasharray: 3 2;
+}
+.sk-sw-locked {
+  fill: var(--paper);
+}
+.sk-sw-now {
+  fill: var(--ice);
+}
+[data-dark] .sk-count {
+  fill: var(--text-2);
+}
+/* FB7 alarms.txt */
+.rm-list {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.rm-list li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+}
+.rm-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

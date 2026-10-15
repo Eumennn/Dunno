@@ -1,0 +1,42 @@
+{
+  "id": "slime",
+  "name": {
+    "tr": "slime",
+    "en": "slime"
+  },
+  "palette": {
+    "body": "#5FB3D9",
+    "shade": "#3E8FB8",
+    "light": "#A8DCF0",
+    "belly": "#E8F6FB"
+  },
+  "hidesTuft": true,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "drips",
+      "anchor": "neck",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "sleep"
+      ],
+      "image": "slime.drips.png",
+      "size": 32
+    },
+    {
+      "id": "blob",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "slime.blob.png",
+      "size": 32
+    }
+  ],
+  "icon": "slime.png"
+}

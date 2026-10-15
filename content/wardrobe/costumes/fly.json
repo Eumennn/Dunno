@@ -1,0 +1,72 @@
+{
+  "id": "fly",
+  "name": {
+    "tr": "sinek",
+    "en": "fly"
+  },
+  "palette": {
+    "body": "#A9A9A9",
+    "shade": "#888888",
+    "light": "#D2D2D2",
+    "belly": "#F2F2F2"
+  },
+  "hidesTuft": true,
+  "blocks": [
+    "eyes"
+  ],
+  "parts": [
+    {
+      "id": "antennae",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "fly.antennae.png",
+      "size": 32
+    },
+    {
+      "id": "wings_up",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "sulk",
+        "peek"
+      ],
+      "frames": "even",
+      "image": "fly.wings_up.png",
+      "size": 32
+    },
+    {
+      "id": "wings_down",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "sulk",
+        "peek"
+      ],
+      "frames": "odd",
+      "image": "fly.wings_down.png",
+      "size": 32
+    },
+    {
+      "id": "eyes",
+      "anchor": "eyes",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "fly.eyes.png",
+      "size": 32
+    }
+  ],
+  "icon": "fly.png"
+}

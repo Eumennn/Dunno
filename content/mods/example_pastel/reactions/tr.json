@@ -1,0 +1,14 @@
+[
+  {
+    "id": "pastel_excel_01",
+    "trigger": "app:excel",
+    "intent": "pastel mod sample about spreadsheets",
+    "tr": "bu tabloyu pastel boyasan da tablo"
+  },
+  {
+    "id": "pastel_click_01",
+    "trigger": "interaction:click",
+    "intent": "pastel mod sample poke reaction",
+    "tr": "beni pastele boyadın. yine de dürtme"
+  }
+]

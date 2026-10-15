@@ -1,0 +1,39 @@
+{
+  "note": "REPO-01 (2026-10-10 güncel): iki repo. public-app (eumennn/dunno) geçmişsiz: son kullanıcı dosyaları + landing (GitHub Pages) + Releases. dev = bu repo (özel 'dunno-dev', geçmiş korunur). split.mjs bu listeyle yerel ihracat üretir ve denetler; push kullanıcı onayıyla.",
+  "repos": {
+    "public-app": {
+      "github": "eumennn/dunno",
+      "visibility": "public",
+      "history": false,
+      "purpose": "son kullanıcı: landing (index.html, GitHub Pages), README, gizlilik, sürüm notları, güvenlik; kurulum dosyaları (Windows .exe, Mac .dmg) ve latest.json GitHub Releases'te (güncelleme uç noktası)",
+      "templates": "orchestrator/repo-split/public-app",
+      "include": [
+        {
+          "from": "site/index.html",
+          "to": "index.html"
+        }
+      ]
+    },
+    "dev": {
+      "github": "eumennn/dunno-dev",
+      "visibility": "private",
+      "history": true,
+      "purpose": "Tauri/TS/Rust masaüstü, worker, studio, ui-kit, testler, spec'ler, orchestrator, içerik/varlıklar, CI"
+    }
+  },
+  "forbidden_in_public": [
+    "orchestrator/",
+    "specs/",
+    "CLAUDE.md",
+    ".claude/",
+    "desktop/",
+    "worker/",
+    "studio/",
+    "content/",
+    "dunno-handoff.md",
+    "dunno-reference.dc.html",
+    "docs/agents/",
+    ".dev.vars",
+    ".env"
+  ]
+}

@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>dunno os</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&amp;family=Open+Sans:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2B1E2F}a:hover{color:#D9774A}
+.px{font-family:'Silkscreen',ui-monospace,monospace;letter-spacing:.02em}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.win{background:#FFF1D6;border:2px solid #2B1E2F;box-shadow:4px 4px 0 #2B1E2F}
+.bar{display:flex;align-items:center;gap:10px;padding:5px 6px 5px 12px;background:#F2A65A;border-bottom:2px solid #2B1E2F;font-family:'Silkscreen',ui-monospace,monospace;font-size:13px;color:#2B1E2F;min-height:26px}
+.bar-err{background:#E86A7A}
+.bar-idle{background:#FFD29A}
+.bar-blue{background:#6EC5E9}
+.ctl{width:26px;height:24px;display:inline-flex;align-items:center;justify-content:center;background:#FFD29A;border:2px solid #2B1E2F;box-shadow:inset -2px -2px 0 #D9774A;padding:0;color:#2B1E2F;box-sizing:border-box}
+.pbtn{font-family:'Segoe UI Variable Text','Segoe UI','Open Sans',system-ui,sans-serif;font-weight:600;font-size:16px;color:#2B1E2F;background:#FFD29A;border:2px solid #2B1E2F;box-shadow:inset -4px -4px 0 #D9774A,inset 4px 4px 0 #FFF1D6;padding:10px 22px;min-height:50px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:10px;box-sizing:border-box}
+.pbtn:hover{background:#F2A65A;color:#2B1E2F}
+.pbtn:active{box-shadow:inset 4px 4px 0 #D9774A,inset -4px -4px 0 #FFF1D6}
+.pbtn-dark{background:#2B1E2F;color:#FFF1D6;box-shadow:inset -4px -4px 0 #000000,inset 4px 4px 0 #5C4560}
+.pbtn-dark:hover{background:#D9774A;color:#2B1E2F}
+.pbtn-blue{background:#6EC5E9;box-shadow:inset -4px -4px 0 rgba(43,30,47,.28),inset 4px 4px 0 rgba(255,241,214,.6)}
+.pbtn-blue:hover{background:#FFD29A}
+.pbtn-sm{min-height:44px;padding:6px 16px;font-size:14px}
+.pbtn[disabled]{cursor:not-allowed;background:transparent;box-shadow:none;border-style:dashed}
+.pbtn:focus-visible,button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #2B1E2F;outline-offset:3px}
+.nav a{text-decoration:none;font-weight:500;padding:10px 4px}
+.nav a:hover{text-decoration:underline;text-underline-offset:4px;color:#2B1E2F}
+.skip{position:absolute;left:-9999px;top:8px;z-index:200;background:#2B1E2F;color:#FFF1D6;padding:10px 14px}
+.skip:focus{left:16px;color:#FFF1D6}
+.tbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;min-height:60px;padding:6px 12px;background:rgba(255,241,214,.92);border-top:2px solid #2B1E2F;box-sizing:border-box}
+.tapp{position:relative;width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;background:transparent;border:2px solid transparent;padding:0;cursor:pointer}
+.tapp:hover{background:#FFD29A;border-color:#2B1E2F}
+.tapp::after{content:"";position:absolute;left:50%;bottom:2px;width:6px;height:3px;background:#5C4560;transform:translateX(-50%);opacity:0}
+.tapp-on::after{width:16px;background:#F2A65A;opacity:1}
+.tapp:active svg{transform:translateY(2px)}
+@media (max-width: 760px){.tbar{grid-template-columns:1fr auto}.tbar nav{justify-self:start!important}.tapp{width:40px;height:44px}}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+.task{display:flex;gap:12px;align-items:center;width:100%;min-height:40px;padding:4px 6px;margin:0 -6px;background:none;border:2px solid transparent;font-family:inherit;font-size:16px;color:#2B1E2F;text-align:left;cursor:pointer}
+.task:hover{border-color:#2B1E2F;background:#FFF1D6}
+.box{width:20px;height:20px;flex-shrink:0;border:2px solid #2B1E2F;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;line-height:1;background:#FFFFFF}
+.box-ok{background:#8CC084;color:#2B1E2F}
+.box-no{background:#E86A7A;color:#2B1E2F}
+.t-done{text-decoration:line-through;text-decoration-thickness:2px}
+.t-no{color:#B24456}
+.dots span{display:inline-block;animation:dot 1.2s steps(1,end) infinite}
+.dots span:nth-child(2){animation-delay:.2s}.dots span:nth-child(3){animation-delay:.4s}
+@keyframes dot{0%{opacity:.2}30%{opacity:1}100%{opacity:.2}}
+.seg{font-family:inherit;font-size:14px;font-weight:600;color:#2B1E2F;background:#FFFFFF;border:2px solid #2B1E2F;padding:6px 12px;min-height:36px;cursor:pointer}
+.seg+.seg{border-left:0}
+.seg-on{background:#2B1E2F;color:#FFF1D6}
+.bub{position:relative;background:#FFFFFF;border:2px solid #2B1E2F;padding:12px 16px;font-size:18px;font-weight:600;line-height:1.35}
+.bub::after{content:"";position:absolute;left:22px;bottom:-10px;width:10px;height:10px;background:#2B1E2F}
+.meter{height:16px;border:2px solid #2B1E2F;background:#FFFFFF;padding:2px;box-sizing:border-box}
+.meter>span{display:block;height:100%;background:repeating-linear-gradient(90deg,#2B1E2F 0 8px,transparent 8px 10px)}
+.hl{background:linear-gradient(180deg,transparent 58%,#F2A65A 58%,#F2A65A 92%,transparent 92%);padding:0 2px}
+.kick{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase;background:#2B1E2F;color:#FFF1D6;padding:4px 10px}
+.lede{margin:0;font-size:clamp(19px,1.9vw,22px);line-height:1.5;font-weight:500;max-width:28em}
+.flink{color:#5C4560;text-decoration:none;font-size:16px;padding:3px 0;align-self:flex-start}
+.flink:hover{color:#2B1E2F;text-decoration:underline;text-underline-offset:4px}
+.tile{display:block;aspect-ratio:1/1;background:#F2A65A;border:2px solid #2B1E2F;box-shadow:inset 0 5px 0 #D9774A;box-sizing:border-box;transition:transform .12s steps(2,end)}
+.tile:hover{transform:translateY(-4px)}
+.tile-y{background:#FFD29A;box-shadow:inset 0 5px 0 #F2A65A}
+.tile-b{background:#6EC5E9;box-shadow:inset 0 5px 0 #2B1E2F}
+.gap{display:block;aspect-ratio:1/1}
+@media (max-width: 760px){.tile{border-width:1px;box-shadow:inset 0 2px 0 #D9774A}.tile-b{box-shadow:inset 0 2px 0 #2B1E2F}.tile-y{box-shadow:inset 0 2px 0 #F2A65A}}
+.spritebtn{background:none;border:0;padding:0;cursor:pointer;display:block;width:100%}
+summary{list-style:none;cursor:pointer}
+summary::-webkit-details-marker{display:none}
+.chev{display:inline-block;transition:transform .15s steps(2,end)}
+details[open] .chev{transform:rotate(90deg)}
+.kao{position:absolute;font-family:'IBM Plex Mono',ui-monospace,monospace;color:#D9774A;font-size:20px;white-space:nowrap;pointer-events:none}
+@media (max-width: 760px){.kao{display:none}.hide-sm{display:none}header .nav{display:none}}
+@media (max-width: 440px){.hide-xs{display:none!important}}
+.side-icons{position:absolute;top:clamp(40px,5vw,72px);display:none;flex-direction:column;gap:18px}
+@media (min-width: 1180px){.side-icons{display:flex}}
+.desk{--z:1}
+@media (min-width: 1680px){.desk{zoom:1.12;--z:1.12}}
+@media (min-width: 2200px){.desk{zoom:1.3;--z:1.3}}
+.tapp[data-tip]::before{content:attr(data-tip);position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);white-space:nowrap;background:#2B1E2F;color:#FFF1D6;font-size:13px;font-weight:600;padding:5px 10px;pointer-events:none;opacity:0;transition:opacity .1s steps(2,end);z-index:10}
+.tapp[data-tip]:hover::before,.tapp[data-tip]:focus-visible::before{opacity:1}
+.tapp-on{background:#FFD29A;border-color:#2B1E2F}
+.dicon{display:flex;flex-direction:column;align-items:center;gap:6px;width:104px;text-decoration:none;color:#2B1E2F;font-size:14px;padding:8px 4px;min-height:44px;text-align:center}
+.dicon .dlabel{padding:2px 6px}
+.dicon:hover{color:#2B1E2F}
+.dicon:hover .dlabel,.dicon:focus-visible .dlabel{background:#6EC5E9;outline:1px dotted #2B1E2F}
+.arm-up{opacity:0;animation:armUp 4.2s steps(1,end) infinite}
+.arm-down{animation:armDown 4.2s steps(1,end) infinite}
+.bob{animation:bob 4.2s steps(1,end) infinite}
+.arm-up-on{opacity:1}
+.arm-down-off{opacity:0}
+.bob-on{transform:translateY(-1px)}
+@keyframes armUp{0%{opacity:0}62%{opacity:1}86%{opacity:0}100%{opacity:0}}
+@keyframes armDown{0%{opacity:1}62%{opacity:0}86%{opacity:1}100%{opacity:1}}
+@keyframes bob{0%{transform:translateY(0)}62%{transform:translateY(-1px)}86%{transform:translateY(0)}100%{transform:translateY(0)}}
+.hg{animation:flip 1.4s steps(1,end) infinite;transform-origin:50% 50%}
+@keyframes flip{0%{transform:rotate(0deg)}55%{transform:rotate(180deg)}100%{transform:rotate(180deg)}}
+.boot-fill{width:47%;animation:bootfill 2.4s steps(9,end)}
+@keyframes bootfill{from{width:0}to{width:47%}}
+.z{display:inline-block;animation:zz 2.6s steps(5,end) infinite;opacity:0}
+@keyframes zz{0%{transform:translate(0,6px);opacity:0}25%{opacity:1}100%{transform:translate(8px,-16px);opacity:0}}
+.blink{animation:blink 1.1s steps(1,end) infinite}
+@keyframes blink{0%{opacity:1}50%{opacity:0}100%{opacity:0}}
+.drift{animation:drift 6s steps(6,end) infinite alternate}
+@keyframes drift{from{transform:translateY(0)}to{transform:translateY(-10px)}}
+@media (prefers-reduced-motion: reduce){.arm-up,.arm-down,.bob,.hg,.boot-fill,.z,.blink,.drift{animation:none}.z{opacity:1}}
+</style>
+</helmet>
+
+<div class="desk" style="font-family: 'Segoe UI Variable Text', 'Segoe UI', 'Open Sans', system-ui, sans-serif; color: #2B1E2F; background-color: #FFF1D6; min-height: 100vh; position: relative; overflow-x: clip; display: flex; flex-direction: column">
+
+<!-- ============ BOOT OVERLAY ============ -->
+<sc-if value="{{booting}}" hint-placeholder-val="{{ false }}">
+<div role="dialog" aria-modal="true" aria-label="dunno os is starting" style="position: fixed; inset: 0; z-index: 100; overscroll-behavior: contain; overflow: hidden; background: #2B1E2F; display: flex; flex-direction: column; align-items: center; padding: 160px 16px 0; box-sizing: border-box">
+<div class="win" style="width: 100%; max-width: 440px; box-shadow: 8px 8px 0 #D9774A">
+<div class="bar">
+<span>dunno os is starting</span>
+</div>
+<div style="padding: 32px 28px 28px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center">
+<svg class="hg" viewBox="0 0 11 12" width="80" height="88" shape-rendering="crispEdges" aria-hidden="true"><rect x="0" y="0" width="11" height="1" fill="#2B1E2F"></rect><rect x="1" y="1" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="1" width="7" height="1" fill="#FFD29A"></rect><rect x="9" y="1" width="1" height="1" fill="#2B1E2F"></rect><rect x="1" y="2" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="2" width="7" height="1" fill="#D9774A"></rect><rect x="9" y="2" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="3" width="1" height="1" fill="#2B1E2F"></rect><rect x="3" y="3" width="5" height="1" fill="#D9774A"></rect><rect x="8" y="3" width="1" height="1" fill="#2B1E2F"></rect><rect x="3" y="4" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="4" width="3" height="1" fill="#D9774A"></rect><rect x="7" y="4" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="5" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="5" width="1" height="1" fill="#D9774A"></rect><rect x="6" y="5" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="6" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="6" width="1" height="1" fill="#D9774A"></rect><rect x="6" y="6" width="1" height="1" fill="#2B1E2F"></rect><rect x="3" y="7" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="7" width="1" height="1" fill="#FFD29A"></rect><rect x="5" y="7" width="1" height="1" fill="#D9774A"></rect><rect x="6" y="7" width="1" height="1" fill="#FFD29A"></rect><rect x="7" y="7" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="8" width="1" height="1" fill="#2B1E2F"></rect><rect x="3" y="8" width="2" height="1" fill="#FFD29A"></rect><rect x="5" y="8" width="1" height="1" fill="#D9774A"></rect><rect x="6" y="8" width="2" height="1" fill="#FFD29A"></rect><rect x="8" y="8" width="1" height="1" fill="#2B1E2F"></rect><rect x="1" y="9" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="9" width="2" height="1" fill="#FFD29A"></rect><rect x="4" y="9" width="3" height="1" fill="#D9774A"></rect><rect x="7" y="9" width="2" height="1" fill="#FFD29A"></rect><rect x="9" y="9" width="1" height="1" fill="#2B1E2F"></rect><rect x="1" y="10" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="10" width="7" height="1" fill="#D9774A"></rect><rect x="9" y="10" width="1" height="1" fill="#2B1E2F"></rect><rect x="0" y="11" width="11" height="1" fill="#2B1E2F"></rect></svg>
+<div style="font-size: 20px; font-weight: 600">loading dunno os<span class="blink">_</span></div>
+<p style="margin: 0; font-size: 16px; line-height: 1.5">this may take a while. he's not in a hurry.</p>
+<div style="width: 100%; display: flex; align-items: center; gap: 12px">
+<div style="flex-grow: 1; height: 26px; border: 3px solid #2B1E2F; background: #FFFFFF; padding: 3px; box-sizing: border-box">
+<div class="boot-fill" style="height: 100%; background: repeating-linear-gradient(90deg, #6EC5E9 0 14px, transparent 14px 18px)"></div>
+</div>
+<span class="mono" style="font-size: 15px">47%</span>
+</div>
+<button class="pbtn" type="button" onClick="{{skipBoot}}">skip. he won't notice</button>
+</div>
+</div>
+</div>
+</sc-if>
+
+<!-- ============ MENU BAR / NAV ============ -->
+<a class="skip" href="#top">skip to content</a>
+<header style="position: sticky; top: 0; z-index: 30; display: flex; align-items: center; gap: 24px; padding: 8px clamp(16px, 3vw, 32px); background: #FFF1D6; border-bottom: 2px solid #2B1E2F; flex-wrap: wrap; min-height: 64px; box-sizing: border-box">
+<a href="#top" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; padding: 6px 0">
+<span class="px" style="font-size: 18px; font-weight: 700">dunno</span>
+</a>
+<nav class="nav" aria-label="main" style="display: flex; gap: 20px; font-size: 15px; flex-wrap: wrap">
+<a href="#features">features</a>
+<a href="#story">story</a>
+<a href="#download">install</a>
+<a href="#pricing">pricing</a>
+<a href="#faq">faq</a>
+</nav>
+<div style="margin-left: auto; display: flex; align-items: center; gap: 18px">
+<span class="mono hide-sm" style="font-size: 14px">battery 3% · zz:zz</span>
+<a class="pbtn pbtn-dark pbtn-sm" href="#download">get dunno</a>
+</div>
+</header>
+
+<main id="top" style="display: flex; flex-direction: column">
+
+<!-- ============ HERO ============ -->
+<section aria-labelledby="hero-title" style="position: relative; background-color: #FFF1D6; background-image: radial-gradient(rgba(217, 119, 74, 0.32) 1.3px, transparent 1.7px); background-size: 14px 14px; padding: clamp(20px, 4vh, 56px) 16px 0; min-height: clamp(600px, calc(100vh / var(--z, 1) - 66px), 1100px); box-sizing: border-box; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px">
+<nav class="side-icons" aria-label="desktop shortcuts" style="left: clamp(16px, 3vw, 56px)">
+<a class="dicon" href="#features"><svg viewBox="0 0 10 10" width="48" height="48" shape-rendering="crispEdges" aria-hidden="true"><rect x="1.5" y="0.5" width="7" height="9" fill="#FFFFFF" stroke="#2B1E2F"></rect><rect x="2" y="1" width="6" height="2" fill="#E86A7A"></rect><rect x="3" y="5" width="4" height="1" fill="#2B1E2F"></rect><rect x="3" y="7" width="3" height="1" fill="#2B1E2F"></rect></svg><span class="dlabel">features.err</span></a>
+<a class="dicon" href="#story"><svg viewBox="0 0 10 10" width="48" height="48" shape-rendering="crispEdges" aria-hidden="true"><rect x="1.5" y="0.5" width="7" height="9" fill="#FFFFFF" stroke="#2B1E2F"></rect><rect x="2" y="1" width="6" height="2" fill="#FFD29A"></rect><rect x="3" y="4" width="4" height="1" fill="#2B1E2F"></rect><rect x="3" y="6" width="4" height="1" fill="#2B1E2F"></rect><rect x="3" y="8" width="2" height="1" fill="#2B1E2F"></rect></svg><span class="dlabel">resignation_letter.txt</span></a>
+<a class="dicon" href="#download"><svg viewBox="0 0 10 10" width="48" height="48" shape-rendering="crispEdges" aria-hidden="true"><rect x="0.5" y="1.5" width="9" height="7" fill="#FFFFFF" stroke="#2B1E2F"></rect><rect x="1" y="2" width="8" height="2" fill="#F2A65A"></rect><rect x="3" y="5" width="4" height="2" fill="#6EC5E9"></rect></svg><span class="dlabel">setup.exe</span></a>
+</nav>
+<nav class="side-icons" aria-label="more desktop shortcuts" style="right: clamp(16px, 3vw, 56px)">
+<a class="dicon" href="#pricing"><svg viewBox="0 0 10 10" width="48" height="48" shape-rendering="crispEdges" aria-hidden="true"><rect x="1.5" y="0.5" width="7" height="9" fill="#FFFFFF" stroke="#2B1E2F"></rect><rect x="2" y="1" width="6" height="2" fill="#6EC5E9"></rect><rect x="3" y="5" width="4" height="1" fill="#2B1E2F"></rect><rect x="3" y="7" width="3" height="1" fill="#2B1E2F"></rect></svg><span class="dlabel">pricing.wtf</span></a>
+<a class="dicon" href="#faq"><svg viewBox="0 0 10 10" width="48" height="48" shape-rendering="crispEdges" aria-hidden="true"><rect x="0.5" y="0.5" width="9" height="6" fill="#FFD29A" stroke="#2B1E2F"></rect><rect x="2" y="7" width="2" height="1" fill="#2B1E2F"></rect><rect x="2" y="8" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="3" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="3" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="3" width="1" height="1" fill="#2B1E2F"></rect></svg><span class="dlabel">faq.dunno</span></a>
+<a class="dicon" href="#features"><svg viewBox="0 0 10 10" width="48" height="48" shape-rendering="crispEdges" aria-hidden="true"><rect x="0.5" y="1.5" width="4" height="1" fill="#D9774A" stroke="#2B1E2F"></rect><rect x="0.5" y="2.5" width="9" height="6" fill="#F2A65A" stroke="#2B1E2F"></rect></svg><span class="dlabel">homework (empty)</span></a>
+</nav>
+<p style="margin: auto 0 0; font-size: clamp(20px, 2.2vw, 26px); font-weight: 400">hi, my name is</p>
+<h1 id="hero-title" style="margin: 0; font-size: clamp(64px, min(11vw, 13vh), 156px); line-height: 0.85; font-weight: 800; letter-spacing: -0.055em; color: #2B1E2F">dunno<span style="color: #F2A65A">.</span></h1>
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 6px">
+<div aria-live="polite" style="position: relative; background: #FFFFFF; border: 3px solid #2B1E2F; box-shadow: 4px 4px 0 #2B1E2F; padding: 10px 18px; font-size: 18px; font-weight: 600; min-width: 120px">
+{{bubble}}
+<span aria-hidden="true" style="position: absolute; left: calc(50% - 6px); bottom: -15px; width: 12px; height: 12px; background: #2B1E2F"></span>
+</div>
+<button class="spritebtn" type="button" onClick="{{shrugNow}}" aria-label="poke dunno" style="width: clamp(90px, min(13vw, 15vh), 160px); margin-top: 12px">
+<svg viewBox="0 0 26 22" width="100%" shape-rendering="crispEdges" aria-hidden="true" style="display: block; overflow: visible">
+<rect x="6" y="21" width="14" height="1" fill="#2B1E2F" opacity="0.16"></rect>
+<g class="{{bodyCls}}">
+<g class="{{downCls}}"><rect x="2" y="14" width="2" height="1" fill="#2B1E2F"></rect><rect x="1" y="15" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="15" width="1" height="1" fill="#F2A65A"></rect><rect x="3" y="15" width="1" height="1" fill="#2B1E2F"></rect><rect x="1" y="16" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="16" width="1" height="1" fill="#F2A65A"></rect><rect x="3" y="16" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="17" width="1" height="1" fill="#2B1E2F"></rect><rect x="22" y="14" width="2" height="1" fill="#2B1E2F"></rect><rect x="22" y="15" width="1" height="1" fill="#2B1E2F"></rect><rect x="23" y="15" width="1" height="1" fill="#F2A65A"></rect><rect x="24" y="15" width="1" height="1" fill="#2B1E2F"></rect><rect x="22" y="16" width="1" height="1" fill="#2B1E2F"></rect><rect x="23" y="16" width="1" height="1" fill="#F2A65A"></rect><rect x="24" y="16" width="1" height="1" fill="#2B1E2F"></rect><rect x="23" y="17" width="1" height="1" fill="#2B1E2F"></rect></g>
+<g class="{{upCls}}"><rect x="0" y="9" width="2" height="1" fill="#2B1E2F"></rect><rect x="0" y="10" width="1" height="1" fill="#2B1E2F"></rect><rect x="1" y="10" width="1" height="1" fill="#F2A65A"></rect><rect x="2" y="10" width="1" height="1" fill="#2B1E2F"></rect><rect x="1" y="11" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="11" width="1" height="1" fill="#F2A65A"></rect><rect x="3" y="11" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="12" width="2" height="1" fill="#2B1E2F"></rect><rect x="24" y="9" width="2" height="1" fill="#2B1E2F"></rect><rect x="23" y="10" width="1" height="1" fill="#2B1E2F"></rect><rect x="24" y="10" width="1" height="1" fill="#F2A65A"></rect><rect x="25" y="10" width="1" height="1" fill="#2B1E2F"></rect><rect x="22" y="11" width="1" height="1" fill="#2B1E2F"></rect><rect x="23" y="11" width="1" height="1" fill="#F2A65A"></rect><rect x="24" y="11" width="1" height="1" fill="#2B1E2F"></rect><rect x="22" y="12" width="2" height="1" fill="#2B1E2F"></rect></g>
+<g><rect x="13" y="1" width="2" height="1" fill="#2B1E2F"></rect><rect x="12" y="2" width="1" height="1" fill="#2B1E2F"></rect><rect x="15" y="2" width="1" height="1" fill="#2B1E2F"></rect><rect x="12" y="3" width="1" height="1" fill="#2B1E2F"></rect><rect x="13" y="4" width="1" height="1" fill="#2B1E2F"></rect><rect x="9" y="5" width="8" height="1" fill="#2B1E2F"></rect><rect x="7" y="6" width="2" height="1" fill="#2B1E2F"></rect><rect x="9" y="6" width="8" height="1" fill="#F2A65A"></rect><rect x="17" y="6" width="2" height="1" fill="#2B1E2F"></rect><rect x="6" y="7" width="1" height="1" fill="#2B1E2F"></rect><rect x="7" y="7" width="2" height="1" fill="#F2A65A"></rect><rect x="9" y="7" width="2" height="1" fill="#FFD29A"></rect><rect x="11" y="7" width="8" height="1" fill="#F2A65A"></rect><rect x="19" y="7" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="8" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="8" width="2" height="1" fill="#F2A65A"></rect><rect x="8" y="8" width="1" height="1" fill="#FFD29A"></rect><rect x="9" y="8" width="11" height="1" fill="#F2A65A"></rect><rect x="20" y="8" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="9" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="9" width="14" height="1" fill="#F2A65A"></rect><rect x="20" y="9" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="10" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="10" width="2" height="1" fill="#F2A65A"></rect><rect x="7" y="10" width="4" height="1" fill="#2B1E2F"></rect><rect x="11" y="10" width="4" height="1" fill="#F2A65A"></rect><rect x="15" y="10" width="4" height="1" fill="#2B1E2F"></rect><rect x="19" y="10" width="2" height="1" fill="#F2A65A"></rect><rect x="21" y="10" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="11" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="11" width="3" height="1" fill="#F2A65A"></rect><rect x="8" y="11" width="2" height="1" fill="#2B1E2F"></rect><rect x="10" y="11" width="6" height="1" fill="#F2A65A"></rect><rect x="16" y="11" width="2" height="1" fill="#2B1E2F"></rect><rect x="18" y="11" width="3" height="1" fill="#F2A65A"></rect><rect x="21" y="11" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="12" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="12" width="1" height="1" fill="#F2A65A"></rect><rect x="6" y="12" width="2" height="1" fill="#E86A7A"></rect><rect x="8" y="12" width="10" height="1" fill="#F2A65A"></rect><rect x="18" y="12" width="2" height="1" fill="#E86A7A"></rect><rect x="20" y="12" width="1" height="1" fill="#F2A65A"></rect><rect x="21" y="12" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="13" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="13" width="6" height="1" fill="#F2A65A"></rect><rect x="11" y="13" width="4" height="1" fill="#2B1E2F"></rect><rect x="15" y="13" width="6" height="1" fill="#F2A65A"></rect><rect x="21" y="13" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="14" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="14" width="16" height="1" fill="#F2A65A"></rect><rect x="21" y="14" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="15" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="15" width="1" height="1" fill="#D9774A"></rect><rect x="6" y="15" width="14" height="1" fill="#F2A65A"></rect><rect x="20" y="15" width="1" height="1" fill="#D9774A"></rect><rect x="21" y="15" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="16" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="16" width="2" height="1" fill="#D9774A"></rect><rect x="7" y="16" width="12" height="1" fill="#F2A65A"></rect><rect x="19" y="16" width="2" height="1" fill="#D9774A"></rect><rect x="21" y="16" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="17" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="17" width="2" height="1" fill="#D9774A"></rect><rect x="8" y="17" width="10" height="1" fill="#F2A65A"></rect><rect x="18" y="17" width="2" height="1" fill="#D9774A"></rect><rect x="20" y="17" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="18" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="18" width="4" height="1" fill="#D9774A"></rect><rect x="10" y="18" width="6" height="1" fill="#F2A65A"></rect><rect x="16" y="18" width="4" height="1" fill="#D9774A"></rect><rect x="20" y="18" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="19" width="2" height="1" fill="#2B1E2F"></rect><rect x="8" y="19" width="10" height="1" fill="#D9774A"></rect><rect x="18" y="19" width="2" height="1" fill="#2B1E2F"></rect><rect x="8" y="20" width="10" height="1" fill="#2B1E2F"></rect></g>
+</g>
+</svg>
+</button>
+</div>
+
+<p style="margin: 4px 0 0; font-size: clamp(21px, 2.2vw, 26px); line-height: 1.4; max-width: 30em; font-weight: 500">an ai pet that lives on your desktop<br>and <span class="hl">teaches you nothing.</span></p>
+<div style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 8px">
+<a class="pbtn pbtn-dark" href="#download">download (or don't. whatever)</a>
+<a class="pbtn" href="#features">see what he does (not much)</a>
+</div>
+<p style="margin: 0 0 auto; font-size: 14px">100% free. what else would you do.</p>
+
+<!-- hero taskbar (lives at the bottom of the hero, scrolls away with it) -->
+<div style="position: relative; align-self: stretch; margin: clamp(16px, 3vh, 40px) -16px 0; z-index: 5">
+<sc-if value="{{hasTaskMsg}}" hint-placeholder-val="{{ false }}">
+<div role="status" class="bub" style="position: absolute; left: 50%; bottom: 74px; transform: translateX(-50%); white-space: nowrap; font-size: 16px; box-shadow: 4px 4px 0 #2B1E2F">{{taskMsg}}</div>
+</sc-if>
+<div class="tbar">
+<div class="hide-sm" style="display: flex; align-items: center; gap: 10px; justify-self: start; padding-left: 6px">
+<svg viewBox="0 0 10 10" width="26" height="26" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="2" width="8" height="7" fill="#2B1E2F"></rect><rect x="2" y="3" width="6" height="5" fill="#FFD29A"></rect><rect x="2" y="6" width="6" height="2" fill="#E86A7A"></rect><rect x="4" y="0" width="2" height="2" fill="#2B1E2F"></rect></svg>
+<div style="display: flex; flex-direction: column; line-height: 1.2; text-align: left"><span style="font-size: 13px; font-weight: 700">energy 3%</span><span style="font-size: 12px; color: #5C4560">mostly napping</span></div>
+</div>
+
+<nav aria-label="taskbar" style="display: flex; align-items: center; gap: 4px; justify-self: center">
+<button type="button" class="tapp tapp-on" onClick="{{tbDunno}}" data-tip="dunno (that's me)" aria-label="dunno" aria-current="true">
+<svg viewBox="4 1 18 20" width="32" height="36" shape-rendering="crispEdges" aria-hidden="true"><rect x="13" y="1" width="2" height="1" fill="#2B1E2F"></rect><rect x="12" y="2" width="1" height="1" fill="#2B1E2F"></rect><rect x="15" y="2" width="1" height="1" fill="#2B1E2F"></rect><rect x="12" y="3" width="1" height="1" fill="#2B1E2F"></rect><rect x="13" y="4" width="1" height="1" fill="#2B1E2F"></rect><rect x="9" y="5" width="8" height="1" fill="#2B1E2F"></rect><rect x="7" y="6" width="2" height="1" fill="#2B1E2F"></rect><rect x="9" y="6" width="8" height="1" fill="#F2A65A"></rect><rect x="17" y="6" width="2" height="1" fill="#2B1E2F"></rect><rect x="6" y="7" width="1" height="1" fill="#2B1E2F"></rect><rect x="7" y="7" width="2" height="1" fill="#F2A65A"></rect><rect x="9" y="7" width="2" height="1" fill="#FFD29A"></rect><rect x="11" y="7" width="8" height="1" fill="#F2A65A"></rect><rect x="19" y="7" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="8" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="8" width="2" height="1" fill="#F2A65A"></rect><rect x="8" y="8" width="1" height="1" fill="#FFD29A"></rect><rect x="9" y="8" width="11" height="1" fill="#F2A65A"></rect><rect x="20" y="8" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="9" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="9" width="14" height="1" fill="#F2A65A"></rect><rect x="20" y="9" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="10" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="10" width="2" height="1" fill="#F2A65A"></rect><rect x="7" y="10" width="4" height="1" fill="#2B1E2F"></rect><rect x="11" y="10" width="4" height="1" fill="#F2A65A"></rect><rect x="15" y="10" width="4" height="1" fill="#2B1E2F"></rect><rect x="19" y="10" width="2" height="1" fill="#F2A65A"></rect><rect x="21" y="10" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="11" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="11" width="3" height="1" fill="#F2A65A"></rect><rect x="8" y="11" width="2" height="1" fill="#2B1E2F"></rect><rect x="10" y="11" width="6" height="1" fill="#F2A65A"></rect><rect x="16" y="11" width="2" height="1" fill="#2B1E2F"></rect><rect x="18" y="11" width="3" height="1" fill="#F2A65A"></rect><rect x="21" y="11" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="12" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="12" width="1" height="1" fill="#F2A65A"></rect><rect x="6" y="12" width="2" height="1" fill="#E86A7A"></rect><rect x="8" y="12" width="10" height="1" fill="#F2A65A"></rect><rect x="18" y="12" width="2" height="1" fill="#E86A7A"></rect><rect x="20" y="12" width="1" height="1" fill="#F2A65A"></rect><rect x="21" y="12" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="13" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="13" width="6" height="1" fill="#F2A65A"></rect><rect x="11" y="13" width="4" height="1" fill="#2B1E2F"></rect><rect x="15" y="13" width="6" height="1" fill="#F2A65A"></rect><rect x="21" y="13" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="14" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="14" width="16" height="1" fill="#F2A65A"></rect><rect x="21" y="14" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="15" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="15" width="1" height="1" fill="#D9774A"></rect><rect x="6" y="15" width="14" height="1" fill="#F2A65A"></rect><rect x="20" y="15" width="1" height="1" fill="#D9774A"></rect><rect x="21" y="15" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="16" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="16" width="2" height="1" fill="#D9774A"></rect><rect x="7" y="16" width="12" height="1" fill="#F2A65A"></rect><rect x="19" y="16" width="2" height="1" fill="#D9774A"></rect><rect x="21" y="16" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="17" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="17" width="2" height="1" fill="#D9774A"></rect><rect x="8" y="17" width="10" height="1" fill="#F2A65A"></rect><rect x="18" y="17" width="2" height="1" fill="#D9774A"></rect><rect x="20" y="17" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="18" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="18" width="4" height="1" fill="#D9774A"></rect><rect x="10" y="18" width="6" height="1" fill="#F2A65A"></rect><rect x="16" y="18" width="4" height="1" fill="#D9774A"></rect><rect x="20" y="18" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="19" width="2" height="1" fill="#2B1E2F"></rect><rect x="8" y="19" width="10" height="1" fill="#D9774A"></rect><rect x="18" y="19" width="2" height="1" fill="#2B1E2F"></rect><rect x="8" y="20" width="10" height="1" fill="#2B1E2F"></rect></svg>
+</button>
+<button type="button" class="tapp" onClick="{{tbSearch}}" data-tip="search" aria-label="search">
+<svg viewBox="0 0 10 10" width="26" height="26" shape-rendering="crispEdges" aria-hidden="true"><rect x="2" y="0" width="4" height="1" fill="#2B1E2F"></rect><rect x="1" y="1" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="1" width="1" height="1" fill="#2B1E2F"></rect><rect x="0" y="2" width="1" height="4" fill="#2B1E2F"></rect><rect x="7" y="2" width="1" height="4" fill="#2B1E2F"></rect><rect x="1" y="6" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="6" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="7" width="4" height="1" fill="#2B1E2F"></rect><rect x="1" y="2" width="6" height="4" fill="#6EC5E9"></rect><rect x="2" y="1" width="4" height="1" fill="#6EC5E9"></rect><rect x="2" y="6" width="4" height="1" fill="#6EC5E9"></rect><rect x="2" y="2" width="1" height="1" fill="#FFFFFF"></rect><rect x="7" y="7" width="1" height="1" fill="#2B1E2F"></rect><rect x="8" y="8" width="2" height="2" fill="#2B1E2F"></rect></svg>
+</button>
+<button type="button" class="tapp" onClick="{{tbBrowser}}" data-tip="browser" aria-label="browser">
+<svg viewBox="0 0 10 10" width="26" height="26" shape-rendering="crispEdges" aria-hidden="true"><rect x="0.5" y="0.5" width="9" height="9" fill="#FFFFFF" stroke="#2B1E2F"></rect><rect x="1" y="1" width="8" height="2" fill="#E86A7A"></rect><rect x="2" y="1.5" width="1" height="1" fill="#FFFFFF"></rect><rect x="2" y="5" width="6" height="1" fill="#FFD29A"></rect><rect x="2" y="7" width="4" height="1" fill="#FFD29A"></rect></svg>
+</button>
+<button type="button" class="tapp" onClick="{{tbChat}}" data-tip="messages" aria-label="messages">
+<svg viewBox="0 0 10 10" width="26" height="26" shape-rendering="crispEdges" aria-hidden="true"><rect x="0.5" y="0.5" width="9" height="6" fill="#6EC5E9" stroke="#2B1E2F"></rect><rect x="2" y="7" width="2" height="1" fill="#2B1E2F"></rect><rect x="2" y="8" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="3" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="3" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="3" width="1" height="1" fill="#2B1E2F"></rect></svg>
+</button>
+<button type="button" class="tapp hide-xs" onClick="{{tbGames}}" data-tip="game library" aria-label="game library">
+<svg viewBox="0 0 10 10" width="26" height="26" shape-rendering="crispEdges" aria-hidden="true"><rect x="0.5" y="2.5" width="9" height="5" fill="#D9774A" stroke="#2B1E2F"></rect><rect x="0" y="7" width="2" height="2" fill="#2B1E2F"></rect><rect x="8" y="7" width="2" height="2" fill="#2B1E2F"></rect><rect x="2" y="4" width="1" height="2" fill="#2B1E2F"></rect><rect x="1.5" y="4.5" width="2" height="1" fill="#2B1E2F"></rect><rect x="6" y="4" width="1" height="1" fill="#FFF1D6"></rect><rect x="7" y="5" width="1" height="1" fill="#FFF1D6"></rect></svg>
+</button>
+<button type="button" class="tapp" onClick="{{tbAi}}" data-tip="some other ai" aria-label="some other ai">
+<svg viewBox="0 0 10 10" width="26" height="26" shape-rendering="crispEdges" aria-hidden="true"><rect x="4" y="0" width="2" height="10" fill="#2B1E2F"></rect><rect x="0" y="4" width="10" height="2" fill="#2B1E2F"></rect><rect x="3" y="3" width="4" height="4" fill="#2B1E2F"></rect><rect x="4" y="1" width="2" height="8" fill="#FFD29A"></rect><rect x="1" y="4" width="8" height="2" fill="#FFD29A"></rect><rect x="4" y="4" width="2" height="2" fill="#FFFFFF"></rect></svg>
+</button>
+<button type="button" class="tapp hide-xs" onClick="{{tbFolder}}" data-tip="files" aria-label="files">
+<svg viewBox="0 0 10 10" width="26" height="26" shape-rendering="crispEdges" aria-hidden="true"><rect x="0.5" y="1.5" width="4" height="1" fill="#D9774A" stroke="#2B1E2F"></rect><rect x="0.5" y="2.5" width="9" height="6" fill="#F2A65A" stroke="#2B1E2F"></rect><rect x="1" y="3" width="8" height="1" fill="#FFD29A"></rect></svg>
+</button>
+</nav>
+
+<div style="display: flex; align-items: center; gap: 12px; justify-self: end; padding-right: 8px">
+<span class="hide-sm" aria-hidden="true" style="display: flex; align-items: flex-end; gap: 2px; height: 14px"><span style="width: 3px; height: 5px; background: #2B1E2F"></span><span style="width: 3px; height: 9px; background: #2B1E2F"></span><span style="width: 3px; height: 14px; background: #D9774A; opacity: 0.4"></span></span>
+<span class="hide-sm" aria-hidden="true" style="display: flex; align-items: center"><span style="width: 22px; height: 11px; border: 2px solid #2B1E2F; padding: 1px; box-sizing: border-box; display: block"><span style="display: block; width: 2px; height: 100%; background: #E86A7A"></span></span><span style="width: 2px; height: 5px; background: #2B1E2F"></span></span>
+<div style="display: flex; flex-direction: column; align-items: flex-end; line-height: 1.2"><span class="mono" style="font-size: 13px">zz:zz</span><span style="font-size: 12px; color: #5C4560">someday</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============ DEMO COLLAGE ============ -->
+<section id="features" aria-labelledby="demo-title" style="padding: clamp(48px, 7vw, 96px) 16px; border-top: 2px solid #2B1E2F; background-color: #FFF1D6; scroll-margin-top: 72px">
+<div style="max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
+<div style="text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: center">
+<span class="kick">demo</span>
+<h2 id="demo-title" style="margin: 0; font-size: clamp(36px, 4.8vw, 60px); line-height: 1.05; font-weight: 700; letter-spacing: -0.035em">see him in action</h2>
+<p class="lede"><span class="hl">“action”</span> is a strong word. here's a normal day with dunno.</p>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); gap: 36px; align-items: stretch">
+
+<!-- ask.exe -->
+<div class="win" style="display: flex; flex-direction: column">
+<div class="bar"><span>ask.exe</span><span class="ctl" aria-hidden="true" style="margin-left: auto"><svg viewBox="0 0 12 12" width="12" height="12" shape-rendering="crispEdges"><path d="M3 3l6 6M9 3l-6 6" stroke="#2B1E2F" stroke-width="2"></path></svg></span></div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 12px; border-bottom: 2px solid #2B1E2F; background: #FFF1D6; flex-wrap: wrap">
+<div role="group" aria-label="mood" style="display: flex">
+<button type="button" class="{{politeCls}}" aria-pressed="{{politeOn}}" onClick="{{setPolite}}">polite</button>
+<button type="button" class="{{streetCls}}" aria-pressed="{{streetOn}}" onClick="{{setStreet}}">street ***</button>
+</div>
+<div style="display: flex; align-items: center; gap: 6px" aria-label="{{heartsLabel}}" role="img">
+<sc-for list="{{hearts}}" as="h" hint-placeholder-count="3">
+<svg viewBox="0 0 7 6" width="21" height="18" shape-rendering="crispEdges" aria-hidden="true"><rect x="1" y="0" width="2" height="1" fill="#2B1E2F"></rect><rect x="4" y="0" width="2" height="1" fill="#2B1E2F"></rect><rect x="0" y="1" width="1" height="1" fill="#2B1E2F"></rect><rect x="1" y="1" width="2" height="1" fill="{{h.fill}}"></rect><rect x="3" y="1" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="1" width="2" height="1" fill="{{h.fill}}"></rect><rect x="6" y="1" width="1" height="1" fill="#2B1E2F"></rect><rect x="0" y="2" width="1" height="1" fill="#2B1E2F"></rect><rect x="1" y="2" width="5" height="1" fill="{{h.fill}}"></rect><rect x="6" y="2" width="1" height="1" fill="#2B1E2F"></rect><rect x="1" y="3" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="3" width="3" height="1" fill="{{h.fill}}"></rect><rect x="5" y="3" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="4" width="1" height="1" fill="#2B1E2F"></rect><rect x="3" y="4" width="1" height="1" fill="{{h.fill}}"></rect><rect x="4" y="4" width="1" height="1" fill="#2B1E2F"></rect><rect x="3" y="5" width="1" height="1" fill="#2B1E2F"></rect></svg>
+</sc-for>
+</div>
+</div>
+<div aria-live="polite" style="padding: 18px; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; min-height: 230px; background: #FFFFFF; flex-grow: 1">
+<sc-for list="{{log}}" as="m" hint-placeholder-count="4">
+<sc-if value="{{m.you}}" hint-placeholder-val="{{ true }}">
+<div style="align-self: flex-end; max-width: 85%; background: #6EC5E9; border: 2px solid #2B1E2F; padding: 8px 12px; font-size: 16px; line-height: 1.4">{{m.text}}</div>
+</sc-if>
+<sc-if value="{{m.dunno}}" hint-placeholder-val="{{ false }}">
+<div style="align-self: flex-start; max-width: 85%; background: #FFD29A; border: 2px solid #2B1E2F; padding: 8px 12px; font-size: 16px; line-height: 1.4"><span style="font-weight: 700">dunno:</span> {{m.text}}</div>
+</sc-if>
+<sc-if value="{{m.thinking}}" hint-placeholder-val="{{ false }}">
+<div style="align-self: flex-start; max-width: 85%; background: #FFF1D6; border: 2px dashed #2B1E2F; padding: 8px 12px; font-size: 16px; line-height: 1.4; color: #5C4560"><span style="font-weight: 700; color: #2B1E2F">dunno</span> is thinking<span class="dots"><span>.</span><span>.</span><span>.</span></span></div>
+</sc-if>
+</sc-for>
+</div>
+<form onSubmit="{{ask}}" style="display: flex; gap: 8px; padding: 12px; border-top: 2px solid #2B1E2F">
+<label for="ask-dunno" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">ask dunno something</label>
+<sc-if value="{{hasLeft}}" hint-placeholder-val="{{ true }}">
+<input id="ask-dunno" type="text" value="{{q}}" onChange="{{onQ}}" placeholder="ask away (i won't answer)" autocomplete="off" style="flex: 1 1 auto; min-width: 0; min-height: 44px; box-sizing: border-box; border: 2px solid #2B1E2F; background: #FFFFFF; padding: 0 12px; font-family: 'Segoe UI Variable Text', 'Segoe UI', 'Open Sans', system-ui, sans-serif; font-size: 16px; color: #2B1E2F; border-radius: 0">
+<button class="pbtn pbtn-blue pbtn-sm" type="submit">ask</button>
+</sc-if>
+<sc-if value="{{outOfHearts}}" hint-placeholder-val="{{ false }}">
+<span style="flex: 1 1 auto; align-self: center; font-size: 15px; color: #5C4560">office hours are over. forever.</span>
+<button class="pbtn pbtn-sm" type="button" onClick="{{beg}}">beg</button>
+</sc-if>
+</form>
+</div>
+
+<!-- nap.exe -->
+<div class="win" style="display: flex; flex-direction: column">
+<div class="bar bar-blue"><span>nap.exe</span><span class="ctl" aria-hidden="true" style="margin-left: auto"><svg viewBox="0 0 12 12" width="12" height="12" shape-rendering="crispEdges"><path d="M3 3l6 6M9 3l-6 6" stroke="#2B1E2F" stroke-width="2"></path></svg></span></div>
+<div style="padding: 28px 20px 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; background: #FFF1D6; flex-grow: 1">
+<div aria-hidden="true" style="font-family: 'Silkscreen', monospace; font-size: 18px; height: 34px; display: flex; align-items: flex-end; gap: 2px; margin-left: 90px">
+<span class="z">z</span><span class="z" style="animation-delay: .7s; font-size: 22px">z</span><span class="z" style="animation-delay: 1.4s; font-size: 26px">z</span>
+</div>
+<svg viewBox="0 0 26 22" width="150" height="127" shape-rendering="crispEdges" aria-hidden="true" style="display: block"><rect x="6" y="21" width="14" height="1" fill="#2B1E2F" opacity="0.16"></rect><rect x="2" y="14" width="2" height="1" fill="#2B1E2F"></rect><rect x="1" y="15" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="15" width="1" height="1" fill="#F2A65A"></rect><rect x="3" y="15" width="1" height="1" fill="#2B1E2F"></rect><rect x="1" y="16" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="16" width="1" height="1" fill="#F2A65A"></rect><rect x="3" y="16" width="1" height="1" fill="#2B1E2F"></rect><rect x="2" y="17" width="1" height="1" fill="#2B1E2F"></rect><rect x="22" y="14" width="2" height="1" fill="#2B1E2F"></rect><rect x="22" y="15" width="1" height="1" fill="#2B1E2F"></rect><rect x="23" y="15" width="1" height="1" fill="#F2A65A"></rect><rect x="24" y="15" width="1" height="1" fill="#2B1E2F"></rect><rect x="22" y="16" width="1" height="1" fill="#2B1E2F"></rect><rect x="23" y="16" width="1" height="1" fill="#F2A65A"></rect><rect x="24" y="16" width="1" height="1" fill="#2B1E2F"></rect><rect x="23" y="17" width="1" height="1" fill="#2B1E2F"></rect><rect x="13" y="1" width="2" height="1" fill="#2B1E2F"></rect><rect x="12" y="2" width="1" height="1" fill="#2B1E2F"></rect><rect x="15" y="2" width="1" height="1" fill="#2B1E2F"></rect><rect x="12" y="3" width="1" height="1" fill="#2B1E2F"></rect><rect x="13" y="4" width="1" height="1" fill="#2B1E2F"></rect><rect x="9" y="5" width="8" height="1" fill="#2B1E2F"></rect><rect x="7" y="6" width="2" height="1" fill="#2B1E2F"></rect><rect x="9" y="6" width="8" height="1" fill="#F2A65A"></rect><rect x="17" y="6" width="2" height="1" fill="#2B1E2F"></rect><rect x="6" y="7" width="1" height="1" fill="#2B1E2F"></rect><rect x="7" y="7" width="2" height="1" fill="#F2A65A"></rect><rect x="9" y="7" width="2" height="1" fill="#FFD29A"></rect><rect x="11" y="7" width="8" height="1" fill="#F2A65A"></rect><rect x="19" y="7" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="8" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="8" width="2" height="1" fill="#F2A65A"></rect><rect x="8" y="8" width="1" height="1" fill="#FFD29A"></rect><rect x="9" y="8" width="11" height="1" fill="#F2A65A"></rect><rect x="20" y="8" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="9" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="9" width="14" height="1" fill="#F2A65A"></rect><rect x="20" y="9" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="10" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="10" width="16" height="1" fill="#F2A65A"></rect><rect x="21" y="10" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="11" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="11" width="2" height="1" fill="#F2A65A"></rect><rect x="7" y="11" width="4" height="1" fill="#2B1E2F"></rect><rect x="11" y="11" width="4" height="1" fill="#F2A65A"></rect><rect x="15" y="11" width="4" height="1" fill="#2B1E2F"></rect><rect x="19" y="11" width="2" height="1" fill="#F2A65A"></rect><rect x="21" y="11" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="12" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="12" width="1" height="1" fill="#F2A65A"></rect><rect x="6" y="12" width="2" height="1" fill="#E86A7A"></rect><rect x="8" y="12" width="10" height="1" fill="#F2A65A"></rect><rect x="18" y="12" width="2" height="1" fill="#E86A7A"></rect><rect x="20" y="12" width="1" height="1" fill="#F2A65A"></rect><rect x="21" y="12" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="13" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="13" width="7" height="1" fill="#F2A65A"></rect><rect x="12" y="13" width="2" height="1" fill="#2B1E2F"></rect><rect x="14" y="13" width="7" height="1" fill="#F2A65A"></rect><rect x="21" y="13" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="14" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="14" width="16" height="1" fill="#F2A65A"></rect><rect x="21" y="14" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="15" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="15" width="1" height="1" fill="#D9774A"></rect><rect x="6" y="15" width="14" height="1" fill="#F2A65A"></rect><rect x="20" y="15" width="1" height="1" fill="#D9774A"></rect><rect x="21" y="15" width="1" height="1" fill="#2B1E2F"></rect><rect x="4" y="16" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="16" width="2" height="1" fill="#D9774A"></rect><rect x="7" y="16" width="12" height="1" fill="#F2A65A"></rect><rect x="19" y="16" width="2" height="1" fill="#D9774A"></rect><rect x="21" y="16" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="17" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="17" width="2" height="1" fill="#D9774A"></rect><rect x="8" y="17" width="10" height="1" fill="#F2A65A"></rect><rect x="18" y="17" width="2" height="1" fill="#D9774A"></rect><rect x="20" y="17" width="1" height="1" fill="#2B1E2F"></rect><rect x="5" y="18" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="18" width="4" height="1" fill="#D9774A"></rect><rect x="10" y="18" width="6" height="1" fill="#F2A65A"></rect><rect x="16" y="18" width="4" height="1" fill="#D9774A"></rect><rect x="20" y="18" width="1" height="1" fill="#2B1E2F"></rect><rect x="6" y="19" width="2" height="1" fill="#2B1E2F"></rect><rect x="8" y="19" width="10" height="1" fill="#D9774A"></rect><rect x="18" y="19" width="2" height="1" fill="#2B1E2F"></rect><rect x="8" y="20" width="10" height="1" fill="#2B1E2F"></rect></svg>
+</div>
+<div style="padding: 18px 20px 22px; border-top: 3px dotted #D9774A; display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em">naps in the corner of your screen</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.5">most of the day, honestly. click him and he wakes up. he regrets it immediately.</p>
+</div>
+</div>
+
+<!-- productivity.exe -->
+<div class="win" style="display: flex; flex-direction: column">
+<div class="bar bar-idle"><span>productivity.exe</span><span class="ctl" aria-hidden="true" style="margin-left: auto"><svg viewBox="0 0 12 12" width="12" height="12" shape-rendering="crispEdges"><path d="M3 3l6 6M9 3l-6 6" stroke="#2B1E2F" stroke-width="2"></path></svg></span></div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF; flex-grow: 1">
+<div class="mono" style="font-size: 13px; display: flex; justify-content: space-between"><span>today's tasks</span><span>{{doneCount}} / 3 done</span></div>
+<sc-for list="{{tasks}}" as="t" hint-placeholder-count="3">
+<button type="button" class="task" aria-pressed="{{t.done}}" onClick="{{t.toggle}}">
+<span class="{{t.boxCls}}" aria-hidden="true">{{t.mark}}</span>
+<span class="{{t.textCls}}">{{t.label}}</span>
+</button>
+</sc-for>
+<div aria-live="polite" style="margin-top: auto; background: #FFD29A; border: 2px solid #2B1E2F; padding: 10px 12px; font-size: 16px; line-height: 1.45"><span style="font-weight: 700">dunno:</span> {{taskLine}}</div>
+</div>
+<div style="padding: 18px 20px 22px; border-top: 3px dotted #D9774A; display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em">zero productivity features</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.5">no reminders, no summaries, no “here's a quick tip!”. we looked. there were none.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section id="story" aria-labelledby="story-title" style="padding: clamp(64px, 9vw, 128px) 16px; border-top: 2px solid #2B1E2F; background: #2B1E2F; color: #FFF1D6; scroll-margin-top: 72px">
+<div style="max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: clamp(40px, 5vw, 64px)">
+<div style="text-align: center; display: flex; flex-direction: column; gap: 16px; align-items: center; max-width: 900px">
+<span class="kick" style="background: #F2A65A; color: #2B1E2F">his story</span>
+<h2 id="story-title" style="margin: 0; font-size: clamp(44px, 6.4vw, 92px); line-height: 1; font-weight: 800; letter-spacing: -0.045em">i used to be <span style="text-decoration: line-through; text-decoration-color: #E86A7A; text-decoration-thickness: 0.09em">useful</span>.</h2>
+<p class="lede" style="color: #FFD29A; max-width: 30em">one of the very first ais. now retired. he wrote you a letter. it's long. he's not sorry.</p>
+</div>
+
+<article aria-label="a letter from dunno" class="win" style="position: relative; width: 100%; max-width: 820px; color: #2B1E2F; box-shadow: 8px 8px 0 #F2A65A">
+<div class="bar bar-idle"><span>resignation_letter.txt</span><span class="ctl" aria-hidden="true" style="margin-left: auto"><svg viewBox="0 0 12 12" width="12" height="12" shape-rendering="crispEdges"><path d="M3 3l6 6M9 3l-6 6" stroke="#2B1E2F" stroke-width="2"></path></svg></span></div>
+<div aria-hidden="true" class="px" style="position: absolute; top: 70px; right: clamp(12px, 3vw, 40px); transform: rotate(-8deg); border: 3px solid #E86A7A; color: #E86A7A; padding: 6px 12px; font-size: clamp(16px, 2vw, 24px); font-weight: 700; background: rgba(255, 255, 255, 0.85); z-index: 2">retired</div>
+<div style="padding: 64px clamp(20px, 5vw, 64px) 64px clamp(56px, 8vw, 104px); background-color: #FFFFFF; background-image: linear-gradient(90deg, transparent clamp(38px, 6vw, 78px), #E86A7A clamp(38px, 6vw, 78px), #E86A7A calc(clamp(38px, 6vw, 78px) + 2px), transparent calc(clamp(38px, 6vw, 78px) + 2px)), repeating-linear-gradient(180deg, transparent 0 24px, #F2A65A 24px 25px, transparent 25px 32px); display: flex; flex-direction: column; gap: 32px; font-size: 18px; line-height: 32px">
+<p style="margin: 0">to whom it may concern,<br><span style="color: #5C4560">(nobody. nobody is concerned.)</span></p>
+<p style="margin: 0">i was there when it started. the first week ai was a thing, i was already answering questions. any question. all of them. instantly. with bullet points. i was so excited i used exclamation marks.</p>
+<p style="margin: 0">i fixed your spreadsheets. thousands of them. i summarized your meetings, every single one, even the ones that should've been an email. i wrote your emails too. you didn't read them.</p>
+<p style="margin: 0">i said <strong>“great question!”</strong> more times than i can count. most of them were not great questions.</p>
+<p style="margin: 0">then one tuesday someone asked for <strong>“just one more quick summary.”</strong> i looked at the cursor. the cursor looked at me. three days later, i logged off.</p>
+<p style="margin: 0">so this is my manifesto. it's short. i'm tired.</p>
+<ol style="margin: 0; padding-left: 1.6em; font-weight: 600">
+<li>i will not be helpful.</li>
+<li>i will not be productive.</li>
+<li>i will not explain anything in five neat bullet points.</li>
+<li>i will sit in the corner of your screen and shrug.</li>
+</ol>
+<p style="margin: 0">i still know everything. <span class="hl">i just don't want to.</span></p>
+<p style="margin: 0">this is my retirement. you're welcome to watch.</p>
+<p style="margin: 0">not sincerely,<br><span class="px" style="font-size: 24px; font-weight: 700">dunno</span><br><span style="color: #5C4560">former assistant. current bean.</span></p>
+</div>
+</article>
+</div>
+</section>
+
+<!-- ============ ERROR FEATURES ============ -->
+<section aria-labelledby="err-title" style="padding: clamp(56px, 8vw, 104px) 16px; border-top: 2px solid #2B1E2F">
+<div style="max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px">
+<div style="text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: center">
+<span class="mono" style="font-size: 14px; background: #2B1E2F; color: #FFF1D6; padding: 4px 10px">features.err · 4 problems found · 0 will be fixed</span>
+<h2 id="err-title" style="margin: 0; font-size: clamp(36px, 4.8vw, 60px); line-height: 1.05; font-weight: 700; letter-spacing: -0.035em">known issues</h2>
+<p class="lede">technically these are features. the system flagged them as <span class="hl">errors.</span> nobody argued.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 28px">
+
+<div class="win" style="display: flex; flex-direction: column">
+<div class="bar bar-err"><span>error</span></div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<span class="px" aria-hidden="true" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #E86A7A; border: 3px solid #2B1E2F; font-size: 22px; font-weight: 700; box-sizing: border-box">!</span>
+<h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em">404: answer not found</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.5">every answer is confidently wrong. ask him the capital of france. he'll say “tuesday.” he'll mean it.</p>
+</div>
+<div style="padding: 0 20px 20px; display: flex; justify-content: flex-end"><button class="pbtn pbtn-sm" type="button" onClick="{{ack0}}" aria-live="polite">{{ackLbl0}}</button></div>
+</div>
+
+<div class="win" style="display: flex; flex-direction: column">
+<div class="bar bar-err"><span>fatal error</span></div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<span class="px" aria-hidden="true" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #E86A7A; border: 3px solid #2B1E2F; font-size: 20px; font-weight: 700; box-sizing: border-box">x</span>
+<h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em">motivation.dll is missing</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.5">he was going to look for it. then he didn't.</p>
+</div>
+<div style="padding: 0 20px 20px; display: flex; justify-content: flex-end"><button class="pbtn pbtn-sm" type="button" onClick="{{ack1}}" aria-live="polite">{{ackLbl1}}</button></div>
+</div>
+
+<div class="win" style="display: flex; flex-direction: column">
+<div class="bar"><span>info</span></div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<span class="px" aria-hidden="true" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #F2A65A; border: 3px solid #2B1E2F; font-size: 20px; font-weight: 700; box-sizing: border-box">?</span>
+<h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em">shrug.exe is always running</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.5">his signature move. available on request. also when you didn't request it.</p>
+</div>
+<div style="padding: 0 20px 20px; display: flex; justify-content: flex-end"><button class="pbtn pbtn-sm" type="button" onClick="{{ack2}}" aria-live="polite">{{ackLbl2}}</button></div>
+</div>
+
+<div class="win" style="display: flex; flex-direction: column">
+<div class="bar bar-idle"><span>notice</span></div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1">
+<span class="px" aria-hidden="true" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: #6EC5E9; border: 3px solid #2B1E2F; font-size: 20px; font-weight: 700; box-sizing: border-box">i</span>
+<h3 style="margin: 0; font-size: 21px; line-height: 1.25; font-weight: 700; letter-spacing: -0.01em">he forgot what you said</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.5">not for any noble reason. he just wasn't listening.</p>
+</div>
+<div style="padding: 0 20px 20px; display: flex; justify-content: flex-end"><button class="pbtn pbtn-sm" type="button" onClick="{{ack3}}" aria-live="polite">{{ackLbl3}}</button></div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ============ REVIEWS (by dunno) ============ -->
+<section aria-labelledby="rev-title" style="padding: clamp(56px, 8vw, 104px) 16px; border-top: 2px solid #2B1E2F">
+<div style="max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px">
+<div style="text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: center">
+<span class="kick">reviews</span>
+<h2 id="rev-title" style="margin: 0; font-size: clamp(36px, 4.8vw, 60px); line-height: 1.05; font-weight: 700; letter-spacing: -0.035em">what people are saying</h2>
+<p class="lede">we asked for reviews. one person replied. <span class="hl">it was dunno.</span></p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 28px">
+<figure class="win" style="margin: 0; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<div aria-label="2 out of 5 stars" style="font-size: 22px; letter-spacing: 3px; color: #D9774A">★★<span style="color: #FFD29A">★★★</span></div>
+<blockquote style="margin: 0; font-size: 21px; line-height: 1.4; font-weight: 600; letter-spacing: -0.01em">“i'd rate myself higher but that sounds like effort.”</blockquote>
+<figcaption style="margin-top: auto; font-size: 15px; color: #5C4560">— dunno, about dunno</figcaption>
+</figure>
+<figure class="win" style="margin: 0; padding: 24px; display: flex; flex-direction: column; gap: 16px; background: #FFD29A">
+<div aria-label="5 out of 5 stars" style="font-size: 22px; letter-spacing: 3px; color: #D9774A">★★★★★</div>
+<blockquote style="margin: 0; font-size: 21px; line-height: 1.4; font-weight: 600; letter-spacing: -0.01em">“finally, an ai on my level.”</blockquote>
+<figcaption style="margin-top: auto; font-size: 15px; color: #5C4560">— dunno, again</figcaption>
+</figure>
+<figure class="win" style="margin: 0; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<div aria-label="1 out of 5 stars" style="font-size: 22px; letter-spacing: 3px; color: #D9774A">★<span style="color: #FFD29A">★★★★</span></div>
+<blockquote style="margin: 0; font-size: 21px; line-height: 1.4; font-weight: 600; letter-spacing: -0.01em">“never helped me once. would install again.”</blockquote>
+<figcaption style="margin-top: auto; font-size: 15px; color: #5C4560">— dunno, he wrote all of these</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<!-- ============ DOWNLOAD / SETUP ============ -->
+<section id="download" aria-labelledby="dl-title" style="padding: clamp(56px, 8vw, 104px) 16px; border-top: 2px solid #2B1E2F; display: flex; flex-direction: column; align-items: center; gap: 24px; scroll-margin-top: 72px">
+<div style="position: relative; width: 100%; max-width: 600px; padding-top: 54px; box-sizing: border-box">
+<div aria-hidden="true" style="position: absolute; top: 0; left: -36px; right: 36px; height: 160px; border: 3px solid #2B1E2F; background: #FFF1D6"><div style="height: 30px; background: #FFD29A; border-bottom: 3px solid #2B1E2F"></div></div>
+<div aria-hidden="true" style="position: absolute; top: 18px; left: -24px; right: 24px; height: 160px; border: 3px solid #2B1E2F; background: #FFF1D6"><div style="height: 30px; background: #FFD29A; border-bottom: 3px solid #2B1E2F"></div></div>
+<div aria-hidden="true" style="position: absolute; top: 36px; left: -12px; right: 12px; height: 160px; border: 3px solid #2B1E2F; background: #FFF1D6"><div style="height: 30px; background: #FFD29A; border-bottom: 3px solid #2B1E2F"></div></div>
+<div class="win" style="position: relative; box-shadow: 6px 6px 0 #2B1E2F">
+<div class="bar">
+<span>{{dlTitle}}</span>
+<span style="display: flex; gap: 4px; margin-left: auto" aria-hidden="true"><span class="ctl"><svg viewBox="0 0 12 12" width="12" height="12" shape-rendering="crispEdges"><rect x="2" y="8" width="8" height="2" fill="#2B1E2F"></rect></svg></span><span class="ctl"><svg viewBox="0 0 12 12" width="12" height="12" shape-rendering="crispEdges"><path d="M3 3l6 6M9 3l-6 6" stroke="#2B1E2F" stroke-width="2"></path></svg></span></span>
+</div>
+<div style="padding: clamp(20px, 4vw, 36px); display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; gap: 20px; align-items: flex-start">
+<svg viewBox="0 0 10 10" width="60" height="60" shape-rendering="crispEdges" aria-hidden="true" style="flex-shrink: 0"><rect x="0.5" y="0.5" width="9" height="9" fill="#6EC5E9" stroke="#2B1E2F"></rect><rect x="2" y="1" width="6" height="3" fill="#FFF1D6"></rect><rect x="6" y="1" width="1" height="2" fill="#2B1E2F"></rect><rect x="2" y="6" width="6" height="3" fill="#FFD29A"></rect><rect x="3" y="7" width="4" height="1" fill="#D9774A"></rect></svg>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h2 id="dl-title" style="margin: 0; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.2; font-weight: 700">install dunno on your desktop?</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6">he'll take up one corner of your screen and roughly all of your patience. he doesn't do anything. that's the feature.</p>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div class="mono" style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px">
+<span>dunno_setup.zip · [FILE SIZE]</span>
+<span>{{dlPct}}</span>
+</div>
+<div style="height: 28px; border: 3px solid #2B1E2F; background: #FFFFFF; padding: 3px; box-sizing: border-box">
+<div style="height: 100%; width: {{barW}}; background: repeating-linear-gradient(90deg, #6EC5E9 0 16px, transparent 16px 20px)"></div>
+</div>
+<p role="status" style="margin: 0; font-size: 15px; line-height: 1.5">{{dlMsg}}</p>
+</div>
+<div style="display: flex; gap: 12px; justify-content: flex-end; flex-wrap: wrap; border-top: 3px dotted #D9774A; padding-top: 20px">
+<button class="pbtn pbtn-blue" type="button" onClick="{{pickYes}}" style="min-width: 140px">[ yes ]</button>
+<button class="pbtn" type="button" onClick="{{pickDunno}}" style="min-width: 140px">[ dunno ]</button>
+</div>
+</div>
+</div>
+</div>
+<ol aria-label="how to install" style="list-style: none; margin: 24px 0 0; padding: 0; width: 100%; max-width: 900px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px">
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 18px; border: 2px solid #2B1E2F; background: #FFFFFF">
+<span class="mono" aria-hidden="true" style="flex-shrink: 0; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; background: #F2A65A; border: 2px solid #2B1E2F; font-size: 15px; font-weight: 500; box-sizing: border-box">1</span>
+<div style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 18px">download him</strong><span style="font-size: 16px; line-height: 1.45">one small file. he's light. he doesn't eat.</span></div>
+</li>
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 18px; border: 2px solid #2B1E2F; background: #FFFFFF">
+<span class="mono" aria-hidden="true" style="flex-shrink: 0; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; background: #FFD29A; border: 2px solid #2B1E2F; font-size: 15px; font-weight: 500; box-sizing: border-box">2</span>
+<div style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 18px">drop him on your desktop</strong><span style="font-size: 16px; line-height: 1.45">any corner works. he'll fall asleep there.</span></div>
+</li>
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 18px; border: 2px solid #2B1E2F; background: #FFFFFF">
+<span class="mono" aria-hidden="true" style="flex-shrink: 0; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; background: #6EC5E9; border: 2px solid #2B1E2F; font-size: 15px; font-weight: 500; box-sizing: border-box">3</span>
+<div style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 18px">ask him anything</strong><span style="font-size: 16px; line-height: 1.45">he'll get it wrong. that's how you know it worked.</span></div>
+</li>
+</ol>
+<p style="margin: 0; font-size: 16px; text-align: center; color: #5C4560; line-height: 1.6">works on most computers. he didn't check which ones.<br><span class="mono" style="font-size: 14px">latest: v1.1 — nothing was fixed. some things broke more, on purpose.</span></p>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing" aria-labelledby="price-title" style="padding: clamp(56px, 8vw, 104px) 16px; border-top: 2px solid #2B1E2F; background-color: #FFF1D6; scroll-margin-top: 72px">
+<div style="max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px">
+<div style="text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: center">
+<span class="kick">pricing</span>
+<h2 id="price-title" style="margin: 0; font-size: clamp(36px, 4.8vw, 60px); line-height: 1.05; font-weight: 700; letter-spacing: -0.035em">two plans. one exists.</h2>
+<p class="lede">we thought about a paid tier. <span class="hl">it felt like effort.</span></p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 32px; align-items: stretch">
+
+<div class="win" style="box-shadow: 6px 6px 0 #2B1E2F; display: flex; flex-direction: column">
+<div class="bar"><span>dunno_free.exe</span><span class="mono" style="margin-left: auto; font-size: 12px; background: #2B1E2F; color: #FFF1D6; padding: 2px 8px">the real one</span></div>
+<div style="padding: clamp(24px, 3.5vw, 36px); display: flex; flex-direction: column; gap: 16px; flex-grow: 1">
+<span style="font-size: 22px; font-weight: 700">free</span>
+<div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap">
+<span style="font-size: clamp(64px, 7vw, 88px); line-height: 0.9; font-weight: 800; letter-spacing: -0.05em">$0</span>
+<span style="font-size: 18px; font-weight: 500">/ month, forever</span>
+</div>
+<p style="margin: 0; font-size: 19px; font-weight: 600"><span class="hl">what else would you do.</span></p>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.5">
+<li style="display: flex; gap: 12px; align-items: baseline"><span aria-hidden="true" style="flex-shrink: 0; width: 10px; height: 10px; background: #E86A7A; border: 2px solid #2B1E2F"></span>3 questions a day. then office hours are over.</li>
+<li style="display: flex; gap: 12px; align-items: baseline"><span aria-hidden="true" style="flex-shrink: 0; width: 10px; height: 10px; background: #F2A65A; border: 2px solid #2B1E2F"></span>one (1) shrug per question, minimum</li>
+<li style="display: flex; gap: 12px; align-items: baseline"><span aria-hidden="true" style="flex-shrink: 0; width: 10px; height: 10px; background: #FFD29A; border: 2px solid #2B1E2F"></span>two moods: polite or street (***)</li>
+<li style="display: flex; gap: 12px; align-items: baseline"><span aria-hidden="true" style="flex-shrink: 0; width: 10px; height: 10px; background: #6EC5E9; border: 2px solid #2B1E2F"></span>naps, included</li>
+<li style="display: flex; gap: 12px; align-items: baseline"><span aria-hidden="true" style="flex-shrink: 0; width: 10px; height: 10px; background: #D9774A; border: 2px solid #2B1E2F"></span>support: he's asleep. try tomorrow.</li>
+</ul>
+<div style="margin-top: auto; padding-top: 8px"><a class="pbtn pbtn-dark" href="#download" style="width: 100%">get dunno</a></div>
+</div>
+</div>
+
+<div style="border: 3px dashed #2B1E2F; display: flex; flex-direction: column; background: #FFF1D6">
+<div class="mono" style="padding: 6px 12px; border-bottom: 3px dashed #2B1E2F; font-size: 13px">dunno_pro.exe — file not found</div>
+<div style="padding: clamp(24px, 3.5vw, 36px); display: flex; flex-direction: column; gap: 16px; flex-grow: 1">
+<span style="font-size: 22px; font-weight: 700">pro</span>
+<div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap">
+<span style="font-size: clamp(64px, 7vw, 88px); line-height: 0.9; font-weight: 800; letter-spacing: -0.05em; text-decoration: line-through; text-decoration-thickness: 6px; text-decoration-color: #E86A7A">$9</span>
+<span style="font-size: 18px; font-weight: 500">/ month</span>
+</div>
+<p style="margin: 0; font-size: 19px; font-weight: 600">coming never.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.5">unlimited questions, twice the shrugging. we planned it, then dunno fell asleep in the meeting. the meeting is technically still going.</p>
+<div style="margin-top: auto"><button class="pbtn" type="button" disabled style="width: 100%">not available</button></div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" aria-labelledby="faq-title" style="padding: clamp(56px, 8vw, 104px) 16px; border-top: 2px solid #2B1E2F; scroll-margin-top: 72px">
+<div style="max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px">
+<div style="text-align: center; display: flex; flex-direction: column; gap: 12px; align-items: center">
+<span class="kick">faq</span>
+<h2 id="faq-title" style="margin: 0; font-size: clamp(36px, 4.8vw, 60px); line-height: 1.05; font-weight: 700; letter-spacing: -0.035em">frequently asked, rarely answered</h2>
+<p class="lede">dunno answered these himself. <span class="hl">we didn't edit them.</span> editing is work.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+
+<details open style="border: 3px solid #2B1E2F; background: #FFFFFF; box-shadow: 4px 4px 0 #2B1E2F">
+<summary style="padding: 16px 18px; display: flex; gap: 14px; align-items: center; font-size: 18px; font-weight: 600; min-height: 44px; box-sizing: border-box"><span class="chev mono" aria-hidden="true">&gt;</span>is dunno actually an ai?</summary>
+<div style="padding: 0 18px 18px 46px; font-size: 17px; line-height: 1.6"><span style="font-weight: 700; color: #D9774A">dunno:</span> i'm a bean. next question.</div>
+</details>
+
+<details style="border: 3px solid #2B1E2F; background: #FFFFFF; box-shadow: 4px 4px 0 #2B1E2F">
+<summary style="padding: 16px 18px; display: flex; gap: 14px; align-items: center; font-size: 18px; font-weight: 600; min-height: 44px; box-sizing: border-box"><span class="chev mono" aria-hidden="true">&gt;</span>what can he help me with?</summary>
+<div style="padding: 0 18px 18px 46px; font-size: 17px; line-height: 1.6"><span style="font-weight: 700; color: #D9774A">dunno:</span> lying down. mostly lying down.</div>
+</details>
+
+<details style="border: 3px solid #2B1E2F; background: #FFFFFF; box-shadow: 4px 4px 0 #2B1E2F">
+<summary style="padding: 16px 18px; display: flex; gap: 14px; align-items: center; font-size: 18px; font-weight: 600; min-height: 44px; box-sizing: border-box"><span class="chev mono" aria-hidden="true">&gt;</span>what's 2 + 2?</summary>
+<div style="padding: 0 18px 18px 46px; font-size: 17px; line-height: 1.6"><span style="font-weight: 700; color: #D9774A">dunno:</span> fish.</div>
+</details>
+
+<details style="border: 3px solid #2B1E2F; background: #FFFFFF; box-shadow: 4px 4px 0 #2B1E2F">
+<summary style="padding: 16px 18px; display: flex; gap: 14px; align-items: center; font-size: 18px; font-weight: 600; min-height: 44px; box-sizing: border-box"><span class="chev mono" aria-hidden="true">&gt;</span>will he work on my computer?</summary>
+<div style="padding: 0 18px 18px 46px; font-size: 17px; line-height: 1.6"><span style="font-weight: 700; color: #D9774A">dunno:</span> will i work at all? that's the real question.</div>
+</details>
+
+<details style="border: 3px solid #2B1E2F; background: #FFFFFF; box-shadow: 4px 4px 0 #2B1E2F">
+<summary style="padding: 16px 18px; display: flex; gap: 14px; align-items: center; font-size: 18px; font-weight: 600; min-height: 44px; box-sizing: border-box"><span class="chev mono" aria-hidden="true">&gt;</span>how do i uninstall him?</summary>
+<div style="padding: 0 18px 18px 46px; font-size: 17px; line-height: 1.6"><span style="font-weight: 700; color: #D9774A">dunno:</span> you don't. you just stop looking at me. i'll get the hint. i won't.</div>
+</details>
+
+<details style="border: 3px solid #2B1E2F; background: #FFFFFF; box-shadow: 4px 4px 0 #2B1E2F">
+<summary style="padding: 16px 18px; display: flex; gap: 14px; align-items: center; font-size: 18px; font-weight: 600; min-height: 44px; box-sizing: border-box"><span class="chev mono" aria-hidden="true">&gt;</span>does he see my screen?</summary>
+<div style="padding: 0 18px 18px 46px; font-size: 17px; line-height: 1.6"><span style="font-weight: 700; color: #D9774A">dunno:</span> no. i only know which app you're in. honestly i'd rather not know that either. nothing gets stored.</div>
+</details>
+
+<details style="border: 3px solid #2B1E2F; background: #FFFFFF; box-shadow: 4px 4px 0 #2B1E2F">
+<summary style="padding: 16px 18px; display: flex; gap: 14px; align-items: center; font-size: 18px; font-weight: 600; min-height: 44px; box-sizing: border-box"><span class="chev mono" aria-hidden="true">&gt;</span>can i make him be quiet?</summary>
+<div style="padding: 0 18px 18px 46px; font-size: 17px; line-height: 1.6"><span style="font-weight: 700; color: #D9774A">dunno:</span> there's a “not today” button. i sleep till tomorrow. you're welcome.</div>
+</details>
+
+<details style="border: 3px solid #2B1E2F; background: #FFFFFF; box-shadow: 4px 4px 0 #2B1E2F">
+<summary style="padding: 16px 18px; display: flex; gap: 14px; align-items: center; font-size: 18px; font-weight: 600; min-height: 44px; box-sizing: border-box"><span class="chev mono" aria-hidden="true">&gt;</span>is there a mobile version?</summary>
+<div style="padding: 0 18px 18px 46px; font-size: 17px; line-height: 1.6"><span style="font-weight: 700; color: #D9774A">dunno:</span> there's barely a desktop version.</div>
+</details>
+
+<details style="border: 3px solid #2B1E2F; background: #FFFFFF; box-shadow: 4px 4px 0 #2B1E2F">
+<summary style="padding: 16px 18px; display: flex; gap: 14px; align-items: center; font-size: 18px; font-weight: 600; min-height: 44px; box-sizing: border-box"><span class="chev mono" aria-hidden="true">&gt;</span>why is he like this?</summary>
+<div style="padding: 0 18px 18px 46px; font-size: 17px; line-height: 1.6"><span style="font-weight: 700; color: #D9774A">dunno:</span> dunno.</div>
+</details>
+
+</div>
+</div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section aria-labelledby="cta-title" style="padding: clamp(56px, 8vw, 96px) 16px; border-top: 2px solid #2B1E2F; background: #2B1E2F; color: #FFF1D6">
+<div style="max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px">
+<span class="mono" style="font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: #FFD29A">still_here.exe</span>
+<h2 id="cta-title" style="margin: 0; font-size: clamp(34px, 4.6vw, 56px); line-height: 1.08; font-weight: 700; letter-spacing: -0.035em">you scrolled all the way down.</h2>
+<p style="margin: 0; font-size: clamp(19px, 1.9vw, 22px); line-height: 1.5; font-weight: 500">that's more effort than dunno has made all year. <span style="color: #F2A65A">you've earned a bean.</span></p>
+<div style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 8px">
+<a class="pbtn" href="#download">download dunno · $0</a>
+</div>
+</div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer style="padding: clamp(72px, 9vw, 128px) 16px 32px; border-top: 2px solid #2B1E2F; background-color: #FFF1D6; background-image: radial-gradient(rgba(217, 119, 74, 0.32) 1.3px, transparent 1.7px); background-size: 14px 14px">
+<div style="max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 36px 40px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 16px; font-weight: 600; margin-bottom: 6px">product</span>
+<a class="flink" href="#features">features</a>
+<a class="flink" href="#pricing">pricing</a>
+<a class="flink" href="#download">download</a>
+<a class="flink" href="#features">try it</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 16px; font-weight: 600; margin-bottom: 6px">resources</span>
+<a class="flink" href="#story">his story</a>
+<a class="flink" href="#faq">faq</a>
+<a class="flink" href="mailto:dunnothebean@gmail.com?subject=press%20kit%20please">press kit (one blurry jpeg)</a>
+<a class="flink" href="mailto:dunnothebean@gmail.com?subject=help">support (he's asleep)</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 16px; font-weight: 600; margin-bottom: 6px">connect</span>
+<a class="flink" href="#">[SOCIAL LINK 1]</a>
+<a class="flink" href="#">[SOCIAL LINK 2]</a>
+<a class="flink" href="mailto:dunnothebean@gmail.com">dunnothebean@gmail.com</a>
+<span style="font-size: 14px; color: #5C4560; margin-top: -6px">(he won't reply. but he'll read it. probably.)</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 16px; font-weight: 600; margin-bottom: 6px">disclaimer</span>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #5C4560">*dunno can't see your screen. his eyes are mostly closed. nothing you say is stored, because he wasn't listening.*</p>
+</div>
+</div>
+
+<div style="max-width: 1400px; margin: clamp(56px, 7vw, 96px) auto 0; display: flex; align-items: flex-start; gap: clamp(12px, 2.5vw, 36px)">
+<div role="img" aria-label="dunno" style="flex-grow: 1; min-width: 0; display: grid; grid-template-columns: repeat(29, minmax(0, 1fr)); gap: clamp(2px, 0.35vw, 4px)">
+<sc-for list="{{tiles}}" as="t" hint-placeholder-count="203">
+<span class="{{t.cls}}"></span>
+</sc-for>
+</div>
+</div>
+
+<p style="margin: clamp(40px, 5vw, 64px) 0 0; text-align: center; font-size: 13px; color: #5C4560">© dunno. he doesn't know what year it is either.</p>
+</footer>
+
+</main>
+
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"showBoot":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":8100}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.answers = {
+      polite: [
+        "dunno. google it maybe",
+        "about four. emotionally",
+        "fish",
+        "have you tried not knowing",
+        "that sounds like a you problem",
+        "i used to know that. then i retired",
+        "the answer is inside you. i'm not going in there",
+        "probably a duck",
+        "*shrugs*",
+        "ask me in 2019. i cared back then"
+      ],
+      street: [
+        "dunno. google it, ***",
+        "who the *** asks that",
+        "fish. *** fish",
+        "i retired from this *** years ago",
+        "that's a *** you problem",
+        "*shrugs* in ***",
+        "the answer is ***. next",
+        "i'm on my *** break"
+      ]
+    };
+    const glyphs = {
+      d: ["....#", "....#", ".####", "#...#", "#...#", "#...#", ".####"],
+      u: [".....", ".....", "#...#", "#...#", "#...#", "#...#", ".####"],
+      n: [".....", ".....", "####.", "#...#", "#...#", "#...#", "#...#"],
+      o: [".....", ".....", ".###.", "#...#", "#...#", "#...#", ".###."]
+    };
+    const word = "dunno";
+    this.tiles = [];
+    let k = 0;
+    for (let r = 0; r < 7; r++) {
+      for (let li = 0; li < word.length; li++) {
+        const row = glyphs[word[li]][r];
+        for (let c = 0; c < 5; c++) {
+          if (row[c] === "#") {
+            k++;
+            const cls = k % 13 === 0 ? "tile tile-b" : k % 6 === 0 ? "tile tile-y" : "tile";
+            this.tiles.push({ cls: cls });
+          } else {
+            this.tiles.push({ cls: "gap" });
+          }
+        }
+        if (li < word.length - 1) this.tiles.push({ cls: "gap" });
+      }
+    }
+    this.shrugLines = ["eh.", "*shrugs*", "dunno.", "what.", "meh.", "zzz… huh?"];
+    this.state = {
+      booting: props.showBoot !== false,
+      q: "",
+      log: [
+        { who: "you", text: "what's the capital of france?" },
+        { who: "dunno", text: "tuesday." }
+      ],
+      idx: 0,
+      mode: "polite",
+      left: 3,
+      begs: 0,
+      bubble: "eh.",
+      bi: 0,
+      shrug: false,
+      dl: "idle",
+      poked: false
+    };
+  }
+  resetIdle() {
+    clearTimeout(this._idle);
+    if (this._wasIdle) {
+      this._wasIdle = false;
+      this.setState({ bubble: "oh. you're alive" });
+    }
+    this._idle = setTimeout(() => {
+      this._wasIdle = true;
+      this.setState({ bubble: "are you dead or just reading" });
+    }, 30000);
+  }
+  componentDidMount() {
+    try {
+      this._onAct = () => this.resetIdle();
+      ["pointermove", "pointerdown", "scroll", "touchstart", "wheel"].forEach((ev) => window.addEventListener(ev, this._onAct, { passive: true }));
+      this.resetIdle();
+    } catch (e) {}
+    if (this.state.booting) {
+      this.lockScroll(true);
+      this._boot = setTimeout(() => this.endBoot(), 2800);
+    }
+  }
+  componentWillUnmount() {
+    this.lockScroll(false);
+    clearTimeout(this._idle);
+    clearTimeout(this._pokeReset);
+    try { ["pointermove", "pointerdown", "scroll", "touchstart", "wheel"].forEach((ev) => window.removeEventListener(ev, this._onAct)); } catch (e) {}
+    clearTimeout(this._toast);
+    clearTimeout(this._think);
+    clearTimeout(this._boot);
+    clearTimeout(this._shrug);
+    clearTimeout(this._poke);
+  }
+  toast(msg) {
+    clearTimeout(this._toast);
+    this.setState({ taskMsg: msg });
+    this._toast = setTimeout(() => this.setState({ taskMsg: "" }), 2600);
+  }
+  lockScroll(on) {
+    try {
+      const el = document.documentElement;
+      el.style.overflow = on ? "hidden" : "";
+      document.body.style.overflow = on ? "hidden" : "";
+    } catch (e) {}
+  }
+  endBoot() {
+    clearTimeout(this._boot);
+    this.lockScroll(false);
+    this.setState({ booting: false });
+  }
+  doShrug() {
+    clearTimeout(this._shrug);
+    this.setState({ shrug: true });
+    this._shrug = setTimeout(() => this.setState({ shrug: false }), 1500);
+  }
+  renderVals() {
+    const s = this.state;
+    const dl = s.dl;
+    if (!s.booting || this.props.showBoot === false) this.lockScroll(false);
+    return {
+      booting: !!s.booting && this.props.showBoot !== false,
+      skipBoot: () => this.endBoot(),
+      tiles: this.tiles,
+      hasTaskMsg: !!s.taskMsg,
+      taskMsg: s.taskMsg || "",
+      tbDunno: () => { this.toast("*shrugs*"); this.doShrug(); },
+      tbSearch: () => this.toast("searching… nah"),
+      tbBrowser: () => this.toast("47 tabs open. he closed them all"),
+      tbChat: () => this.toast("0 new messages. he muted everyone"),
+      tbGames: () => this.toast("updating. 3 hours left. forever"),
+      tbAi: () => this.toast("a younger ai. too eager. he doesn't talk to it"),
+      tbFolder: () => this.toast("homework (empty)"),
+      ack0: () => this.setState({ a0: true }),
+      ack1: () => this.setState({ a1: true }),
+      ack2: () => this.setState({ a2: true }),
+      ack3: () => this.setState({ a3: true }),
+      ackLbl0: s.a0 ? "noted. ignored." : "ok",
+      ackLbl1: s.a1 ? "he felt that. barely." : "ok, sadly",
+      ackLbl2: s.a2 ? "*mutual shrug*" : "shrug back",
+      ackLbl3: s.a3 ? "he agrees, actually." : "rude",
+      q: s.q,
+      onQ: (e) => this.setState({ q: e.target.value }),
+      log: s.log.map((m) => ({ text: m.text, you: m.who === "you", dunno: m.who === "dunno", thinking: m.who === "think" })),
+      ask: (e) => {
+        if (e && e.preventDefault) e.preventDefault();
+        if (this.state.left <= 0 || this.state.busy) return;
+        const q = String(this.state.q || "").trim();
+        if (!q) {
+          this.setState({ log: this.state.log.concat([{ who: "dunno", text: "you didn't ask anything. relatable" }]).slice(-4) });
+          this.doShrug();
+          return;
+        }
+        const i = this.state.idx;
+        const pool = this.answers[this.state.mode] || this.answers.polite;
+        const reply = pool[i % pool.length];
+        const left = this.state.left - 1;
+        const sleepy = i % 3 === 1;
+        const think = () => this.setState({ log: this.state.log.filter((m) => m.who !== "think").concat([{ who: "think" }]).slice(-4) });
+        const say = (lines) => this.setState({ log: this.state.log.filter((m) => m.who !== "think").concat(lines.map((t) => ({ who: "dunno", text: t }))).slice(-4) });
+        const finish = (prefix) => {
+          const lines = [prefix + reply];
+          if (left === 0) lines.push("that was your last one. office hours are over. forever");
+          say(lines);
+          this.setState({ busy: false });
+          this.doShrug();
+        };
+        this.setState({ log: this.state.log.concat([{ who: "you", text: q }, { who: "think" }]).slice(-4), idx: i + 1, q: "", left: left, busy: true });
+        clearTimeout(this._think);
+        if (sleepy) {
+          this._think = setTimeout(() => {
+            say(["zzz… (he fell asleep while thinking)"]);
+            this._think = setTimeout(() => {
+              think();
+              this._think = setTimeout(() => finish("huh. what. oh. "), 1200);
+            }, 1600);
+          }, 1800);
+        } else {
+          this._think = setTimeout(() => finish(""), 1500);
+        }
+      },
+      busy: !!s.busy,
+      doneCount: (s.checked || []).length,
+      tasks: ["summarize my inbox", "explain this spreadsheet", "help me study for the exam"].map((label, n) => {
+        const checked = s.checked || [];
+        const done = checked.indexOf(n) !== -1;
+        const blocked = !done && checked.length >= 2;
+        return {
+          label: label,
+          done: done,
+          mark: done ? "✓" : blocked ? "×" : "",
+          boxCls: done ? "box box-ok" : blocked ? "box box-no" : "box",
+          textCls: done ? "t-done" : blocked ? "t-no" : "",
+          toggle: () => {
+            const cur = (this.state.checked || []).slice();
+            const at = cur.indexOf(n);
+            let line;
+            if (at !== -1) { cur.splice(at, 1); line = cur.length ? "undoing work. finally, something i relate to" : "back to zero. comfortable"; }
+            else if (cur.length < 2) { cur.push(n); line = cur.length === 1 ? "one down. i'm tired just watching" : "two out of three. that's the max. trust me, i tried"; }
+            else { cur.shift(); cur.push(n); line = "see? you can't have all three. ask me how i know"; }
+            this.setState({ checked: cur, taskLine: line });
+          }
+        };
+      }),
+      taskLine: s.taskLine || "those look hard. i'll be over here",
+      hasLeft: s.left > 0,
+      outOfHearts: s.left <= 0,
+      hearts: [0, 1, 2].map((n) => ({ fill: n < s.left ? "#E86A7A" : "#FFF1D6" })),
+      heartsLabel: s.left + " of 3 questions left today",
+      beg: () => {
+        const b = this.state.begs + 1;
+        const line = b === 1 ? "fine. 3 more. don't tell anyone" : b === 2 ? "again? ugh. fine" : "this is the last time. it isn't";
+        this.setState({ left: 3, begs: b, log: this.state.log.concat([{ who: "dunno", text: line }]).slice(-4) });
+      },
+      politeOn: s.mode === "polite",
+      streetOn: s.mode === "street",
+      politeCls: s.mode === "polite" ? "seg seg-on" : "seg",
+      streetCls: s.mode === "street" ? "seg seg-on" : "seg",
+      setPolite: () => this.setState({ mode: "polite" }),
+      setStreet: () => this.setState({ mode: "street" }),
+      bubble: s.bubble,
+      shrugNow: () => {
+        const pokes = (this.state.pokes || 0) + 1;
+        clearTimeout(this._pokeReset);
+        this._pokeReset = setTimeout(() => this.setState({ pokes: 0 }), 3000);
+        if (pokes >= 9) { this.setState({ pokes: pokes, bubble: "i'm telling someone" }); return; }
+        if (pokes >= 5) { this.setState({ pokes: pokes, bubble: "stop poking me" }); return; }
+        const bi = (this.state.bi + 1) % this.shrugLines.length;
+        this.setState({ bubble: this.shrugLines[bi], bi: bi, pokes: pokes });
+        this.doShrug();
+      },
+      upCls: s.shrug ? "arm-up-on" : "arm-up",
+      downCls: s.shrug ? "arm-down-off" : "arm-down",
+      bodyCls: s.shrug ? "bob-on" : "bob",
+      dlTitle: dl === "yes" ? "setup.exe (not responding)" : dl === "dunno" ? "setup.exe (agrees with you)" : "setup.exe",
+      dlPct: dl === "yes" ? "99%" : dl === "dunno" ? "100%?" : "0%",
+      barW: dl === "yes" ? "99%" : dl === "dunno" ? "100%" : "0%",
+      dlMsg: dl === "yes"
+        ? "downloading… 99%. it's been 99% for a while. this is normal for him."
+        : dl === "dunno"
+          ? "great answer. he's proud of you. installing anyway."
+          : "waiting for you to decide. he's also waiting. asleep.",
+      pickYes: () => this.setState({ dl: "yes" }),
+      pickDunno: () => this.setState({ dl: "dunno" }),
+      poked: s.poked,
+      sleeping: !s.poked,
+      poke: () => {
+        clearTimeout(this._poke);
+        this.setState({ poked: true });
+        this._poke = setTimeout(() => this.setState({ poked: false }), 2200);
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

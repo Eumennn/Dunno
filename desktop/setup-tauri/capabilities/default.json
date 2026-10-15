@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "setup",
+  "description": "kurulum penceresi: sadece başlık çubuğundan sürükleme. Kurulum komutları (invoke_handler) izin gerektirmez.",
+  "windows": ["setup"],
+  "permissions": ["core:window:allow-start-dragging"]
+}

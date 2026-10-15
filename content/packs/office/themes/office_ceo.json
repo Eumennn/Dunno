@@ -1,0 +1,13 @@
+{
+  "id": "office_ceo",
+  "name": {
+    "tr": "yönetim katı",
+    "en": "top floor"
+  },
+  "colors": {
+    "body": "#CFA070",
+    "shade": "#A8754A",
+    "light": "#ECD0AE",
+    "belly": "#F7EBDD"
+  }
+}

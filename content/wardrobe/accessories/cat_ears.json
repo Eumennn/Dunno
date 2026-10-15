@@ -1,0 +1,21 @@
+{
+  "id": "cat_ears",
+  "name": {
+    "tr": "kedi kulakları",
+    "en": "cat ears"
+  },
+  "anchor": "head",
+  "slot": "head",
+  "pivot": {
+    "x": 16,
+    "y": 16
+  },
+  "antenna": "through",
+  "hiddenIn": [],
+  "image": "cat_ears.png",
+  "size": 32,
+  "overflow": {
+    "top": 2,
+    "side": 2
+  }
+}

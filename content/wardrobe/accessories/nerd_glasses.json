@@ -1,0 +1,22 @@
+{
+  "id": "nerd_glasses",
+  "name": {
+    "tr": "nerd gözlüğü",
+    "en": "nerd glasses"
+  },
+  "anchor": "eyes",
+  "slot": "eyes",
+  "pivot": {
+    "x": 16,
+    "y": 16
+  },
+  "antenna": "through",
+  "hiddenIn": [
+    "sulk"
+  ],
+  "image": "nerd_glasses.png",
+  "size": 32,
+  "overflow": {
+    "side": 1
+  }
+}

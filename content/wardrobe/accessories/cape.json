@@ -1,0 +1,24 @@
+{
+  "id": "cape",
+  "name": {
+    "tr": "pelerin",
+    "en": "cape"
+  },
+  "anchor": "neck",
+  "slot": "body",
+  "pivot": {
+    "x": 16,
+    "y": 16
+  },
+  "antenna": "through",
+  "hiddenIn": [
+    "walk",
+    "run_away",
+    "sleep"
+  ],
+  "image": "cape.png",
+  "size": 32,
+  "overflow": {
+    "side": 3
+  }
+}

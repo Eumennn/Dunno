@@ -1,0 +1,86 @@
+{
+  "id": "evo_sloth",
+  "name": {
+    "tr": "tembel hayvan",
+    "en": "sloth"
+  },
+  "palette": {
+    "body": "#CFA070",
+    "shade": "#A8754A",
+    "light": "#ECD0AE",
+    "belly": "#F7EBDD"
+  },
+  "hidesTuft": false,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "lids",
+      "anchor": "eyes",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away",
+        "peek",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "evo_sloth.lids.png",
+      "size": 32
+    },
+    {
+      "id": "bags",
+      "anchor": "eyes",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away",
+        "peek",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "evo_sloth.bags.png",
+      "size": 32
+    },
+    {
+      "id": "lids_side",
+      "anchor": "eyes",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "idle",
+        "shrug",
+        "talk",
+        "sleep",
+        "sulk",
+        "peek",
+        "shh",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "evo_sloth.lids_side.png",
+      "size": 32
+    }
+  ],
+  "icon": "evo_sloth.png"
+}

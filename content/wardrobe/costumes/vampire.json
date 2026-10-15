@@ -1,0 +1,60 @@
+{
+  "id": "vampire",
+  "name": {
+    "tr": "vampir",
+    "en": "vampire"
+  },
+  "palette": {
+    "body": "#D2D2D2",
+    "shade": "#A9A9A9",
+    "light": "#F2F2F2",
+    "belly": "#F2F2F2"
+  },
+  "hidesTuft": true,
+  "blocks": [
+    "neck",
+    "body"
+  ],
+  "parts": [
+    {
+      "id": "hair",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "sulk"
+      ],
+      "image": "vampire.hair.png",
+      "size": 32
+    },
+    {
+      "id": "collar",
+      "anchor": "neck",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "vampire.collar.png",
+      "size": 32
+    },
+    {
+      "id": "fangs",
+      "anchor": "eyes",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away"
+      ],
+      "image": "vampire.fangs.png",
+      "size": 32
+    }
+  ],
+  "icon": "vampire.png"
+}

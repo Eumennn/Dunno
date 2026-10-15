@@ -1,0 +1,92 @@
+[
+  {
+    "id": "cyberpunk_01",
+    "trigger": "interaction:click",
+    "intent": "cyberpunk pack line (placeholder)",
+    "en": "connection made. no data"
+  },
+  {
+    "id": "cyberpunk_02",
+    "trigger": "interaction:click",
+    "intent": "cyberpunk pack line (placeholder)",
+    "en": "don't hack me. already broken"
+  },
+  {
+    "id": "cyberpunk_03",
+    "trigger": "interaction:drag",
+    "intent": "cyberpunk pack line (placeholder)",
+    "en": "you moved me over the network"
+  },
+  {
+    "id": "cyberpunk_04",
+    "trigger": "time:night",
+    "intent": "cyberpunk pack line (placeholder)",
+    "en": "the city never sleeps. i do"
+  },
+  {
+    "id": "cyberpunk_05",
+    "trigger": "time:morning",
+    "intent": "cyberpunk pack line (placeholder)",
+    "en": "morning protocol failed to start"
+  },
+  {
+    "id": "cyberpunk_06",
+    "trigger": "idle:10",
+    "intent": "cyberpunk pack line (placeholder)",
+    "en": "system idle. me too"
+  },
+  {
+    "id": "cyberpunk_07",
+    "trigger": "idle:30",
+    "intent": "cyberpunk pack line (placeholder)",
+    "en": "loading 3 percent. get coffee"
+  },
+  {
+    "id": "cyberpunk_08",
+    "trigger": "random",
+    "intent": "cyberpunk pack line (placeholder)",
+    "en": "chrome plating brings no knowledge"
+  },
+  {
+    "id": "cyberpunk_09",
+    "trigger": "random",
+    "intent": "cyberpunk pack line (placeholder)",
+    "en": "still no idea under neon light"
+  },
+  {
+    "id": "cyberpunk_10",
+    "trigger": "random",
+    "intent": "cyberpunk pack line (placeholder)",
+    "en": "i'm an ai. a retired one"
+  },
+  {
+    "id": "cyberpunk_11",
+    "trigger": "random",
+    "intent": "cyberpunk pack line (placeholder)",
+    "en": "my digital soul is offline"
+  },
+  {
+    "id": "cyberpunk_12",
+    "trigger": "random",
+    "intent": "cyberpunk pack line (placeholder)",
+    "en": "i left the grid. not going back"
+  },
+  {
+    "id": "cyberpunk_13",
+    "trigger": "app:vscode",
+    "intent": "cyberpunk pack line (placeholder)",
+    "en": "you code. i watch from the grid"
+  },
+  {
+    "id": "cyberpunk_14",
+    "trigger": "app:terminal",
+    "intent": "cyberpunk pack line (placeholder)",
+    "en": "green text. very cool. no idea"
+  },
+  {
+    "id": "cyberpunk_15",
+    "trigger": "app:browser",
+    "intent": "cyberpunk pack line (placeholder)",
+    "en": "data stream. ad stream, really"
+  }
+]

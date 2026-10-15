@@ -1,0 +1,70 @@
+{
+  "id": "fish",
+  "name": {
+    "tr": "balık",
+    "en": "fish"
+  },
+  "palette": {
+    "body": "#F7A982",
+    "shade": "#E08560",
+    "light": "#FFD3BC",
+    "belly": "#FFF3EA"
+  },
+  "hidesTuft": true,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "fin",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "fish.fin.png",
+      "size": 32
+    },
+    {
+      "id": "tail",
+      "anchor": "neck",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away"
+      ],
+      "image": "fish.tail.png",
+      "size": 32
+    },
+    {
+      "id": "tail_side",
+      "anchor": "ears",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "idle",
+        "shrug",
+        "talk",
+        "sleep",
+        "sulk",
+        "peek",
+        "shh",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "fish.tail_side.png",
+      "size": 32
+    }
+  ],
+  "icon": "fish.png"
+}

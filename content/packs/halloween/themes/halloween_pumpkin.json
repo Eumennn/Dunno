@@ -1,0 +1,13 @@
+{
+  "id": "halloween_pumpkin",
+  "name": {
+    "tr": "balkabağı",
+    "en": "pumpkin"
+  },
+  "colors": {
+    "body": "#B5713F",
+    "shade": "#8E5330",
+    "light": "#F2A65A",
+    "belly": "#FFD29A"
+  }
+}

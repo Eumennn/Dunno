@@ -1,0 +1,23 @@
+{
+  "id": "headphones",
+  "name": {
+    "tr": "kulaklık",
+    "en": "headphones"
+  },
+  "anchor": "ears",
+  "slot": "head",
+  "pivot": {
+    "x": 16,
+    "y": 16
+  },
+  "antenna": "through",
+  "hiddenIn": [
+    "sleep"
+  ],
+  "image": "headphones.png",
+  "size": 32,
+  "overflow": {
+    "top": 2,
+    "side": 4
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "dog",
+  "name": {
+    "tr": "köpek",
+    "en": "dog"
+  },
+  "palette": {
+    "body": "#CFA070",
+    "shade": "#A8754A",
+    "light": "#ECD0AE",
+    "belly": "#F7EBDD"
+  },
+  "hidesTuft": false,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "ears",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away"
+      ],
+      "image": "dog.ears.png",
+      "size": 32
+    },
+    {
+      "id": "nose",
+      "anchor": "eyes",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away"
+      ],
+      "image": "dog.nose.png",
+      "size": 32
+    },
+    {
+      "id": "tail",
+      "anchor": "neck",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away"
+      ],
+      "image": "dog.tail.png",
+      "size": 32
+    },
+    {
+      "id": "tail_side",
+      "anchor": "ears",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "idle",
+        "shrug",
+        "talk",
+        "sleep",
+        "sulk",
+        "peek",
+        "shh",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "dog.tail_side.png",
+      "size": 32
+    }
+  ],
+  "icon": "dog.png"
+}

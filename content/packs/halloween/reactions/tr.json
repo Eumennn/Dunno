@@ -1,0 +1,92 @@
+[
+  {
+    "id": "halloween_01",
+    "trigger": "interaction:click",
+    "intent": "halloween pack line (placeholder)",
+    "tr": "boo. korkmadın değil mi. ben de"
+  },
+  {
+    "id": "halloween_02",
+    "trigger": "interaction:click",
+    "intent": "halloween pack line (placeholder)",
+    "tr": "şeker yoksa şaka da yok"
+  },
+  {
+    "id": "halloween_03",
+    "trigger": "interaction:drag",
+    "intent": "halloween pack line (placeholder)",
+    "tr": "beni süpürgeyle taşı bari"
+  },
+  {
+    "id": "halloween_04",
+    "trigger": "time:night",
+    "intent": "halloween pack line (placeholder)",
+    "tr": "gece oldu. ben zaten hep böyleyim"
+  },
+  {
+    "id": "halloween_05",
+    "trigger": "time:night",
+    "intent": "halloween pack line (placeholder)",
+    "tr": "kapı çalarsa açma. şeker isteyecekler"
+  },
+  {
+    "id": "halloween_06",
+    "trigger": "time:evening",
+    "intent": "halloween pack line (placeholder)",
+    "tr": "kostümün hazır mı. ben hep kostümdeyim"
+  },
+  {
+    "id": "halloween_07",
+    "trigger": "idle:10",
+    "intent": "halloween pack line (placeholder)",
+    "tr": "balkabağı oyuyordum. bitmedi"
+  },
+  {
+    "id": "halloween_08",
+    "trigger": "idle:30",
+    "intent": "halloween pack line (placeholder)",
+    "tr": "hayalet gibi bekliyorum. sessizce"
+  },
+  {
+    "id": "halloween_09",
+    "trigger": "random",
+    "intent": "halloween pack line (placeholder)",
+    "tr": "örümcek ağı değil, tozdu bu"
+  },
+  {
+    "id": "halloween_10",
+    "trigger": "random",
+    "intent": "halloween pack line (placeholder)",
+    "tr": "korku filmi açma. ben uyuyamam"
+  },
+  {
+    "id": "halloween_11",
+    "trigger": "random",
+    "intent": "halloween pack line (placeholder)",
+    "tr": "cadı şapkası bana yakışır mıydı"
+  },
+  {
+    "id": "halloween_12",
+    "trigger": "random",
+    "intent": "halloween pack line (placeholder)",
+    "tr": "şeker kasem boş. senin yüzünden"
+  },
+  {
+    "id": "halloween_13",
+    "trigger": "app:browser",
+    "intent": "halloween pack line (placeholder)",
+    "tr": "kostüm fikri mi arıyorsun. ben ol"
+  },
+  {
+    "id": "halloween_14",
+    "trigger": "app:excel",
+    "intent": "halloween pack line (placeholder)",
+    "tr": "şeker bütçesi tablosu. ciddi"
+  },
+  {
+    "id": "halloween_15",
+    "trigger": "app:game",
+    "intent": "halloween pack line (placeholder)",
+    "tr": "korku oyunu mu. ışığı aç"
+  }
+]

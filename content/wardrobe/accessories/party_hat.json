@@ -1,0 +1,20 @@
+{
+  "id": "party_hat",
+  "name": {
+    "tr": "parti şapkası",
+    "en": "party hat"
+  },
+  "anchor": "head",
+  "slot": "head",
+  "pivot": {
+    "x": 16,
+    "y": 16
+  },
+  "antenna": "through",
+  "hiddenIn": [],
+  "image": "party_hat.png",
+  "size": 32,
+  "overflow": {
+    "top": 7
+  }
+}

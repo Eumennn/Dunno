@@ -1,2 +1,6 @@
-﻿*.html linguist-detectable=false
-*.html linguist-documentation=true
+* text=auto eol=lf
+*.sh text eol=lf
+*.png binary
+*.jpg binary
+*.aseprite binary
+*.cmd text eol=crlf

@@ -1,0 +1,45 @@
+{
+  "id": "ghost",
+  "name": {
+    "tr": "hayalet",
+    "en": "ghost"
+  },
+  "palette": {
+    "body": "#FFFFFF",
+    "shade": "#D2D2D2",
+    "light": "#FFFFFF",
+    "belly": "#F2F2F2"
+  },
+  "hidesTuft": true,
+  "blocks": [
+    "neck",
+    "body"
+  ],
+  "parts": [
+    {
+      "id": "peak",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "ghost.peak.png",
+      "size": 32
+    },
+    {
+      "id": "hem",
+      "anchor": "neck",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "sleep"
+      ],
+      "image": "ghost.hem.png",
+      "size": 32
+    }
+  ],
+  "icon": "ghost.png"
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "halloween_01",
+    "trigger": "interaction:click",
+    "intent": "halloween pack line (placeholder)",
+    "en": "boo. you weren't scared. me neither"
+  },
+  {
+    "id": "halloween_02",
+    "trigger": "interaction:click",
+    "intent": "halloween pack line (placeholder)",
+    "en": "no candy, no trick"
+  },
+  {
+    "id": "halloween_03",
+    "trigger": "interaction:drag",
+    "intent": "halloween pack line (placeholder)",
+    "en": "at least carry me on a broom"
+  },
+  {
+    "id": "halloween_04",
+    "trigger": "time:night",
+    "intent": "halloween pack line (placeholder)",
+    "en": "it's night. i always look like this"
+  },
+  {
+    "id": "halloween_05",
+    "trigger": "time:night",
+    "intent": "halloween pack line (placeholder)",
+    "en": "don't open the door. they want candy"
+  },
+  {
+    "id": "halloween_06",
+    "trigger": "time:evening",
+    "intent": "halloween pack line (placeholder)",
+    "en": "costume ready. i'm always in one"
+  },
+  {
+    "id": "halloween_07",
+    "trigger": "idle:10",
+    "intent": "halloween pack line (placeholder)",
+    "en": "i was carving a pumpkin. not done"
+  },
+  {
+    "id": "halloween_08",
+    "trigger": "idle:30",
+    "intent": "halloween pack line (placeholder)",
+    "en": "waiting like a ghost. quietly"
+  },
+  {
+    "id": "halloween_09",
+    "trigger": "random",
+    "intent": "halloween pack line (placeholder)",
+    "en": "that's not a cobweb, it's dust"
+  },
+  {
+    "id": "halloween_10",
+    "trigger": "random",
+    "intent": "halloween pack line (placeholder)",
+    "en": "don't put on a horror movie. i won't sleep"
+  },
+  {
+    "id": "halloween_11",
+    "trigger": "random",
+    "intent": "halloween pack line (placeholder)",
+    "en": "would a witch hat suit me"
+  },
+  {
+    "id": "halloween_12",
+    "trigger": "random",
+    "intent": "halloween pack line (placeholder)",
+    "en": "my candy bowl is empty. your fault"
+  },
+  {
+    "id": "halloween_13",
+    "trigger": "app:browser",
+    "intent": "halloween pack line (placeholder)",
+    "en": "looking for costume ideas. be me"
+  },
+  {
+    "id": "halloween_14",
+    "trigger": "app:excel",
+    "intent": "halloween pack line (placeholder)",
+    "en": "a candy budget sheet. serious"
+  },
+  {
+    "id": "halloween_15",
+    "trigger": "app:game",
+    "intent": "halloween pack line (placeholder)",
+    "en": "horror game. turn on the lights"
+  }
+]

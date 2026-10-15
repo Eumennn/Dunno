@@ -1,0 +1,88 @@
+{
+  "id": "egg_monster",
+  "name": {
+    "tr": "canavar",
+    "en": "monster"
+  },
+  "palette": {
+    "body": "#6475B0",
+    "shade": "#4E5D94",
+    "light": "#94A4D8",
+    "belly": "#D9E0F6"
+  },
+  "hidesTuft": true,
+  "blocks": [
+    "head",
+    "eyes"
+  ],
+  "parts": [
+    {
+      "id": "horns",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "egg_monster.horns.png",
+      "size": 32
+    },
+    {
+      "id": "brows",
+      "anchor": "eyes",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away"
+      ],
+      "image": "egg_monster.brows.png",
+      "size": 32
+    },
+    {
+      "id": "fangs",
+      "anchor": "eyes",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away"
+      ],
+      "image": "egg_monster.fangs.png",
+      "size": 32
+    },
+    {
+      "id": "spikes",
+      "anchor": "neck",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "idle",
+        "shrug",
+        "talk",
+        "sleep",
+        "sulk",
+        "peek",
+        "shh",
+        "dragged",
+        "fart",
+        "wave",
+        "jump",
+        "dance",
+        "yawn",
+        "sneeze"
+      ],
+      "image": "egg_monster.spikes.png",
+      "size": 32
+    }
+  ],
+  "icon": "egg_monster.png"
+}

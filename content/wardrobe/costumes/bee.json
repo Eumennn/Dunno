@@ -1,0 +1,86 @@
+{
+  "id": "bee",
+  "name": {
+    "tr": "arı",
+    "en": "bee"
+  },
+  "palette": {
+    "body": "#F2D54E",
+    "shade": "#D1AE2A",
+    "light": "#FFF0A0",
+    "belly": "#FFFBE0"
+  },
+  "bands": [
+    {
+      "anchor": "neck",
+      "rows": [
+        -2,
+        -1,
+        2,
+        3
+      ],
+      "color": "#2B1E2F"
+    }
+  ],
+  "hidesTuft": true,
+  "blocks": [],
+  "parts": [
+    {
+      "id": "antennae",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [],
+      "image": "bee.antennae.png",
+      "size": 32
+    },
+    {
+      "id": "wings_up",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "sulk",
+        "peek"
+      ],
+      "frames": "even",
+      "image": "bee.wings_up.png",
+      "size": 32
+    },
+    {
+      "id": "wings_down",
+      "anchor": "head",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "sulk",
+        "peek"
+      ],
+      "frames": "odd",
+      "image": "bee.wings_down.png",
+      "size": 32
+    },
+    {
+      "id": "stinger",
+      "anchor": "neck",
+      "pivot": {
+        "x": 16,
+        "y": 16
+      },
+      "hiddenIn": [
+        "walk",
+        "sleep",
+        "run_away"
+      ],
+      "image": "bee.stinger.png",
+      "size": 32
+    }
+  ],
+  "icon": "bee.png"
+}

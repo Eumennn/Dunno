@@ -1,0 +1,21 @@
+{
+  "id": "beanie",
+  "name": {
+    "tr": "bere",
+    "en": "beanie"
+  },
+  "anchor": "head",
+  "slot": "head",
+  "pivot": {
+    "x": 16,
+    "y": 16
+  },
+  "antenna": "through",
+  "hiddenIn": [],
+  "image": "beanie.png",
+  "size": 32,
+  "overflow": {
+    "top": 2,
+    "side": 2
+  }
+}

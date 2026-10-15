@@ -1,0 +1,4079 @@
+{
+  "meta": {
+    "version": "9.0.0-v14-mega-expansion",
+    "description": "Local-only window/tab title & process name keyword matcher for Dunno Entertainment & Media Player pools. Raw titles are never stored or sent externally.",
+    "priorityOrder": [
+      "silent (adult/gambling)",
+      "entertainment_title_specific (series:*, turkish_series:*, anime:*, movie:*, game:*)",
+      "media_player_or_platform (media:*)",
+      "generic_site (site:*)",
+      "generic_app (app:*)"
+    ]
+  },
+  "rules": [
+    {
+      "poolKey": "site:government_banking_tax",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "internet şubesi",
+        "kredi kartı ekstresi",
+        "interaktif vergi dairesi",
+        "gib.gov.tr",
+        "sgk",
+        "online banking"
+      ]
+    },
+    {
+      "poolKey": "site:health_hypochondria_webmd",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "webmd",
+        "mayo clinic",
+        "e-nabız",
+        "mhrs",
+        "neden ağrır",
+        "belirtileri nelerdir",
+        "acıbadem",
+        "memorial"
+      ]
+    },
+    {
+      "poolKey": "site:real_estate_car_window_shopping",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "satılık daire",
+        "satılık villa",
+        "emlakjet",
+        "hepsiemlak",
+        "zillow",
+        "idealista",
+        "rightmove",
+        "porsche configurator"
+      ]
+    },
+    {
+      "poolKey": "site:secondhand_classifieds",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "sahibinden.com",
+        "letgo",
+        "dolap.com",
+        "gardrops",
+        "wallapop",
+        "milanuncios",
+        "craigslist",
+        "facebook marketplace",
+        "ebay"
+      ]
+    },
+    {
+      "poolKey": "site:forum_community_drama",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "donanımhaber",
+        "technopat sosyal",
+        "kızlarsoruyor",
+        "r/amitheasshole",
+        "r/turkey",
+        "forocoches",
+        "burbuja.info"
+      ]
+    },
+    {
+      "poolKey": "app:notes_second_brain",
+      "category": "creative_app",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "notion.exe",
+        "obsidian.exe",
+        "onenote.exe",
+        "evernote.exe",
+        "todoist.exe"
+      ],
+      "titleKeywords": [
+        "notion",
+        "obsidian",
+        "onenote",
+        "evernote",
+        "todoist",
+        "trello"
+      ]
+    },
+    {
+      "poolKey": "app:pdf_ebook_reader",
+      "category": "creative_app",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "acrord32.exe",
+        "acufin.exe",
+        "sumatrapdf.exe",
+        "calibre.exe"
+      ],
+      "titleKeywords": [
+        ".pdf",
+        "adobe acrobat",
+        "sumatrapdf",
+        "calibre",
+        "e-kitap"
+      ]
+    },
+    {
+      "poolKey": "app:office_word_ppt",
+      "category": "creative_app",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "winword.exe",
+        "powerpnt.exe",
+        "soffice.bin"
+      ],
+      "titleKeywords": [
+        "microsoft word",
+        "powerpoint",
+        "google docs",
+        "google slides",
+        "libreoffice writer"
+      ]
+    },
+    {
+      "poolKey": "game:gacha_anime_rpg",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "genshinimpact.exe",
+        "starrail.exe",
+        "zenlesszonezero.exe",
+        "p5r.exe",
+        "nierautomata.exe"
+      ],
+      "titleKeywords": [
+        "genshin impact",
+        "honkai: star rail",
+        "zenless zone zero",
+        "wuthering waves",
+        "persona 5",
+        "nier: automata",
+        "like a dragon",
+        "yakuza"
+      ]
+    },
+    {
+      "poolKey": "game:space_flight_mecha",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "nms.exe",
+        "starfield.exe",
+        "elitedangerous64.exe",
+        "starcitizen.exe",
+        "ksp_x64.exe",
+        "armoredcore6.exe",
+        "flightsimulator.exe"
+      ],
+      "titleKeywords": [
+        "no man's sky",
+        "starfield",
+        "elite dangerous",
+        "star citizen",
+        "kerbal space program",
+        "armored core",
+        "flight simulator"
+      ]
+    },
+    {
+      "poolKey": "game:cozy_puzzle_platformer",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "portal2.exe",
+        "ittakestwo.exe",
+        "outerwilds.exe",
+        "stray.exe"
+      ],
+      "titleKeywords": [
+        "portal 2",
+        "it takes two",
+        "a way out",
+        "outer wilds",
+        "stray",
+        "inside",
+        "limbo",
+        "little nightmares",
+        "overcooked"
+      ]
+    },
+    {
+      "poolKey": "game:horror_singleplayer",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "re4.exe",
+        "re8.exe",
+        "sh2proto-win64-shipping.exe",
+        "outlast.exe",
+        "alanwake2.exe",
+        "dead space.exe"
+      ],
+      "titleKeywords": [
+        "resident evil",
+        "silent hill",
+        "outlast",
+        "alien: isolation",
+        "amnesia",
+        "alan wake",
+        "dead space",
+        "five nights at freddy's",
+        "fnaf"
+      ]
+    },
+    {
+      "poolKey": "game:hero_arena_moba",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "overwatch.exe",
+        "marvel-win64-shipping.exe",
+        "project8.exe",
+        "hl2.exe"
+      ],
+      "titleKeywords": [
+        "overwatch",
+        "marvel rivals",
+        "deadlock",
+        "team fortress 2",
+        "tf2",
+        "smite",
+        "brawl stars"
+      ]
+    },
+    {
+      "poolKey": "game:factory_automation_colony",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "factorio.exe",
+        "factorygame-win64-shipping.exe",
+        "rimworldwin64.exe",
+        "oxygennotincluded.exe",
+        "frostpunk.exe"
+      ],
+      "titleKeywords": [
+        "factorio",
+        "satisfactory",
+        "rimworld",
+        "dwarf fortress",
+        "oxygen not included",
+        "frostpunk",
+        "anno 1800"
+      ]
+    },
+    {
+      "poolKey": "movie:disaster_survival",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "cast away",
+        "the martian",
+        "marslı",
+        "gravity",
+        "127 hours",
+        "127 saat",
+        "society of the snow",
+        "kar kardeşliği",
+        "the day after tomorrow"
+      ]
+    },
+    {
+      "poolKey": "movie:arthouse_festival_cinema",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "nuri bilge ceylan",
+        "kuru otlar üstüne",
+        "ahlat ağacı",
+        "kış uykusu",
+        "bir zamanlar anadolu",
+        "tarkovsky",
+        "bergman",
+        "the lobster",
+        "poor things",
+        "aftersun",
+        "la haine"
+      ]
+    },
+    {
+      "poolKey": "movie:martial_arts_action",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "ip man",
+        "the raid",
+        "baskın",
+        "crouching tiger",
+        "bruce lee",
+        "jackie chan",
+        "ong-bak",
+        "enter the dragon"
+      ]
+    },
+    {
+      "poolKey": "movie:cyberpunk_dystopia",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "blade runner",
+        "children of men",
+        "v for vendetta",
+        "gattaca",
+        "equilibrium",
+        "district 9",
+        "minority report",
+        "clockwork orange",
+        "otomatik portakal"
+      ]
+    },
+    {
+      "poolKey": "movie:war_historical_epic",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "saving private ryan",
+        "er ryan'ı kurtarmak",
+        "1917",
+        "all quiet on the western front",
+        "dunkirk",
+        "apocalypse now",
+        "full metal jacket",
+        "schindler's list",
+        "the pianist",
+        "piyanist"
+      ]
+    },
+    {
+      "poolKey": "movie:heist_casino_con",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "ocean's eleven",
+        "ocean's 11",
+        "catch me if you can",
+        "sıkıysa yakala",
+        "heat ",
+        "now you see me",
+        "sihirbazlar çetesi",
+        "snatch",
+        "baby driver"
+      ]
+    },
+    {
+      "poolKey": "movie:western_spaghetti",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "good, the bad and the ugly",
+        "iyi kötü ve çirkin",
+        "once upon a time in the west",
+        "unforgiven",
+        "no country for old men",
+        "the revenant",
+        "diriliş"
+      ]
+    },
+    {
+      "poolKey": "anime:slice_of_life_romcom",
+      "category": "anime",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "spy x family",
+        "kaguya-sama",
+        "bocchi the rock",
+        "violet evergarden",
+        "your lie in april",
+        "horimiya",
+        "clannad",
+        "toradora"
+      ]
+    },
+    {
+      "poolKey": "anime:seinen_dark",
+      "category": "anime",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "berserk",
+        "vinland saga",
+        "monster ",
+        "vagabond",
+        "chainsaw man",
+        "tokyo ghoul",
+        "parasyte",
+        "hellsing",
+        "claymore"
+      ]
+    },
+    {
+      "poolKey": "anime:sports_hype",
+      "category": "anime",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "blue lock",
+        "haikyuu",
+        "kuroko no basket",
+        "slam dunk",
+        "hajime no ippo",
+        "captain tsubasa",
+        "baki"
+      ]
+    },
+    {
+      "poolKey": "anime:cyberpunk_mecha_scifi",
+      "category": "anime",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "evangelion",
+        "cowboy bebop",
+        "code geass",
+        "steins;gate",
+        "ghost in the shell",
+        "akira",
+        "gurren lagann",
+        "86 eighty-six",
+        "psycho-pass"
+      ]
+    },
+    {
+      "poolKey": "anime:isekai_fantasy",
+      "category": "anime",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "re:zero",
+        "mushoku tensei",
+        "konosuba",
+        "sword art online",
+        "overlord",
+        "slime datta ken",
+        "no game no life",
+        "shield hero"
+      ]
+    },
+    {
+      "poolKey": "series:cooking_travel_lifestyle",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "chef's table",
+        "anthony bourdain",
+        "somebody feed phil",
+        "stanley tucci",
+        "street food",
+        "sokak lezzetleri",
+        "rehber"
+      ]
+    },
+    {
+      "poolKey": "series:anthology_weird",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "love, death & robots",
+        "love death and robots",
+        "cabinet of curiosities",
+        "twilight zone",
+        "inside no. 9",
+        "fargo"
+      ]
+    },
+    {
+      "poolKey": "series:teen_highschool_drama",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "euphoria",
+        "sex education",
+        "gossip girl",
+        "skins",
+        "riverdale",
+        "medcezir",
+        "kavak yelleri",
+        "heartstopper"
+      ]
+    },
+    {
+      "poolKey": "series:spy_political_thriller",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "slow horses",
+        "homeland",
+        "the night agent",
+        "jack ryan",
+        "bodyguard",
+        "house of cards",
+        "the americans",
+        "teşkilat",
+        "person of interest"
+      ]
+    },
+    {
+      "poolKey": "series:western_neo",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "yellowstone",
+        "1883",
+        "1923",
+        "deadwood",
+        "godless",
+        "justified",
+        "longmire"
+      ]
+    },
+    {
+      "poolKey": "game:rage_defeat",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "defeat",
+        "yenilgi",
+        "derrota",
+        "game over",
+        "match history",
+        "kariyer geçmişi"
+      ]
+    },
+    {
+      "poolKey": "site:cart_abandonment",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "sepetim",
+        "shopping cart",
+        "carrito de compras",
+        "checkout",
+        "ödeme adımı"
+      ]
+    },
+    {
+      "poolKey": "web:password_struggles",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "şifre sıfırla",
+        "reset password",
+        "change password",
+        "restablecer contraseña",
+        "street view",
+        "google translate",
+        "deepl translate",
+        "çeviri"
+      ]
+    },
+    {
+      "poolKey": "app:developer_pain",
+      "category": "creative_app",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "merge conflict",
+        "detached head",
+        "git rebase",
+        "failed to compile",
+        "port 3000",
+        "eaddrinuse",
+        "segmentation fault"
+      ]
+    },
+    {
+      "poolKey": "work:meeting_anxiety",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "zoom.exe",
+        "teams.exe",
+        "meet.exe",
+        "webex.exe"
+      ],
+      "titleKeywords": [
+        "zoom meeting",
+        "google meet",
+        "microsoft teams",
+        "toplantı",
+        "unmute",
+        "join conversation"
+      ]
+    },
+    {
+      "poolKey": "site:academic_homework_procrastination",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "tez yazım",
+        "dergipark",
+        "google scholar",
+        "jstor",
+        "researchgate",
+        "akademik takvim",
+        "ödev teslim"
+      ]
+    },
+    {
+      "poolKey": "site:social_doomscrolling",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "tiktok",
+        "instagram reels",
+        "reels",
+        "youtube shorts",
+        "twitter",
+        "x.com",
+        "threads.net"
+      ]
+    },
+    {
+      "poolKey": "site:shopping_deal_hunting",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "akakçe",
+        "cimri",
+        "sıcak fırsatlar",
+        "donanımhaber sıcak",
+        "hotukdeals",
+        "chollometro",
+        "slickdeals",
+        "camelcamelcamel"
+      ]
+    },
+    {
+      "poolKey": "game:coop_horror_phasmo",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "phasmophobia.exe",
+        "lethal company.exe"
+      ],
+      "titleKeywords": [
+        "phasmophobia",
+        "lethal company",
+        "ghost hunting",
+        "spirit box"
+      ]
+    },
+    {
+      "poolKey": "game:mmo_metin2_knight",
+      "category": "game",
+      "supportedLocales": [
+        "tr"
+      ],
+      "processNames": [
+        "knightonline.exe",
+        "metin2client.exe"
+      ],
+      "titleKeywords": [
+        "knight online",
+        "metin2",
+        "usko",
+        "pvp server",
+        "cz pk",
+        "dolunay kılıcı"
+      ]
+    },
+    {
+      "poolKey": "game:baldurs_gate_3",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "bg3.exe",
+        "bg3_dx11.exe"
+      ],
+      "titleKeywords": [
+        "baldur's gate 3",
+        "baldurs gate 3",
+        "astarion",
+        "shadowheart"
+      ]
+    },
+    {
+      "poolKey": "game:skyrim",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "skyrimse.exe",
+        "tesv.exe"
+      ],
+      "titleKeywords": [
+        "skyrim",
+        "the elder scrolls v",
+        "dovahkiin",
+        "dragonborn"
+      ]
+    },
+    {
+      "poolKey": "game:cyberpunk_game",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "cyberpunk2077.exe"
+      ],
+      "titleKeywords": [
+        "cyberpunk 2077",
+        "phantom liberty",
+        "johnny silverhand",
+        "night city"
+      ]
+    },
+    {
+      "poolKey": "game:the_witcher",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "witcher3.exe"
+      ],
+      "titleKeywords": [
+        "the witcher 3",
+        "witcher 3",
+        "wild hunt",
+        "geralt of rivia",
+        "gwent"
+      ]
+    },
+    {
+      "poolKey": "movie:gladiator",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "gladiator",
+        "gladyatör",
+        "russell crowe",
+        "maximus"
+      ]
+    },
+    {
+      "movieKey": "movie:truman_show",
+      "poolKey": "movie:truman_show",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "the truman show",
+        "truman show",
+        "jim carrey"
+      ]
+    },
+    {
+      "poolKey": "movie:whiplash",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "whiplash",
+        "j.k. simmons",
+        "miles teller",
+        "andrew neiman"
+      ]
+    },
+    {
+      "poolKey": "movie:interstellar",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "interstellar",
+        "yıldızlararası",
+        "matthew mcconaughey",
+        "hans zimmer"
+      ]
+    },
+    {
+      "poolKey": "movie:dark_knight_joker",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "the dark knight",
+        "kara şövalye",
+        "heath ledger",
+        "joker",
+        "christian bale"
+      ]
+    },
+    {
+      "poolKey": "movie:fight_club",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "fight club",
+        "dövüş kulübü",
+        "tyler durden",
+        "edward norton",
+        "brad pitt"
+      ]
+    },
+    {
+      "poolKey": "movie:godfather",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "the godfather",
+        "baba",
+        "corleone",
+        "marlon brando",
+        "al pacino"
+      ]
+    },
+    {
+      "poolKey": "series:squid_game",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "squid game",
+        "kalamar oyunu",
+        "gi-hun",
+        "456"
+      ]
+    },
+    {
+      "poolKey": "series:peaky_blinders",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "peaky blinders",
+        "cillian murphy",
+        "thomas shelby",
+        "arthur shelby"
+      ]
+    },
+    {
+      "poolKey": "series:sherlock",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "sherlock",
+        "benedict cumberbatch",
+        "221b baker street",
+        "moriarty"
+      ]
+    },
+    {
+      "poolKey": "series:fleabag",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "fleabag",
+        "phoebe waller-bridge",
+        "hot priest"
+      ]
+    },
+    {
+      "poolKey": "series:ted_lasso_dramedy",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "ted lasso",
+        "afc richmond",
+        "roy kent",
+        "jason sudeikis"
+      ]
+    },
+    {
+      "poolKey": "series:cyberpunk_edgerunners",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "edgerunners",
+        "cyberpunk: edgerunners",
+        "david martinez",
+        "lucy",
+        "rebecca"
+      ]
+    },
+    {
+      "poolKey": "movie_es:hispanic_cult_classics",
+      "category": "movie",
+      "supportedLocales": [
+        "es"
+      ],
+      "titleKeywords": [
+        "relatos salvajes",
+        "el laberinto del fauno",
+        "pan's labyrinth",
+        "amores perros",
+        "el secreto de sus ojos",
+        "roma ",
+        "ocho apellidos vascos",
+        "paquita salas"
+      ]
+    },
+    {
+      "poolKey": "series_en:british_cult_comedy",
+      "category": "series",
+      "supportedLocales": [
+        "en"
+      ],
+      "titleKeywords": [
+        "peep show",
+        "the inbetweeners",
+        "fleabag",
+        "monty python",
+        "fawlty towers",
+        "the office uk",
+        "blackadder",
+        "spaced"
+      ]
+    },
+    {
+      "poolKey": "series:the_wire_sopranos",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "the wire",
+        "baltimore",
+        "omar little",
+        "the sopranos",
+        "tony soprano"
+      ]
+    },
+    {
+      "poolKey": "series:twin_peaks",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "twin peaks",
+        "ikiz tepeler",
+        "david lynch",
+        "laura palmer",
+        "dale cooper"
+      ]
+    },
+    {
+      "poolKey": "series:lost",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "lost",
+        "dharma initiative",
+        "john locke",
+        "jack shephard",
+        "4 8 15 16 23 42",
+        "oceanic 815"
+      ]
+    },
+    {
+      "poolKey": "movie:tarantino_universe",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "django unchained",
+        "zincirsiz",
+        "inglourious basterds",
+        "soysuzlar çetesi",
+        "reservoir dogs",
+        "rezervuar köpekleri",
+        "the hateful eight",
+        "once upon a time in hollywood",
+        "tarantino"
+      ]
+    },
+    {
+      "poolKey": "movie:silence_of_lambs_hannibal",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "silence of the lambs",
+        "kuzuların sessizliği",
+        "hannibal lecter",
+        "clarice starling",
+        "anthony hopkins",
+        "red dragon"
+      ]
+    },
+    {
+      "poolKey": "movie:parasite_asian_cinema",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "parasite",
+        "parazit",
+        "bong joon-ho",
+        "oldboy",
+        "memories of murder",
+        "drive my car",
+        "train to busan"
+      ]
+    },
+    {
+      "poolKey": "movie:shawshank_green_mile",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "shawshank redemption",
+        "esaretin bedeli",
+        "the green mile",
+        "yeşil yol",
+        "andy dufresne",
+        "john coffey",
+        "stephen king"
+      ]
+    },
+    {
+      "poolKey": "site:localhost_debugging",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "localhost:",
+        "127.0.0.1:",
+        "stack overflow",
+        "stackoverflow.com",
+        "github issues",
+        "uncaught typeerror",
+        "referenceerror",
+        "hydration failed",
+        "cors error"
+      ]
+    },
+    {
+      "poolKey": "site:travel_vacation_dreaming",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "booking.com",
+        "airbnb",
+        "skyscanner",
+        "google flights",
+        "enuygun",
+        "obilet",
+        "trivago",
+        "etstur",
+        "jolly tur",
+        "tripadvisor",
+        "google maps",
+        "street view"
+      ]
+    },
+    {
+      "poolKey": "site:crypto_finance_stocks",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "tradingview",
+        "binance",
+        "coinmarketcap",
+        "coingecko",
+        "btcturk",
+        "paribu",
+        "mynet finans",
+        "investing.com",
+        "borsa istanbul",
+        "bist 100",
+        "halka arz",
+        "altın fiyatları",
+        "döviz kuru"
+      ]
+    },
+    {
+      "poolKey": "music:podcast_audiobook",
+      "category": "music",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "podcast",
+        "sesli kitap",
+        "audiobook",
+        "storytel",
+        "audible",
+        "ted talk",
+        "tedx",
+        "fularsız entellik",
+        "ortamlarda satılacak bilgi",
+        "joe rogan"
+      ]
+    },
+    {
+      "poolKey": "music:electronic_techno_house",
+      "category": "music",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "boiler room",
+        "techno mix",
+        "melodic techno",
+        "house music",
+        "deep house",
+        "daft punk",
+        "synthwave",
+        "retrowave",
+        "drum and bass",
+        "fred again"
+      ]
+    },
+    {
+      "poolKey": "music:classical_jazz_ost",
+      "category": "music",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "hans zimmer",
+        "beethoven",
+        "mozart",
+        "chopin",
+        "vivaldi",
+        "bach",
+        "tchaikovsky",
+        "ludovico einaudi",
+        "fazıl say",
+        "jazz mix",
+        "miles davis",
+        "soundtrack",
+        "original score"
+      ]
+    },
+    {
+      "poolKey": "game:retro_emulator",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "retroarch.exe",
+        "pcsx2.exe",
+        "dolphin.exe",
+        "rpcs3.exe",
+        "hl.exe",
+        "gta-vc.exe",
+        "gta_sa.exe",
+        "speed2.exe"
+      ],
+      "titleKeywords": [
+        "retroarch",
+        "pcsx2",
+        "dolphin emulator",
+        "half-life",
+        "cs 1.6",
+        "gta vice city",
+        "gta san andreas",
+        "need for speed underground",
+        "nfs most wanted",
+        "max payne"
+      ]
+    },
+    {
+      "poolKey": "game:card_board_chess",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "hearthstone.exe",
+        "masterduel.exe",
+        "snap.exe",
+        "mtga.exe"
+      ],
+      "titleKeywords": [
+        "chess.com",
+        "lichess.org",
+        "lichess",
+        "satranç",
+        "hearthstone",
+        "yu-gi-oh",
+        "marvel snap",
+        "magic: the gathering",
+        "101 okey",
+        "gamyun",
+        "tavla"
+      ]
+    },
+    {
+      "poolKey": "game:cozy_simulation_job",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "powerwashsimulator.exe",
+        "farmingsimulator2022game.exe",
+        "farmingsimulator2025.exe",
+        "houseflipper.exe",
+        "supermarket simulator.exe"
+      ],
+      "titleKeywords": [
+        "powerwash simulator",
+        "farming simulator",
+        "house flipper",
+        "supermarket simulator",
+        "internet cafe simulator",
+        "kebap simulator",
+        "goat simulator",
+        "unpacking"
+      ]
+    },
+    {
+      "poolKey": "game:mmo_grinding",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "knightonline.exe",
+        "metin2client.exe",
+        "wow.exe",
+        "blackdesert64.exe",
+        "ffxiv_dx11.exe",
+        "lostark.exe",
+        "gw2-64.exe",
+        "runelite.exe"
+      ],
+      "titleKeywords": [
+        "knight online",
+        "metin2",
+        "world of warcraft",
+        "black desert",
+        "final fantasy xiv",
+        "ffxiv",
+        "lost ark",
+        "guild wars 2",
+        "runescape",
+        "albion online",
+        "throne and liberty"
+      ]
+    },
+    {
+      "poolKey": "movie:comedy_hangover",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "the hangover",
+        "felekten bir gece",
+        "superbad",
+        "borat",
+        "the truman show",
+        "truman show",
+        "the mask",
+        "maske",
+        "ölümlü dünya",
+        "aykut enişte",
+        "kolpaçino",
+        "eyvah eyvah"
+      ]
+    },
+    {
+      "poolKey": "movie:musical_biopic",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "whiplash",
+        "bohemian rhapsody",
+        "the social network",
+        "sosyal ağ",
+        "8 mile",
+        "amadeus",
+        "elvis",
+        "rocketman",
+        "müslüm",
+        "bergen"
+      ]
+    },
+    {
+      "poolKey": "movie:post_apocalyptic_zombie",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "28 days later",
+        "28 weeks later",
+        "world war z",
+        "train to busan",
+        "zombi ekspresi",
+        "i am legend",
+        "ben efsaneyim",
+        "bird box",
+        "snowpiercer",
+        "the road",
+        "book of eli"
+      ]
+    },
+    {
+      "poolKey": "movie:whodunit_mystery",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "knives out",
+        "bıçaklar çekildi",
+        "glass onion",
+        "zodiac",
+        "gone girl",
+        "kayıp kız",
+        "prisoners",
+        "usual suspects",
+        "olağan şüpheliler",
+        "orient express",
+        "cinayet süsü"
+      ]
+    },
+    {
+      "poolKey": "series:supernatural_teen",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "supernatural",
+        "winchester",
+        "vampire diaries",
+        "the originals",
+        "teen wolf",
+        "wednesday",
+        "lucifer",
+        "buffy",
+        "sabrina",
+        "true blood"
+      ]
+    },
+    {
+      "poolKey": "series:reality_competition",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "masterchef",
+        "survivor",
+        "hell's kitchen",
+        "gordon ramsay",
+        "kısmetse olur",
+        "yemekteyiz",
+        "zuhal topal",
+        "love island",
+        "too hot to handle"
+      ]
+    },
+    {
+      "poolKey": "series:historical_period",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "vikings",
+        "the last kingdom",
+        "spartacus",
+        "rome ",
+        "the crown",
+        "bridgerton",
+        "muhteşem yüzyıl",
+        "tudors",
+        "marco polo"
+      ]
+    },
+    {
+      "poolKey": "series:scifi_space_opera",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "doctor who",
+        "the expanse",
+        "battlestar galactica",
+        "star trek",
+        "foundation",
+        "andor",
+        "the mandalorian",
+        "silo ",
+        "altered carbon"
+      ]
+    },
+    {
+      "poolKey": "site:rabbit_hole_3am",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "vikipedi",
+        "wikipedia",
+        "ekşi sözlük",
+        "eksisozluk",
+        "reddit",
+        "quora",
+        "fandom.com",
+        "tvtropes"
+      ]
+    },
+    {
+      "poolKey": "game:indie_roguelike",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "hollow_knight.exe",
+        "hades.exe",
+        "hades2.exe",
+        "undertale.exe",
+        "cuphead.exe",
+        "celeste.exe",
+        "deadcells.exe",
+        "balatro.exe",
+        "disco.exe"
+      ],
+      "titleKeywords": [
+        "hollow knight",
+        "silksong",
+        "hades",
+        "undertale",
+        "cuphead",
+        "celeste",
+        "dead cells",
+        "vampire survivors",
+        "balatro",
+        "slay the spire",
+        "disco elysium",
+        "ori and the"
+      ]
+    },
+    {
+      "poolKey": "game:racing_fighting",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "eurotrucks2.exe",
+        "forzahorizon5.exe",
+        "acs.exe",
+        "f1_24.exe",
+        "f1_25.exe",
+        "mk12.exe",
+        "polar-win64-shipping.exe",
+        "streetfighter6.exe"
+      ],
+      "titleKeywords": [
+        "euro truck simulator",
+        "ets2",
+        "forza horizon",
+        "assetto corsa",
+        "mortal kombat",
+        "tekken 8",
+        "street fighter 6",
+        "gran turismo",
+        "iracing"
+      ]
+    },
+    {
+      "poolKey": "game:survival_coop_horror",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "rustclient.exe",
+        "shootergame.exe",
+        "projectzomboid64.exe",
+        "sonsoftheforest.exe",
+        "valheim.exe",
+        "subnautica.exe",
+        "lethal company.exe",
+        "phasmophobia.exe",
+        "deadbydaylight-win64-shipping.exe",
+        "among us.exe"
+      ],
+      "titleKeywords": [
+        "rust",
+        "ark: survival",
+        "project zomboid",
+        "sons of the forest",
+        "the forest",
+        "valheim",
+        "subnautica",
+        "don't starve",
+        "lethal company",
+        "phasmophobia",
+        "dead by daylight",
+        "among us",
+        "palworld",
+        "dayz"
+      ]
+    },
+    {
+      "poolKey": "game:strategy_4x",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "hoi4.exe",
+        "eu4.exe",
+        "ck3.exe",
+        "civilizationvi.exe",
+        "aoe2de_s.exe",
+        "relichardware.exe",
+        "cities.exe",
+        "factorio.exe"
+      ],
+      "titleKeywords": [
+        "hearts of iron",
+        "hoi4",
+        "europa universalis",
+        "crusader kings",
+        "civilization vi",
+        "civilization vii",
+        "age of empires",
+        "total war",
+        "cities: skylines",
+        "factorio",
+        "stellaris",
+        "manor lords"
+      ]
+    },
+    {
+      "poolKey": "movie:action_fast",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "fast & furious",
+        "fast and furious",
+        "hızlı ve öfkeli",
+        "mission: impossible",
+        "görevimiz tehlike",
+        "mad max",
+        "fury road",
+        "top gun",
+        "james bond",
+        "skyfall",
+        "casino royale",
+        "kill bill",
+        "gladiator",
+        "gladyatör",
+        "300 spartans"
+      ]
+    },
+    {
+      "poolKey": "movie:romance_drama",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "titanic",
+        "titanik",
+        "la la land",
+        "the notebook",
+        "not defteri",
+        "eternal sunshine",
+        "sil baştan",
+        "before sunrise",
+        "before sunset",
+        "500 days of summer",
+        "aşkın 500 günü",
+        "pride and prejudice",
+        "aşk ve gurur",
+        "about time",
+        "issız adam",
+        "me before you"
+      ]
+    },
+    {
+      "poolKey": "movie:animation_pixar_ghibli",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "spirited away",
+        "ruhların kaçışı",
+        "howl's moving castle",
+        "yürüyen şato",
+        "totoro",
+        "princess mononoke",
+        "studio ghibli",
+        "shrek",
+        "toy story",
+        "oyuncak hikayesi",
+        "cars ",
+        "arabalar",
+        "şimşek mcqueen",
+        "ratatouille",
+        "wall-e",
+        "up ",
+        "yukarı bak",
+        "inside out",
+        "ters yüz",
+        "spider-verse",
+        "ice age",
+        "buz devri",
+        "kung fu panda",
+        "how to train your dragon"
+      ]
+    },
+    {
+      "poolKey": "movie:horror_thriller",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "the conjuring",
+        "korku seansı",
+        "insidious",
+        "hereditary",
+        "midsommar",
+        "saw ",
+        "testere",
+        "scream",
+        "çığlık",
+        "the shining",
+        "cinnet",
+        "a quiet place",
+        "sessiz bir yer",
+        "alien",
+        "paranormal activity",
+        "dabbe",
+        "siccin",
+        "exorcist",
+        "smile",
+        "talk to me",
+        "nosferatu"
+      ]
+    },
+    {
+      "poolKey": "series:true_crime_doc",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "dahmer",
+        "making a murderer",
+        "unsolved mysteries",
+        "mindhunter",
+        "our planet",
+        "planet earth",
+        "drive to survive",
+        "the last dance",
+        "cosmos",
+        "true crime",
+        "belgeseli"
+      ]
+    },
+    {
+      "poolKey": "series:animated_adult",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "rick and morty",
+        "rick & morty",
+        "bojack horseman",
+        "south park",
+        "family guy",
+        "the simpsons",
+        "simpsons",
+        "avatar: the last airbender",
+        "son hava bükücü",
+        "regular show",
+        "sürekli dizi",
+        "adventure time",
+        "futurama",
+        "smiling friends"
+      ]
+    },
+    {
+      "poolKey": "series:prestige_medical_legal",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "house m.d.",
+        "house md",
+        "dr. house",
+        "grey's anatomy",
+        "the good doctor",
+        "suits",
+        "harvey specter",
+        "succession",
+        "kendall roy",
+        "the bear",
+        "carmy",
+        "mad men",
+        "chernobyl",
+        "band of brothers",
+        "the wire"
+      ]
+    },
+    {
+      "poolKey": "series:kdrama",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "the glory",
+        "crash landing on you",
+        "goblin",
+        "all of us are dead",
+        "queen of tears",
+        "alchemy of souls",
+        "vincenzo",
+        "sweet home",
+        "kingdom",
+        "extraordinary attorney woo",
+        "reply 1988",
+        "kore dizisi",
+        "k-drama",
+        "viki"
+      ]
+    },
+    {
+      "poolKey": "site:anxiety_tabs",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "kargo takip",
+        "gönderi takip",
+        "yurtiçi kargo",
+        "aras kargo",
+        "mng kargo",
+        "sürat kargo",
+        "ptt kargo",
+        "hepsijet",
+        "kolay gelsin",
+        "dhl tracking",
+        "fedex tracking",
+        "ups tracking",
+        "correos seguimiento",
+        "ösym",
+        "ais.osym",
+        "sonuc.osym",
+        "not görüntüleme",
+        "öğrenci bilgi sistemi",
+        "e-devlet",
+        "türkiye.gov.tr",
+        "speedtest",
+        "fast.com",
+        "downdetector",
+        "hava durumu",
+        "mgm.gov.tr",
+        "accuweather"
+      ]
+    },
+    {
+      "poolKey": "app:design_creative",
+      "category": "creative_app",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "figma.exe",
+        "photoshop.exe",
+        "illustrator.exe",
+        "premiere pro.exe",
+        "afterfx.exe",
+        "resolve.exe",
+        "blender.exe",
+        "acad.exe",
+        "capcut.exe",
+        "aseprite.exe"
+      ],
+      "titleKeywords": [
+        "figma",
+        "adobe photoshop",
+        "adobe illustrator",
+        "premiere pro",
+        "after effects",
+        "davinci resolve",
+        "blender",
+        "canva",
+        "autocad",
+        "capcut",
+        "aseprite"
+      ]
+    },
+    {
+      "poolKey": "site:job_hunt",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "linkedin",
+        "kariyer.net",
+        "yenibiris",
+        "secretcv",
+        "indeed",
+        "glassdoor",
+        "wellfound",
+        "infojobs",
+        "computrabajo",
+        "bumeran",
+        "özgeçmiş",
+        "cover letter",
+        "curriculum vitae"
+      ]
+    },
+    {
+      "poolKey": "site:food_delivery",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "yemeksepeti",
+        "getiryemek",
+        "getir yemek",
+        "trendyol yemek",
+        "trendyol go",
+        "migros yemek",
+        "uber eats",
+        "doordash",
+        "grubhub",
+        "glovo",
+        "rappi",
+        "just eat",
+        "pedidosya",
+        "nefis yemek tarifleri",
+        "yemek tarifi"
+      ]
+    },
+    {
+      "poolKey": "series_es:la_casa_de_papel_elite",
+      "category": "series_es",
+      "supportedLocales": [
+        "es"
+      ],
+      "titleKeywords": [
+        "la casa de papel",
+        "money heist",
+        "élite",
+        "elite",
+        "vis a vis",
+        "el internado",
+        "sky rojo",
+        "berlin"
+      ]
+    },
+    {
+      "poolKey": "series_es:betty_chavo_novelas",
+      "category": "series_es",
+      "supportedLocales": [
+        "es"
+      ],
+      "titleKeywords": [
+        "betty la fea",
+        "yo soy betty",
+        "ecomoda",
+        "el chavo del 8",
+        "el chavo",
+        "don ramón",
+        "aquí no hay quien viva",
+        "la que se avecina",
+        "pasión de gavilanes",
+        "la reina del sur",
+        "club de cuervos",
+        "la casa de las flores"
+      ]
+    },
+    {
+      "poolKey": "game:valorant",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "valorant.exe",
+        "valorant-win64-shipping.exe"
+      ],
+      "titleKeywords": [
+        "valorant",
+        "vlr.gg",
+        "tracker.gg/valorant",
+        "radiant",
+        "instalock"
+      ]
+    },
+    {
+      "poolKey": "game:cs2",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "cs2.exe",
+        "csgo.exe"
+      ],
+      "titleKeywords": [
+        "counter-strike 2",
+        "counter-strike",
+        "cs2",
+        "cs:go",
+        "faceit",
+        "hltv.org",
+        "mirage",
+        "dust2"
+      ]
+    },
+    {
+      "poolKey": "game:dota2",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "dota2.exe"
+      ],
+      "titleKeywords": [
+        "dota 2",
+        "dota2",
+        "dotabuff"
+      ]
+    },
+    {
+      "poolKey": "game:battle_royale",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "fortniteclient-win64-shipping.exe",
+        "tslgame.exe",
+        "r5apex.exe",
+        "cod.exe"
+      ],
+      "titleKeywords": [
+        "fortnite",
+        "pubg: battlegrounds",
+        "pubg",
+        "apex legends",
+        "call of duty: warzone",
+        "warzone"
+      ]
+    },
+    {
+      "poolKey": "launcher:steam",
+      "category": "launcher",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "steam.exe",
+        "steamwebhelper.exe"
+      ],
+      "titleKeywords": [
+        "steam",
+        "welcome to steam",
+        "steam store",
+        "steam community",
+        "steamdb"
+      ]
+    },
+    {
+      "poolKey": "launcher:epic_games",
+      "category": "launcher",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "epicgameslauncher.exe"
+      ],
+      "titleKeywords": [
+        "epic games launcher",
+        "epic games store"
+      ]
+    },
+    {
+      "poolKey": "launcher:ea_ubisoft",
+      "category": "launcher",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "eadesktop.exe",
+        "eabackgroundservice.exe",
+        "origin.exe",
+        "upc.exe",
+        "ubisoftconnect.exe",
+        "uplay.exe"
+      ],
+      "titleKeywords": [
+        "ea app",
+        "ea play",
+        "ubisoft connect",
+        "uplay"
+      ]
+    },
+    {
+      "poolKey": "launcher:riot_battlenet_xbox",
+      "category": "launcher",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "riotclientservices.exe",
+        "riotclientux.exe",
+        "battle.net.exe",
+        "xboxpcapp.exe",
+        "gog galaxy.exe"
+      ],
+      "titleKeywords": [
+        "riot client",
+        "battle.net",
+        "xbox app",
+        "pc game pass",
+        "gog galaxy"
+      ]
+    },
+    {
+      "poolKey": "launcher:discord",
+      "category": "launcher",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "discord.exe",
+        "discordptb.exe",
+        "discordcanary.exe"
+      ],
+      "titleKeywords": [
+        "discord"
+      ]
+    },
+    {
+      "poolKey": "music:lofi_focus",
+      "category": "music",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "lofi girl",
+        "lofi hip hop",
+        "beats to relax",
+        "beats to study",
+        "chillhop",
+        "study music",
+        "white noise",
+        "rain sounds",
+        "ambient study"
+      ]
+    },
+    {
+      "poolKey": "music:sad_night",
+      "category": "music",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "slowed + reverb",
+        "slowed and reverb",
+        "sad mix",
+        "sad playlist",
+        "damar şarkılar",
+        "müslüm gürses",
+        "sezen aksu",
+        "bergen",
+        "radiohead",
+        "lana del rey",
+        "the smiths",
+        "cigarettes after sex",
+        "cortavenas",
+        "despecho"
+      ]
+    },
+    {
+      "poolKey": "music:rap_phonk",
+      "category": "music",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "phonk",
+        "brazilian phonk",
+        "drift phonk",
+        "gym hardstyle",
+        "türkçe rap",
+        "drill",
+        "hip hop mix",
+        "trap mix"
+      ]
+    },
+    {
+      "poolKey": "music:rock_metal",
+      "category": "music",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "metallica",
+        "nirvana",
+        "pink floyd",
+        "arctic monkeys",
+        "black sabbath",
+        "iron maiden",
+        "slipknot",
+        "rammstein",
+        "anadolu rock",
+        "duman",
+        "mor ve ötesi",
+        "rock classics",
+        "heavy metal"
+      ]
+    },
+    {
+      "poolKey": "music:pop_local",
+      "category": "music",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "türkçe pop",
+        "90lar pop",
+        "2000ler pop",
+        "tarkan",
+        "sefo",
+        "simge",
+        "reggaeton",
+        "bad bunny",
+        "karol g",
+        "feid",
+        "shakira",
+        "rosalía",
+        "top 50 global",
+        "pop hits"
+      ]
+    },
+    {
+      "poolKey": "music:player_general",
+      "category": "music",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "spotify.exe",
+        "applemusic.exe",
+        "foobar2000.exe",
+        "winamp.exe",
+        "aimp.exe"
+      ],
+      "titleKeywords": [
+        "spotify",
+        "youtube music",
+        "apple music",
+        "soundcloud",
+        "deezer",
+        "fizy",
+        "muud",
+        "shazam",
+        "genius lyrics"
+      ]
+    },
+    {
+      "poolKey": "series:narcos",
+      "category": "series",
+      "titleKeywords": [
+        "narcos",
+        "pablo escobar",
+        "medellin",
+        "cali cartel",
+        "narcos: mexico",
+        "narcos mexico"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "series:breaking_bad",
+      "category": "series",
+      "titleKeywords": [
+        "breaking bad",
+        "better call saul",
+        "walter white",
+        "heisenberg",
+        "jesse pinkman",
+        "saul goodman",
+        "el camino"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "series:game_of_thrones",
+      "category": "series",
+      "titleKeywords": [
+        "game of thrones",
+        "house of the dragon",
+        "taht oyunları",
+        "westeros",
+        "jon snow",
+        "targaryen",
+        "winterfell"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "series:stranger_things",
+      "category": "series",
+      "titleKeywords": [
+        "stranger things",
+        "hawkins",
+        "vecna",
+        "upside down"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "series:sitcom",
+      "category": "series",
+      "titleKeywords": [
+        "the office",
+        "friends",
+        "how i met your mother",
+        "himym",
+        "brooklyn nine-nine",
+        "brooklyn 99",
+        "modern family",
+        "seinfeld",
+        "big bang theory",
+        "michael scott"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "series:mindfuck_scifi",
+      "category": "series",
+      "titleKeywords": [
+        "dark",
+        "black mirror",
+        "severance",
+        "mr. robot",
+        "mr robot",
+        "westworld",
+        "love death + robots",
+        "love, death & robots",
+        "3 body problem"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "series:crime_drama",
+      "category": "series",
+      "titleKeywords": [
+        "peaky blinders",
+        "thomas shelby",
+        "the sopranos",
+        "sopranos",
+        "prison break",
+        "la casa de papel",
+        "money heist",
+        "sherlock",
+        "ozark",
+        "mindhunter",
+        "true detective",
+        "dexter",
+        "fargo"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "series:action_adapted",
+      "category": "series",
+      "titleKeywords": [
+        "the boys",
+        "homelander",
+        "the last of us",
+        "arcane",
+        "fallout",
+        "squid game",
+        "the witcher",
+        "shogun",
+        "shōgun",
+        "invincible",
+        "reacher",
+        "daredevil"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "turkish_series:gibi",
+      "category": "turkish_series",
+      "titleKeywords": [
+        "gibi",
+        "feyyaz yiğit",
+        "ilkkan",
+        "ersoy",
+        "yılmaz"
+      ],
+      "supportedLocales": [
+        "tr"
+      ]
+    },
+    {
+      "poolKey": "turkish_series:prens",
+      "category": "turkish_series",
+      "titleKeywords": [
+        "prens",
+        "bongomia",
+        "giray altınok"
+      ],
+      "supportedLocales": [
+        "tr"
+      ]
+    },
+    {
+      "poolKey": "turkish_series:kurtlar_vadisi",
+      "category": "turkish_series",
+      "titleKeywords": [
+        "kurtlar vadisi",
+        "polat alemdar",
+        "süleyman çakır",
+        "memati",
+        "abuzer kömürcü",
+        "pala"
+      ],
+      "supportedLocales": [
+        "tr"
+      ]
+    },
+    {
+      "poolKey": "turkish_series:ezel_behzat",
+      "category": "turkish_series",
+      "titleKeywords": [
+        "ezel",
+        "ramiz dayı",
+        "behzat ç",
+        "behzat c",
+        "leyla ile mecnun",
+        "ismail abi",
+        "avrupa yakası",
+        "burhan altıntop",
+        "aşk-ı memnu",
+        "ask-i memnu",
+        "kardeş payı",
+        "ayak işleri",
+        "şahsiyet",
+        "bir başkadır"
+      ],
+      "supportedLocales": [
+        "tr"
+      ]
+    },
+    {
+      "poolKey": "turkish_series:tv_general",
+      "category": "turkish_series",
+      "titleKeywords": [
+        "uzak şehir",
+        "kızılcık şerbeti",
+        "bahar",
+        "taşacak bu deniz",
+        "yeraltı",
+        "inci taneleri",
+        "gönül dağı",
+        "teşkilat",
+        "kuruluş osman",
+        "yabani",
+        "kızıl goncalar"
+      ],
+      "supportedLocales": [
+        "tr"
+      ]
+    },
+    {
+      "poolKey": "anime:one_piece",
+      "category": "anime",
+      "titleKeywords": [
+        "one piece",
+        "luffy",
+        "zoro",
+        "mugiwara",
+        "gear 5"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "anime:aot_deathnote",
+      "category": "anime",
+      "titleKeywords": [
+        "attack on titan",
+        "shingeki no kyojin",
+        "eren yeager",
+        "levi ackerman",
+        "death note",
+        "light yagami",
+        "ryuk"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "anime:shonen_general",
+      "category": "anime",
+      "titleKeywords": [
+        "naruto",
+        "shippuden",
+        "jujutsu kaisen",
+        "gojo",
+        "sukuna",
+        "demon slayer",
+        "kimetsu no yaiba",
+        "bleach",
+        "solo leveling",
+        "hunter x hunter",
+        "fullmetal alchemist",
+        "chainsaw man",
+        "frieren",
+        "one punch man",
+        "vinland saga",
+        "crunchyroll",
+        "turkanime",
+        "anizm"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "movie:nolan_scifi",
+      "category": "movie",
+      "titleKeywords": [
+        "interstellar",
+        "yıldızlararası",
+        "inception",
+        "başlangıç",
+        "oppenheimer",
+        "tenet",
+        "the prestige",
+        "prestij",
+        "memento",
+        "christopher nolan"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "movie:cult_classics",
+      "category": "movie",
+      "titleKeywords": [
+        "fight club",
+        "dövüş kulübü",
+        "tyler durden",
+        "the matrix",
+        "matrix",
+        "pulp fiction",
+        "ucuz roman",
+        "shawshank redemption",
+        "esaretin bedeli",
+        "forrest gump",
+        "se7en",
+        "american psycho",
+        "wolf of wall street",
+        "shutter island",
+        "zindan adası"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "movie:mafia_crime",
+      "category": "movie",
+      "titleKeywords": [
+        "the godfather",
+        "baba 1",
+        "baba 2",
+        "vito corleone",
+        "scarface",
+        "tony montana",
+        "goodfellas",
+        "john wick",
+        "taxi driver",
+        "casino",
+        "irishman",
+        "heat"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "movie:lotr",
+      "category": "movie",
+      "titleKeywords": [
+        "lord of the rings",
+        "yüzüklerin efendisi",
+        "yüzük kardeşliği",
+        "iki kule",
+        "kralın dönüşü",
+        "the hobbit",
+        "frodo",
+        "gandalf",
+        "aragorn",
+        "mordor",
+        "gollum"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "movie:harry_potter",
+      "category": "movie",
+      "titleKeywords": [
+        "harry potter",
+        "hogwarts",
+        "felsefe taşı",
+        "sırlar odası",
+        "azkaban tutsağı",
+        "ateş kadehi",
+        "zümrüdüanka",
+        "melez prens",
+        "ölüm yadigarları",
+        "voldemort",
+        "dumbledore"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "movie:star_wars_dune",
+      "category": "movie",
+      "titleKeywords": [
+        "star wars",
+        "yıldız savaşları",
+        "darth vader",
+        "skywalker",
+        "mandalorian",
+        "obi-wan",
+        "dune",
+        "arrakis",
+        "paul atreides",
+        "lisan al-gaib"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "movie:superhero",
+      "category": "movie",
+      "titleKeywords": [
+        "the dark knight",
+        "kara şövalye",
+        "batman",
+        "joker",
+        "avengers",
+        "yenilmezler",
+        "iron man",
+        "spider-man",
+        "örümcek adam",
+        "deadpool",
+        "logan",
+        "wolverine",
+        "guardians of the galaxy"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "movie:turkish_cinema",
+      "category": "movie",
+      "titleKeywords": [
+        "g.o.r.a",
+        "gora",
+        "a.r.o.g",
+        "arog",
+        "yahşi batı",
+        "pek yakında",
+        "arif v 216",
+        "organize işler",
+        "vizontele",
+        "hababam sınıfı",
+        "kibar feyzo",
+        "züğürt ağa",
+        "tosun paşa",
+        "süt kardeşler",
+        "recep ivedik",
+        "ölümlü dünya",
+        "cinayet süsü"
+      ],
+      "supportedLocales": [
+        "tr"
+      ]
+    },
+    {
+      "poolKey": "game:lol",
+      "category": "game",
+      "processNames": [
+        "league of legends.exe",
+        "leagueclient.exe",
+        "leagueclientux.exe"
+      ],
+      "titleKeywords": [
+        "league of legends",
+        "teamfight tactics",
+        "sihirdar vadisi",
+        "aram",
+        "op.gg",
+        "u.gg",
+        "lolalytics"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "game:gta_rdr",
+      "category": "game",
+      "processNames": [
+        "gta5.exe",
+        "gtavlauncher.exe",
+        "rdr2.exe",
+        "playgtav.exe"
+      ],
+      "titleKeywords": [
+        "grand theft auto",
+        "gta 5",
+        "gta v",
+        "gta 6",
+        "gta vi",
+        "fivem",
+        "red dead redemption",
+        "rdr2",
+        "arthur morgan"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "game:rpg_souls",
+      "category": "game",
+      "processNames": [
+        "eldenring.exe",
+        "darksoulsiii.exe",
+        "bg3.exe",
+        "bg3_dx11.exe",
+        "witcher3.exe",
+        "cyberpunk2077.exe",
+        "skyrimse.exe"
+      ],
+      "titleKeywords": [
+        "elden ring",
+        "shadow of the erdtree",
+        "dark souls",
+        "sekiro",
+        "baldur's gate 3",
+        "baldurs gate",
+        "the witcher 3",
+        "cyberpunk 2077",
+        "skyrim",
+        "diablo iv",
+        "path of exile",
+        "nexus mods"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "game:sports_sim",
+      "category": "game",
+      "processNames": [
+        "fc25.exe",
+        "fc26.exe",
+        "fifa23.exe",
+        "fm.exe",
+        "fm24.exe",
+        "fm25.exe"
+      ],
+      "titleKeywords": [
+        "ea sports fc",
+        "fc 25",
+        "fc 26",
+        "fifa",
+        "futbin",
+        "football manager",
+        "fm24",
+        "fm25",
+        "fm26"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "game:sandbox_chill",
+      "category": "game",
+      "processNames": [
+        "javaw.exe",
+        "minecraft.exe",
+        "stardew valley.exe",
+        "ts4_x64.exe",
+        "robloxplayerbeta.exe",
+        "terraria.exe"
+      ],
+      "titleKeywords": [
+        "minecraft",
+        "stardew valley",
+        "the sims 4",
+        "sims 4",
+        "roblox",
+        "terraria",
+        "curseforge",
+        "stardew wiki"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "media:local_player",
+      "category": "media_player",
+      "processNames": [
+        "vlc.exe",
+        "stremio.exe",
+        "mpc-hc64.exe",
+        "mpv.exe",
+        "potplayermini64.exe",
+        "plex.exe",
+        "kodi.exe"
+      ],
+      "titleKeywords": [
+        "vlc media player",
+        "stremio",
+        "plex",
+        "media player classic",
+        "potplayer",
+        ".mkv",
+        ".mp4",
+        "x264",
+        "x265",
+        "bluray"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "media:piracy_tab",
+      "category": "media_player",
+      "titleKeywords": [
+        "1080p izle",
+        "720p izle",
+        "türkçe dublaj izle",
+        "altyazılı izle",
+        "full hd izle",
+        "tek parça izle",
+        "hdfilm",
+        "dizipal",
+        "yabancıdizi",
+        "diziwatch",
+        "sezonlukdizi",
+        "turkcealtyazi.org",
+        "opensubtitles"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "media:art_house",
+      "category": "media_player",
+      "titleKeywords": [
+        "mubi",
+        "letterboxd",
+        "imdb",
+        "sinemalar.com",
+        "beyazperde",
+        "rottentomatoes",
+        "metacritic",
+        "gain",
+        "tod tv",
+        "exxen"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "media:live_stream",
+      "category": "media_player",
+      "titleKeywords": [
+        "twitch",
+        "kick.com",
+        "kick -",
+        "canlı yayın"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "media:streaming_general",
+      "category": "media_player",
+      "processNames": [
+        "netflix.exe",
+        "primevideo.exe",
+        "disneyplus.exe"
+      ],
+      "titleKeywords": [
+        "netflix",
+        "disney+",
+        "disney plus",
+        "prime video",
+        "amazon prime",
+        "blutv",
+        "hbo max",
+        "max.com",
+        "apple tv+",
+        "justwatch"
+      ],
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ]
+    },
+    {
+      "poolKey": "music:phonk_gym_grind",
+      "category": "music",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "phonk",
+        "brazilian phonk",
+        "drift phonk",
+        "gym hardstyle",
+        "zyzz",
+        "tren twins",
+        "kordhell",
+        "interworld"
+      ]
+    },
+    {
+      "poolKey": "music:rain_ambient_sleep",
+      "category": "music",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "rain sounds",
+        "yağmur sesi",
+        "white noise",
+        "brown noise",
+        "fireplace",
+        "şömine sesi",
+        "sleep ambient",
+        "thunderstorm sounds"
+      ]
+    },
+    {
+      "poolKey": "music:turkish_90s_2000s_pop",
+      "category": "music",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "90lar türkçe pop",
+        "90'lar pop",
+        "2000ler türkçe pop",
+        "tarkan",
+        "serdar ortaç",
+        "sezen aksu",
+        "kenan doğulu",
+        "hande yener",
+        "demet akalın"
+      ]
+    },
+    {
+      "poolKey": "music:podcasts_true_crime",
+      "category": "music",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "podcast",
+        "true crime",
+        "seri katil",
+        "suç hikayeleri",
+        "ortamlarda satılacak bilgi",
+        "fularsız entellik",
+        "meksika açmazı",
+        "joe rogan"
+      ]
+    },
+    {
+      "poolKey": "game:racing_drifting_f1",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "forzahorizon5.exe",
+        "assettoCorsa.exe",
+        "f1_23.exe",
+        "f1_24.exe",
+        "beamng.drive.x64.exe",
+        "dirt5.exe"
+      ],
+      "titleKeywords": [
+        "forza horizon",
+        "assetto corsa",
+        "f1 23",
+        "f1 24",
+        "need for speed",
+        "gran turismo",
+        "beamng",
+        "iracing"
+      ]
+    },
+    {
+      "poolKey": "game:mmo_raid_grind",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "wow.exe",
+        "ffxiv_dx11.exe",
+        "blackdesert64.exe",
+        "eso64.exe",
+        "gw2-64.exe",
+        "knightonline.exe",
+        "metin2client.exe"
+      ],
+      "titleKeywords": [
+        "world of warcraft",
+        "final fantasy xiv",
+        "black desert",
+        "elder scrolls online",
+        "guild wars 2",
+        "knight online",
+        "metin2",
+        "lost ark"
+      ]
+    },
+    {
+      "poolKey": "game:roguelike_deckbuilder",
+      "category": "game",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "processNames": [
+        "slaythespire.exe",
+        "balatro.exe",
+        "hades.exe",
+        "hades2.exe",
+        "deadcells.exe",
+        "isaac-ng.exe",
+        "vampiresurvivors.exe"
+      ],
+      "titleKeywords": [
+        "slay the spire",
+        "balatro",
+        "hades",
+        "dead cells",
+        "binding of isaac",
+        "vampire survivors",
+        "risk of rain",
+        "inscryption"
+      ]
+    },
+    {
+      "poolKey": "series:scandi_noir_mystery",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "the bridge",
+        "bron/broen",
+        "the killing",
+        "forbrydelsen",
+        "trapped",
+        "chestnut man",
+        "deadwind",
+        "ragnarok",
+        "katla"
+      ]
+    },
+    {
+      "poolKey": "series:medical_hospital_drama",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "house m.d.",
+        "dr. house",
+        "grey's anatomy",
+        "the good doctor",
+        "mucize doktor",
+        "hekimoglu",
+        "hekimoğlu",
+        "new amsterdam",
+        "er ",
+        "scrubs"
+      ]
+    },
+    {
+      "poolKey": "movie:zombie_post_apocalyptic",
+      "category": "movie",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "28 days later",
+        "train to busan",
+        "world war z",
+        "dawn of the dead",
+        "shaun of the dead",
+        "zombieland",
+        "i am legend",
+        "bird box",
+        "a quiet place"
+      ]
+    },
+    {
+      "poolKey": "site:language_learning_duolingo",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "duolingo",
+        "busuu",
+        "memrise",
+        "cambly",
+        "babbel",
+        "preply",
+        "ankiweb",
+        "tureng",
+        "cambridge dictionary"
+      ]
+    },
+    {
+      "poolKey": "site:astrology_tarot_manifest",
+      "category": "lifestyle_site",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "burç yorumu",
+        "günlük burç",
+        "doğum haritası",
+        "yükselen burç",
+        "tarot falı",
+        "merkür retrosu",
+        "astro.com",
+        "co-star",
+        "astroloji"
+      ]
+    },
+    {
+      "poolKey": "turkish_series:daha_17",
+      "category": "turkish_series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "daha 17",
+        "daha on yedi",
+        "çağan efe ak",
+        "nesrin cavadzade",
+        "daha 17 son bölüm",
+        "daha 17 izle"
+      ]
+    },
+    {
+      "poolKey": "turkish_series:alti_ustu_istanbul",
+      "category": "turkish_series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "altı üstü istanbul",
+        "alti ustu istanbul",
+        "ziyankar mahallesi",
+        "ziyankâr mahallesi",
+        "feyyaz duman",
+        "altı üstü istanbul izle"
+      ]
+    },
+    {
+      "poolKey": "turkish_series:uzak_sehir_mardin",
+      "category": "turkish_series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "uzak şehir",
+        "uzak sehir",
+        "cihan albora",
+        "albora",
+        "yalı çapkını",
+        "yali capkini",
+        "ferit korhan",
+        "hercai",
+        "sıla"
+      ]
+    },
+    {
+      "poolKey": "turkish_series:esref_ruya_yeralti",
+      "category": "turkish_series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "eşref rüya",
+        "esref ruya",
+        "yeraltı dizisi",
+        "hudutsuz sevda",
+        "deha dizisi",
+        "çukur",
+        "üç kuruş",
+        "delikanlı dizisi"
+      ]
+    },
+    {
+      "poolKey": "turkish_series:kizilcik_kizil_goncalar",
+      "category": "turkish_series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "kızılcık şerbeti",
+        "kizilcik serbeti",
+        "kızıl goncalar",
+        "kizil goncalar",
+        "cüneyd",
+        "pembe ünal",
+        "nursema"
+      ]
+    },
+    {
+      "poolKey": "turkish_series:bahar_doktor",
+      "category": "turkish_series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "bahar dizisi",
+        "bahar son bölüm",
+        "demet evgar",
+        "doktor: başka hayatta",
+        "doktor başka hayatta",
+        "timur yavuzoğlu"
+      ]
+    },
+    {
+      "poolKey": "turkish_series:kral_kaybederse_psikolojik",
+      "category": "turkish_series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "kral kaybederse",
+        "kenan baran",
+        "masumlar apartmanı",
+        "kırmızı oda",
+        "camdaki kız",
+        "ömer dizisi"
+      ]
+    },
+    {
+      "poolKey": "turkish_series:inci_taneleri_pavyon",
+      "category": "turkish_series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "inci taneleri",
+        "azem yücedağ",
+        "dilber",
+        "yılmaz erdoğan"
+      ]
+    },
+    {
+      "poolKey": "turkish_series:gassal_dijital_komedi",
+      "category": "turkish_series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "gassal",
+        "ölünce beni kim yıkayacak",
+        "ayak işleri",
+        "var bunlar",
+        "kuvvetli bir alkış",
+        "10 bin adım",
+        "mahsun j"
+      ]
+    },
+    {
+      "poolKey": "turkish_series:sahipsizler_dram",
+      "category": "turkish_series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "sahipsizler",
+        "siyah kalp",
+        "leyla: hayat… aşk… adalet",
+        "leyla dizisi",
+        "çirkin dizisi",
+        "anne yarısı",
+        "sevdiğim sensin"
+      ]
+    },
+    {
+      "poolKey": "series:severance_corporate",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "severance",
+        "lumon",
+        "mark scout",
+        "helly r",
+        "silo season",
+        "silo apple tv"
+      ]
+    },
+    {
+      "poolKey": "series:white_lotus_succession",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "the white lotus",
+        "white lotus",
+        "succession",
+        "kendall roy",
+        "billions",
+        "industry hbo",
+        "the five-star weekend"
+      ]
+    },
+    {
+      "poolKey": "series:the_bear_kitchen",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "the bear",
+        "carmy",
+        "yes chef",
+        "boiling point"
+      ]
+    },
+    {
+      "poolKey": "series:the_last_of_us_fallout",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "the last of us",
+        "last of us",
+        "fallout series",
+        "fallout prime",
+        "vault 33",
+        "station eleven"
+      ]
+    },
+    {
+      "poolKey": "series:the_penguin_gotham",
+      "category": "series",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "the penguin",
+        "oz cobb",
+        "daredevil: born again",
+        "daredevil",
+        "the boys",
+        "homelander",
+        "invincible"
+      ]
+    },
+    {
+      "poolKey": "series_es:la_casa_berlin",
+      "category": "series_es",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "la casa de papel",
+        "money heist",
+        "berlín",
+        "berlin netflix",
+        "asalto al banco central",
+        "el robo del siglo"
+      ]
+    },
+    {
+      "poolKey": "series_es:respira_elite_drama",
+      "category": "series_es",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "respira",
+        "breathless netflix",
+        "élite",
+        "elite netflix",
+        "machos alfa",
+        "alpha males",
+        "olympo",
+        "ni una más",
+        "clanes",
+        "valle salvaje"
+      ]
+    },
+    {
+      "poolKey": "series_es:el_eternauta_macondo",
+      "category": "series_es",
+      "supportedLocales": [
+        "tr",
+        "en",
+        "es"
+      ],
+      "titleKeywords": [
+        "el eternauta",
+        "the eternaut",
+        "cien años de soledad",
+        "one hundred years of solitude",
+        "macondo",
+        "dos tumbas",
+        "entrevías",
+        "el caso asunta",
+        "el refugio atómico"
+      ]
+    }
+  ],
+  "version": "15.0.0",
+  "totalRules": 183,
+  "k7Categories": {
+    "video": [
+      "youtube",
+      "vimeo",
+      "dailymotion",
+      "twitch",
+      "kick",
+      "netflix",
+      "disney+",
+      "prime video",
+      "blutv",
+      "exxen",
+      "gain",
+      "mubi",
+      "bölüm",
+      "sezon",
+      "episode",
+      "watch",
+      "izle"
+    ],
+    "social": [
+      "twitter",
+      "x.com",
+      "instagram",
+      "facebook",
+      "tiktok",
+      "linkedin",
+      "reddit",
+      "ekşi sözlük",
+      "eksisozluk",
+      "mastodon",
+      "threads",
+      "bluesky",
+      "pinterest",
+      "tumblr"
+    ],
+    "shopping": [
+      "trendyol",
+      "hepsiburada",
+      "amazon",
+      "n11",
+      "çiçeksepeti",
+      "boyner",
+      "zara",
+      "bershka",
+      "ikea",
+      "ebay",
+      "aliexpress",
+      "etsy",
+      "sepet",
+      "checkout",
+      "cart",
+      "indirim",
+      "kampanya"
+    ],
+    "news": [
+      "haber",
+      "hürriyet",
+      "milliyet",
+      "sözcü",
+      "ntv",
+      "cnn",
+      "bbc",
+      "reuters",
+      "guardian",
+      "nytimes",
+      "son dakika",
+      "gündem",
+      "gazete",
+      "breaking news"
+    ],
+    "mail": [
+      "gmail",
+      "outlook",
+      "protonmail",
+      "yahoo mail",
+      "gelen kutusu",
+      "inbox",
+      "webmail",
+      "thunderbird",
+      "posta"
+    ],
+    "code": [
+      "github",
+      "gitlab",
+      "bitbucket",
+      "stackoverflow",
+      "stack overflow",
+      "npmjs",
+      "crates.io",
+      "pypi",
+      "localhost",
+      "127.0.0.1",
+      "pull request",
+      "commit",
+      "vercel",
+      "cloudflare",
+      "supabase"
+    ],
+    "ai_chat": [
+      "chatgpt",
+      "claude",
+      "gemini",
+      "copilot",
+      "perplexity",
+      "deepseek",
+      "poe.com",
+      "huggingface",
+      "mistral",
+      "openai",
+      "anthropic"
+    ],
+    "docs": [
+      "google docs",
+      "google sheets",
+      "google slides",
+      "notion",
+      "confluence",
+      "overleaf",
+      "dropbox paper",
+      "coda",
+      "doküman",
+      "belge"
+    ],
+    "music": [
+      "spotify",
+      "youtube music",
+      "apple music",
+      "soundcloud",
+      "deezer",
+      "tidal",
+      "bandcamp",
+      "last.fm",
+      "fizy",
+      "muud",
+      "winamp",
+      "foobar2000"
+    ],
+    "maps": [
+      "google maps",
+      "haritalar",
+      "yandex harita",
+      "apple maps",
+      "openstreetmap",
+      "flightradar",
+      "street view",
+      "yol tarifi"
+    ],
+    "learning": [
+      "udemy",
+      "coursera",
+      "edx",
+      "khan academy",
+      "duolingo",
+      "leetcode",
+      "hackerrank",
+      "freecodecamp",
+      "btk akademi",
+      "patika.dev",
+      "ders",
+      "kurs",
+      "tutorial"
+    ],
+    "game_store": [
+      "steam",
+      "epic games",
+      "gog.com",
+      "itch.io",
+      "humble bundle",
+      "xbox",
+      "playstation store",
+      "nintendo eshop",
+      "battle.net",
+      "riot client",
+      "ea app",
+      "ubisoft"
+    ],
+    "search": [
+      "google",
+      "bing",
+      "duckduckgo",
+      "yandex",
+      "brave search",
+      "kagi",
+      "arama",
+      "search results"
+    ]
+  },
+  "silentKeywords": [
+    "porn",
+    "xxx",
+    "sex",
+    "nsfw",
+    "onlyfans",
+    "xvideos",
+    "pornhub",
+    "xnxx",
+    "chaturbate",
+    "bahis",
+    "bet",
+    "casino",
+    "rulet",
+    "slot",
+    "kumar",
+    "iddaa",
+    "nesine",
+    "bilyoner",
+    "poker",
+    "sweet bonanza",
+    "aviator"
+  ],
+  "privacyNote": "başlığı okur, unutur. hiçbir yere göndermez"
+}
