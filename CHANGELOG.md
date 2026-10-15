@@ -1,9 +1,20 @@
 # sürüm notları
 
+## 0.2.1
+- 1.645 repliklik tam doğrulanmış Türkçe ve İngilizce laf havuzu.
+- K7 Sekme & Pencere farkındalığı: YouTube, VS Code, dizi, oyun ve eğlence sekmelerine özel dinamik tepkiler.
+- K8 Ters soru-cevap zekası (yön, zaman ve selamlaşma karşıtlıkları).
+- Sol tık metin seçimi "Dunnolama" tembel analiz ve özet önizleme motoru.
+- 11.568 repliklik derin çok dilli NLU diyalog motoru entegrasyonu.
+- Yeni optimize edilmiş hafif kurulum paketi (Dunno-setup.exe).
+
+## 0.2.0
+- Genişletilmiş diyalog havuzları ve K7 sekme farkındalığı altyapısı.
+
 ## 0.1.9
 - ispanyolca: üçüncü dil. arayüz, kurulum, laflar, sorular, hatırlatıcılar.
 - hassas sorular: ilk seferde ters cevap, ikincide son uyarı, üçüncüde bir gün küser.
-- gece 00-08 uyur ve susar. dürtersen ya da kaldırırsan uyanır, söylenir. ayarlardan kapanır.
+- gece 00-08 uyur ve susar. dörtersen ya da kaldırırsan uyanır, söylenir. ayarlardan kapanır.
 - özel günler: yılbaşı, cadılar bayramı, sevgililer günü, 1 nisan ve birkaç tane daha. o gün kılık değiştirir.
 - hava durumu: sekmedeki dereceye, yağmura, kara tepki verir. "hava nasıl" sorusuna işe yaramaz cevap verir.
 - yeni laflar: filmler, rekabetçi oyunlar, yayın, kurgu, müzik yapımı, oyun motoru, not ve mesajlaşma uygulamaları.
@@ -20,3 +31,4 @@
 - isteğe bağlı: sekme adlarına ve çalan müziğe tepki (varsayılan kapalı, adlar söylenmez).
 - iki ağız modu (terbiyeli / sokak ***), boyut ve ses ayarı, karanlık mod.
 - imzalı otomatik güncelleme, isteğe bağlı (varsayılan kapalı) kullanım sayıları.
+
