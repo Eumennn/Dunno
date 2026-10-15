@@ -1,0 +1,591 @@
+{
+  "note": "SPEC 09 K7: öndeki pencere/sekme başlığı -> kategori. Sadece cihazda, bellekte eşlenir; başlık saklanmaz, loglanmaz, ağa/LLM'e gitmez. Marka adları SADECE burada (eşleme anahtarı); laflarda marka adı yok. Sıra = öncelik (ilk eşleşen kazanır). silent: true -> o sekme öndeyken dunno hiç laf atmaz. Anahtarlar kelime sınırıyla eşlenir (Türkçe harfler katlanır). SPEC 17: game_* / web_* özel kategoriler genel olanlardan önce; exes: başlık okunmasa da öndeki programın adıyla eşleşir (sadece exe adı, başlık değil).",
+  "categories": [
+    {
+      "id": "adult",
+      "silent": true,
+      "keys": [
+        "porn",
+        "porno",
+        "xxx",
+        "nsfw",
+        "onlyfans",
+        "18+",
+        "+18",
+        "adult content",
+        "yetişkin içerik",
+        "erotik",
+        "erotic",
+        "casino",
+        "kumar",
+        "gambling",
+        "bahis",
+        "iddaa",
+        "betting",
+        "rulet",
+        "roulette",
+        "poker",
+        "slot oyunu",
+        "slot machine",
+        "jackpot",
+        "canlı bahis",
+        "sportsbook"
+      ]
+    },
+    {
+      "id": "music",
+      "silent": false,
+      "keys": [
+        "spotify",
+        "youtube music",
+        "apple music",
+        "soundcloud",
+        "deezer",
+        "tidal",
+        "fizy",
+        "müzik",
+        "music",
+        "playlist",
+        "çalma listesi",
+        "radio",
+        "radyo",
+        "podcast"
+      ]
+    },
+    {
+      "id": "game_lol",
+      "silent": false,
+      "keys": [
+        "league of legends",
+        "lol client",
+        "league client"
+      ],
+      "exes": [
+        "league of legends",
+        "leagueclientux"
+      ]
+    },
+    {
+      "id": "game_valorant",
+      "silent": false,
+      "keys": [
+        "valorant"
+      ],
+      "exes": [
+        "valorant-win64-shipping",
+        "valorant"
+      ]
+    },
+    {
+      "id": "game_cs2",
+      "silent": false,
+      "keys": [
+        "counter-strike 2",
+        "counter-strike",
+        "counter strike",
+        "cs2",
+        "csgo",
+        "cs:go"
+      ],
+      "exes": [
+        "cs2",
+        "csgo"
+      ]
+    },
+    {
+      "id": "game_minecraft",
+      "silent": false,
+      "keys": [
+        "minecraft"
+      ],
+      "exes": [
+        "minecraft",
+        "minecraftlauncher",
+        "minecraft.windows"
+      ]
+    },
+    {
+      "id": "game_fortnite",
+      "silent": false,
+      "keys": [
+        "fortnite"
+      ],
+      "exes": [
+        "fortniteclient-win64-shipping",
+        "fortnite"
+      ]
+    },
+    {
+      "id": "game_roblox",
+      "silent": false,
+      "keys": [
+        "roblox"
+      ],
+      "exes": [
+        "robloxplayerbeta",
+        "roblox"
+      ]
+    },
+    {
+      "id": "game_gta",
+      "silent": false,
+      "keys": [
+        "grand theft auto",
+        "gta v",
+        "gta 5",
+        "gta online",
+        "gta vi",
+        "gta 6"
+      ],
+      "exes": [
+        "gta5",
+        "gta5_enhanced",
+        "playgtav"
+      ]
+    },
+    {
+      "id": "game_dota",
+      "silent": false,
+      "keys": [
+        "dota 2",
+        "dota"
+      ],
+      "exes": [
+        "dota2"
+      ]
+    },
+    {
+      "id": "game_apex",
+      "silent": false,
+      "keys": [
+        "apex legends"
+      ],
+      "exes": [
+        "r5apex",
+        "r5apex_dx12"
+      ]
+    },
+    {
+      "id": "game_pubg",
+      "silent": false,
+      "keys": [
+        "pubg",
+        "battlegrounds",
+        "playerunknown"
+      ],
+      "exes": [
+        "tslgame"
+      ]
+    },
+    {
+      "id": "game_overwatch",
+      "silent": false,
+      "keys": [
+        "overwatch"
+      ],
+      "exes": [
+        "overwatch"
+      ]
+    },
+    {
+      "id": "game_rocket",
+      "silent": false,
+      "keys": [
+        "rocket league"
+      ],
+      "exes": [
+        "rocketleague"
+      ]
+    },
+    {
+      "id": "game_fc",
+      "silent": false,
+      "keys": [
+        "ea sports fc",
+        "fc 25",
+        "fc 26",
+        "fifa 23",
+        "fifa"
+      ],
+      "exes": [
+        "fc25",
+        "fc26",
+        "fifa23"
+      ]
+    },
+    {
+      "id": "game_genshin",
+      "silent": false,
+      "keys": [
+        "genshin impact",
+        "genshin"
+      ],
+      "exes": [
+        "genshinimpact",
+        "yuanshen"
+      ]
+    },
+    {
+      "id": "game_wow",
+      "silent": false,
+      "keys": [
+        "world of warcraft",
+        "warcraft"
+      ],
+      "exes": [
+        "wow",
+        "wowclassic",
+        "wow-64"
+      ]
+    },
+    {
+      "id": "game_cod",
+      "silent": false,
+      "keys": [
+        "call of duty",
+        "warzone",
+        "modern warfare",
+        "black ops"
+      ],
+      "exes": [
+        "cod",
+        "cod24",
+        "modernwarfare",
+        "blackops6"
+      ]
+    },
+    {
+      "id": "game_marvel",
+      "silent": false,
+      "keys": [
+        "marvel rivals"
+      ],
+      "exes": [
+        "marvel-win64-shipping",
+        "marvelrivals"
+      ]
+    },
+    {
+      "id": "web_youtube",
+      "silent": false,
+      "keys": [
+        "youtube"
+      ]
+    },
+    {
+      "id": "web_netflix",
+      "silent": false,
+      "keys": [
+        "netflix"
+      ],
+      "exes": [
+        "netflix"
+      ]
+    },
+    {
+      "id": "web_twitch",
+      "silent": false,
+      "keys": [
+        "twitch"
+      ]
+    },
+    {
+      "id": "web_instagram",
+      "silent": false,
+      "keys": [
+        "instagram"
+      ],
+      "exes": [
+        "instagram"
+      ]
+    },
+    {
+      "id": "web_tiktok",
+      "silent": false,
+      "keys": [
+        "tiktok"
+      ],
+      "exes": [
+        "tiktok"
+      ]
+    },
+    {
+      "id": "web_x",
+      "silent": false,
+      "keys": [
+        "x.com",
+        "twitter",
+        "tweetdeck"
+      ]
+    },
+    {
+      "id": "web_reddit",
+      "silent": false,
+      "keys": [
+        "reddit"
+      ]
+    },
+    {
+      "id": "web_linkedin",
+      "silent": false,
+      "keys": [
+        "linkedin"
+      ]
+    },
+    {
+      "id": "web_whatsapp",
+      "silent": false,
+      "keys": [
+        "whatsapp"
+      ],
+      "exes": [
+        "whatsapp"
+      ]
+    },
+    {
+      "id": "web_wikipedia",
+      "silent": false,
+      "keys": [
+        "wikipedia",
+        "vikipedi"
+      ]
+    },
+    {
+      "id": "maps",
+      "silent": false,
+      "keys": [
+        "google maps",
+        "maps",
+        "harita",
+        "haritalar",
+        "yandex navigasyon",
+        "openstreetmap",
+        "waze",
+        "yol tarifi",
+        "directions",
+        "street view"
+      ]
+    },
+    {
+      "id": "mail",
+      "silent": false,
+      "keys": [
+        "gmail",
+        "outlook",
+        "inbox",
+        "gelen kutusu",
+        "yahoo mail",
+        "proton mail",
+        "protonmail",
+        "e-posta",
+        "eposta",
+        "mail",
+        "webmail"
+      ]
+    },
+    {
+      "id": "ai_chat",
+      "silent": false,
+      "keys": [
+        "chatgpt",
+        "claude",
+        "gemini",
+        "copilot",
+        "perplexity",
+        "mistral",
+        "le chat",
+        "deepseek",
+        "yapay zeka sohbet",
+        "ai chat"
+      ]
+    },
+    {
+      "id": "code",
+      "silent": false,
+      "keys": [
+        "github",
+        "gitlab",
+        "bitbucket",
+        "stack overflow",
+        "stackoverflow",
+        "pull request",
+        "merge request",
+        "repository",
+        "repo",
+        "codepen",
+        "jsfiddle",
+        "npm"
+      ]
+    },
+    {
+      "id": "docs",
+      "silent": false,
+      "keys": [
+        "google docs",
+        "google sheets",
+        "google slides",
+        "dokümanlar",
+        "e-tablolar",
+        "notion",
+        "confluence",
+        "office online",
+        "word online",
+        "excel online",
+        "dropbox paper",
+        "document",
+        "doküman",
+        "belge",
+        "spreadsheet",
+        "untitled document",
+        "adsız doküman"
+      ]
+    },
+    {
+      "id": "game_store",
+      "silent": false,
+      "keys": [
+        "steam",
+        "epic games",
+        "gog",
+        "itch.io",
+        "playstation store",
+        "xbox store",
+        "microsoft store oyun",
+        "game store",
+        "oyun mağazası",
+        "wishlist",
+        "istek listesi"
+      ]
+    },
+    {
+      "id": "shopping",
+      "silent": false,
+      "keys": [
+        "amazon",
+        "trendyol",
+        "hepsiburada",
+        "n11",
+        "aliexpress",
+        "ebay",
+        "etsy",
+        "temu",
+        "shein",
+        "getir",
+        "yemeksepeti",
+        "sepetim",
+        "sepet",
+        "cart",
+        "checkout",
+        "ödeme",
+        "alışveriş",
+        "shopping",
+        "indirim",
+        "sale"
+      ]
+    },
+    {
+      "id": "news",
+      "silent": false,
+      "keys": [
+        "bbc",
+        "cnn",
+        "reuters",
+        "haber",
+        "haberler",
+        "son dakika",
+        "news",
+        "breaking",
+        "gazete",
+        "newspaper",
+        "manşet",
+        "headlines",
+        "the guardian",
+        "nytimes"
+      ]
+    },
+    {
+      "id": "learning",
+      "silent": false,
+      "keys": [
+        "wikipedia",
+        "vikipedi",
+        "coursera",
+        "udemy",
+        "khan academy",
+        "duolingo",
+        "edx",
+        "sözlük",
+        "dictionary",
+        "tdk",
+        "ansiklopedi",
+        "encyclopedia",
+        "kurs",
+        "course",
+        "ders",
+        "lesson",
+        "tutorial",
+        "eğitim"
+      ]
+    },
+    {
+      "id": "social",
+      "silent": false,
+      "keys": [
+        "instagram",
+        "facebook",
+        "twitter",
+        "x.com",
+        "tiktok",
+        "reddit",
+        "linkedin",
+        "threads",
+        "bluesky",
+        "mastodon",
+        "pinterest",
+        "tumblr",
+        "ekşi sözlük",
+        "eksi sozluk",
+        "akış",
+        "feed"
+      ]
+    },
+    {
+      "id": "video",
+      "silent": false,
+      "keys": [
+        "youtube",
+        "netflix",
+        "twitch",
+        "vimeo",
+        "dailymotion",
+        "disney+",
+        "prime video",
+        "blutv",
+        "exxen",
+        "mubi",
+        "izle",
+        "dizi",
+        "film izle",
+        "watch",
+        "episode",
+        "bölüm",
+        "trailer",
+        "fragman"
+      ]
+    },
+    {
+      "id": "search",
+      "silent": false,
+      "keys": [
+        "google search",
+        "google'da ara",
+        "bing",
+        "duckduckgo",
+        "yandex",
+        "ecosia",
+        "search",
+        "arama"
+      ]
+    }
+  ]
+}
