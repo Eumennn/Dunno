@@ -1,33 +1,78 @@
-# dunno
+# Dunno
 
-the ai that teaches you nothing.
+> **The desktop companion that teaches you nothing.**
 
-masaüstünde yaşayan, neredeyse hiçbir soruya doğru cevap vermeyen piksel bir yaratık. günde üç kez doğru söyler, sonra pişman olur.
+A pixel buddy that lives on your screen and answers almost no questions correctly. Speaks the truth three times a day, then immediately regrets it.
 
-site: [eumennn.github.io/Dunno](https://eumennn.github.io/Dunno/)
+[English](README.md) • [Türkçe](README.tr.md) • [Español](README.es.md)
 
-## indir
-- **windows 10 / 11 (64 bit):** [Dunno-setup.exe](https://github.com/eumennn/dunno/releases/latest/download/Dunno-setup.exe).
-  kurulum yönetici izni istemez (sadece senin kullanıcın için kurulur).
-  "windows bilgisayarınızı korudu" çıkarsa: **daha fazla bilgi** -> **yine de çalıştır**. dunno henüz imzalı değil
-  (imza sertifikası parayla, dunno'nun parası yok). dosya sadece bu sayfadan iner.
-- **mac (apple silicon ve intel, macos 11+):** [Dunno.dmg](https://github.com/eumennn/dunno/releases/latest/download/Dunno.dmg).
-  dmg'yi aç, "dunno setup"u çalıştır: dunno'yu uygulamalar klasörüne kendisi kurar. henüz apple imzası yok: kurulum programını
-  ilk açışta sağ tık > aç; macos 15 ve sonrasında sistem ayarları > gizlilik ve güvenlik > "yine de aç". dunno'nun kendisi ayrıca sormaz.
-- eski sürümler ve notlar: [releases](https://github.com/eumennn/dunno/releases).
+🌐 **Official Website:** [eumennn.github.io/Dunno](https://eumennn.github.io/Dunno/)
 
-## güncellemeler
-dunno günde bir kez buraya bakar: yeni sürüm varsa söyler, kurmak senin elinde (about.txt > kur).
-güncellemeler imzalıdır; imza tutmazsa kurulmaz.
+---
 
-## gizlilik
-kısaca: ekranını görmez, klavyeni dinlemez, sorduğun şeyi saklamaz. ayrıntı: [PRIVACY.md](PRIVACY.md).
+## 💾 Download
 
-## kaldırma
-- windows: ayarlar > uygulamalar > dunno > kaldır.
-- mac: uygulamalar klasöründen çöp kutusuna sürükle.
+- **Windows 10 / 11 (64-bit):** [Dunno-setup.exe](https://github.com/eumennn/dunno/releases/latest/download/Dunno-setup.exe)  
+  *No administrator privileges required (installs strictly in your user directory).*
+- **macOS (Apple Silicon & Intel, macOS 11+):** [Dunno.dmg](https://github.com/eumennn/dunno/releases/latest/download/Dunno.dmg)  
+  *Open the DMG and drag Dunno into your Applications folder.*
+- **All Versions & Changelogs:** [GitHub Releases](https://github.com/eumennn/dunno/releases)
 
-## geri bildirim
-[issues](https://github.com/eumennn/dunno/issues) ya da dunnothebean@gmail.com. cevap vereceğimizi garanti etmeyiz. dunno da etmez.
+---
 
-> bu repo sadece kullanıcılar içindir: site, kurulum dosyaları, sürüm notları, gizlilik. kaynak kodu burada değil.
+## 🛡️ Security, Trust & SmartScreen Warning
+
+### Why does Windows or macOS show a warning?
+When you first run Dunno, your operating system might display an alert:
+- **Windows:** *"Windows protected your PC — Microsoft Defender SmartScreen prevented an unrecognized app from starting."*
+- **macOS:** *"Dunno cannot be opened because the developer cannot be verified"* or *"unidentified developer"*.
+
+### Is Dunno safe?
+**Yes, 100%.**
+- **Why the warning appears:** Commercial code-signing certificates (OV/EV certificates) cost $400 to $600+ every year. As an independent open-source indie project, Dunno doesn't have a corporate certificate yet. Operating systems flag any newly released or unsigned executable by default until it gathers thousands of installs.
+- **Transparent Builds:** Every installation file is built directly on GitHub's secure runners using automated CI/CD workflows.
+- **Privacy First:** Dunno runs 100% locally. It never monitors your screen, never records your keystrokes, and never uploads your private conversations.
+
+### How to open Dunno:
+- **On Windows:**
+  1. Click **"More info"** (*Daha fazla bilgi*).
+  2. Click **"Run anyway"** (*Yine de çalıştır*).
+- **On macOS:**
+  1. Right-click (or Control-click) Dunno in Applications and select **"Open"** (*Aç*).
+  2. If blocked, go to **System Settings > Privacy & Security**, scroll down to the Security section, and click **"Open Anyway"** (*Yine de Aç*).
+
+---
+
+## 🔄 Updates
+
+Dunno checks for updates once a day via GitHub Releases. When an update is ready, it lets you know in its own quirky way. Installing is always your choice (**about.txt > install**).  
+Updates are verified using cryptographic signatures (Minisign); unverified binaries are rejected automatically.
+
+---
+
+## 🔒 Privacy
+
+In short:
+- No screen tracking or OCR.
+- No keyloggers or background microphones.
+- Questions and chats are never stored on remote servers.
+
+Read our full transparent privacy policy at [PRIVACY.md](PRIVACY.md).
+
+---
+
+## 🗑️ Uninstallation
+
+- **Windows:** Settings > Apps > Installed apps > Dunno > Uninstall.
+- **macOS:** Drag Dunno from your Applications folder to the Trash.
+
+---
+
+## 📬 Feedback & Support
+
+- **Bug Reports & Ideas:** [GitHub Issues](https://github.com/eumennn/dunno/issues)
+- **Contact:** `dunnothebean@gmail.com`
+
+*(We don't guarantee Dunno will be helpful, and Dunno certainly doesn't either.)*
+
+> *Note: This repository contains end-user assets, downloads, website source, and release notes.*
