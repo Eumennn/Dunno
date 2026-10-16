@@ -1,5 +1,13 @@
 # sürüm notları
 
+## 0.2.9
+- pet.txt artık zihin, beden ve ruh arasında geçilen üç ayrı yetenek ağacıyla açılıyor.
+- my dunno card daha büyük ve okunaklı; xp çubuğu kesin ilerlemeyi üstüne gelince gösteriyor.
+- pet görünmez kalırsa kendini geri getiriyor; macOS'ta pet ve dunno.exe tüm Spaces alanlarında erişilebilir.
+- ilk kurulum ask.exe, ortam tepkileri, xp/evrim ve gardırop özelliklerini tanıtıyor.
+- açılış sayfası hız, mobil indirme çağrısı, benzersiz meta bilgileri, 404 ve gizlilik sayfasıyla yenilendi.
+
+
 ## 0.2.1
 - 1.645 repliklik tam doğrulanmış Türkçe ve İngilizce laf havuzu.
 - K7 Sekme & Pencere farkındalığı: YouTube, VS Code, dizi, oyun ve eğlence sekmelerine özel dinamik tepkiler.

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eumennn.github.io/Dunno/sitemap.xml
