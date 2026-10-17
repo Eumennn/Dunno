@@ -1,65 +1,190 @@
-<!doctype html>
-<html lang="tr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>404 — Dunno OS</title>
-  <meta name="description" content="Aradığın sayfa Dunno OS içinde bulunamadı.">
-  <meta name="robots" content="noindex,follow">
-  <meta name="theme-color" content="#f8f4e8">
-  <link rel="stylesheet" href="site.css">
-  <style>
-    .error-page{min-height:100vh;display:flex;flex-direction:column;background:var(--paper);position:relative;overflow:hidden}
-    .error-page:before{content:"";position:absolute;inset:70px 0 0;background-image:linear-gradient(rgba(41,36,49,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(41,36,49,.055) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
-    .error-main{position:relative;z-index:1;flex:1;display:grid;place-items:center;padding:clamp(48px,8vw,110px) 20px}
-    .error-window{width:min(760px,100%);border:3px solid var(--ink);background:var(--ice);box-shadow:10px 10px 0 var(--ink)}
-    .error-bar{min-height:46px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;border-bottom:3px solid var(--ink);background:var(--blue);font:800 13px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.12em}
-    .error-controls{display:flex;gap:7px}.error-controls i{display:block;width:15px;height:15px;border:2px solid var(--ink);background:var(--paper)}
-    .error-body{display:grid;grid-template-columns:220px 1fr;min-height:350px}
-    .error-pet{position:relative;display:grid;place-items:center;border-right:3px solid var(--ink);background:var(--orange)}
-    .lost-bean{position:relative;width:130px;height:112px;border:6px solid var(--ink);border-radius:52% 52% 42% 42%;background:#ff9f88;box-shadow:inset 0 -18px 0 rgba(255,255,255,.22);transform:rotate(-4deg)}
-    .lost-bean:before,.lost-bean:after{content:"";position:absolute;top:43px;width:22px;height:8px;background:var(--ink)}
-    .lost-bean:before{left:25px}.lost-bean:after{right:25px}
-    .lost-mouth{position:absolute;left:54px;top:69px;width:17px;height:7px;border:4px solid var(--ink);border-top:0}
-    .lost-question{position:absolute;top:38px;right:32px;font:900 54px/1 ui-monospace,monospace;transform:rotate(9deg)}
-    .error-copy{padding:clamp(28px,5vw,52px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
-    .error-code{margin:0;font:900 clamp(72px,14vw,140px)/.8 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:-.09em;color:var(--orange);-webkit-text-stroke:3px var(--ink);text-shadow:6px 6px 0 var(--ink)}
-    .error-copy h1{margin:30px 0 10px;font-size:clamp(27px,4vw,43px);letter-spacing:-.045em}
-    .error-copy p{max-width:430px;margin:0 0 27px;color:var(--ink2);font-size:16px;line-height:1.65}
-    .error-actions{display:flex;gap:13px;flex-wrap:wrap}.error-actions .button{min-width:170px}
-    .error-status{display:flex;justify-content:space-between;gap:18px;padding:13px 16px;border-top:3px solid var(--ink);background:white;font:12px ui-monospace,SFMono-Regular,Consolas,monospace}
-    .error-status b{color:#bd3f55}.blink{animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}
-    @media(max-width:650px){.error-page:before{inset:58px 0 0}.error-main{padding:38px 16px 95px}.error-window{box-shadow:6px 6px 0 var(--ink)}.error-body{grid-template-columns:1fr}.error-pet{min-height:190px;border-right:0;border-bottom:3px solid var(--ink)}.lost-bean{transform:scale(.82) rotate(-4deg)}.lost-question{top:24px;right:23%}.error-copy{padding:30px 24px 34px}.error-code{font-size:84px}.error-copy h1{margin-top:24px}.error-actions{width:100%}.error-actions .button{width:100%}.error-status{font-size:10px}}
-    @media(prefers-reduced-motion:reduce){.blink{animation:none}}
-  </style>
-</head>
-<body class="error-page">
-  <header class="topbar">
-    <a class="brand" href="./" aria-label="Dunno OS ana sayfa"><span class="brand-dot"></span>DUNNO.OS</a>
-    <nav aria-label="Ana menü"><a href="./#features">özellikler</a><a href="./#growth">gelişim</a><a href="./#privacy">gizlilik</a></nav>
-    <a class="button button-small" href="https://github.com/eumennn/dunno/releases/latest/download/Dunno-setup.exe">indir</a>
-  </header>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Dunno OS 404</title>
+<meta name="description" content="404 page for dunno. The page is loading. It has been at 97% since you got here.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap">
+<style>
+  /* One idea, no furniture: a "loading" dialog that stops at 97%.
+     Palette: ink #2B1E2F (ground), paper #FFF1D6 (text), orange #F2A65A (accent), cream #FFD29A (soft text). */
+  :root {
+    --ink: #2B1E2F;
+    --ink-2: #3A2A40;
+    --paper: #FFF1D6;
+    --orange: #F2A65A;
+    --cream: #FFD29A;
+    --muted: #B79BB0;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { height: 100%; }
+  body {
+    margin: 0;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: max(20px, env(safe-area-inset-left, 0px));
+    padding-right: max(20px, env(safe-area-inset-right, 0px));
+    background: var(--ink);
+    color: var(--paper);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
 
-  <main class="error-main">
-    <section class="error-window" aria-labelledby="error-title">
-      <div class="error-bar"><span>PAGE_NOT_FOUND.EXE</span><span class="error-controls" aria-hidden="true"><i></i><i></i><i></i></span></div>
-      <div class="error-body">
-        <div class="error-pet" aria-hidden="true">
-          <span class="lost-question">?</span>
-          <div class="lost-bean"><span class="lost-mouth"></span></div>
-        </div>
-        <div class="error-copy">
-          <p class="error-code">404</p>
-          <h1 id="error-title">dunno bu sayfayı bilmiyor.</h1>
-          <p>Aradığın dosya taşınmış, silinmiş ya da hiç var olmamış olabilir. Dunno üçüncü seçeneğe inanıyor.</p>
-          <div class="error-actions">
-            <a class="button button-primary" href="./">ana ekrana dön</a>
-            <a class="button" href="https://github.com/eumennn/dunno/releases">sürümlere bak</a>
-          </div>
-        </div>
-      </div>
-      <div class="error-status"><span><b>ERROR</b> · path_not_found</span><span>dunno_os<span class="blink">_</span></span></div>
-    </section>
-  </main>
-</body>
-</html>
+  main {
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    min-width: 0;
+  }
+
+  .code {
+    margin: 0;
+    font-family: "Silkscreen", "Courier New", monospace;
+    font-size: clamp(88px, 26vw, 168px);
+    line-height: 0.9;
+    color: var(--orange);
+    letter-spacing: 0.02em;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(22px, 4.5vw, 28px);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  .dialog {
+    background: var(--ink-2);
+    border: 2px solid var(--cream);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .dialog-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    font-family: "Silkscreen", "Courier New", monospace;
+    font-size: 13px;
+    color: var(--cream);
+  }
+  .track {
+    height: 22px;
+    border: 2px solid var(--cream);
+    background: var(--ink);
+    padding: 3px;
+  }
+  .fill {
+    height: 100%;
+    width: 0;
+    background: repeating-linear-gradient(90deg, var(--orange) 0 10px, transparent 10px 12px);
+  }
+
+  .msg { margin: 0; color: var(--muted); min-height: 3em; text-wrap: pretty; }
+
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    appearance: none;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    background: var(--paper);
+    border: 2px solid var(--paper);
+    padding: 10px 18px;
+    min-height: 44px;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+  }
+  .btn.ghost { background: transparent; color: var(--paper); }
+  .btn:hover { background: var(--orange); border-color: var(--orange); color: var(--ink); }
+  .btn.ghost:hover { background: transparent; color: var(--orange); border-color: var(--orange); }
+  .btn:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fill { transition: none; }
+  }
+</style>
+
+<main>
+  <p class="code" aria-hidden="true">404</p>
+
+  <div>
+    <h1>this page is still loading.</h1>
+  </div>
+
+  <section class="dialog" aria-labelledby="dlg">
+    <div class="dialog-top">
+      <span id="dlg">loading page…</span>
+      <span id="pct">0%</span>
+    </div>
+    <div class="track" role="progressbar" aria-labelledby="dlg" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="bar">
+      <div class="fill" id="fill"></div>
+    </div>
+    <p class="msg" id="msg" aria-live="polite">it'll be done soon. it has been soon for a while now.</p>
+  </section>
+
+  <div class="btns">
+    <a class="btn" href="./">go home</a>
+    <button type="button" class="btn ghost" id="wait">keep waiting</button>
+  </div>
+</main>
+
+<script>
+  (function () {
+    var STOP = 97;
+    var fill = document.getElementById("fill");
+    var pct = document.getElementById("pct");
+    var bar = document.getElementById("bar");
+    var msg = document.getElementById("msg");
+    var wait = document.getElementById("wait");
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var value = 0;
+
+    function show(v) {
+      value = v;
+      fill.style.width = v + "%";
+      pct.textContent = Math.floor(v) + "%";
+      bar.setAttribute("aria-valuenow", String(Math.floor(v)));
+    }
+
+    /* fill quickly, then stop at 97 and never finish */
+    if (reduce) {
+      show(STOP);
+    } else {
+      var start = null;
+      var dur = 1800;
+      requestAnimationFrame(function step(t) {
+        if (start === null) start = t;
+        var p = Math.min(1, (t - start) / dur);
+        var eased = 1 - Math.pow(1 - p, 3);
+        show(eased * STOP);
+        if (p < 1) requestAnimationFrame(step);
+      });
+    }
+
+    wait.addEventListener("click", function () {
+      /* each click adds a tenth of a percent, never reaching 100 */
+      var next = Math.min(STOP + 0.9, value + 0.1);
+      if (value < STOP) {
+        show(STOP);
+      } else {
+        show(next);
+      }
+      msg.textContent = value.toFixed(1) + "%. still not there.";
+    });
+  })();
+</script>
+
+</body></html>
