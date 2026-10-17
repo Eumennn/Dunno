@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>dunno os</title>
+  <title>Dunno OS — Masaüstünde Yaşayan Karakter</title>
+  <meta name="description" content="Dunno, masaüstünde yaşayan, seninle konuşan, gelişen ve tarzına uyum sağlayan ücretsiz bir masaüstü karakteridir.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#fff1d6">
+  <link rel="canonical" href="https://eumennn.github.io/Dunno/">
+  <meta property="og:title" content="Dunno OS — Masaüstünde Yaşayan Karakter">
+  <meta property="og:description" content="Konuşan, gelişen ve sana uyum sağlayan masaüstü karakteri.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eumennn.github.io/Dunno/">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #faf9f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
@@ -365,6 +373,27 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (window.Babel && typeof window.Babel.transformScriptTags === 'function') {
       window.Babel.transformScriptTags();
     }
+    // Eski tek-dosyalı landing korunur; mobil indirme ve yasal bağlantılar sonradan, bağımsız eklenir.
+    setTimeout(function() {
+      if (!document.getElementById('dunno-mobile-download')) {
+        const style = document.createElement('style');
+        style.textContent = '#dunno-mobile-download{display:none}@media(max-width:720px){#dunno-mobile-download{display:block;position:fixed;left:14px;right:14px;bottom:14px;z-index:2147483646;padding:14px 18px;border:3px solid #2b1e2f;background:#f2a65a;color:#2b1e2f;box-shadow:5px 5px 0 #2b1e2f;text-align:center;font:700 15px/1.2 ui-monospace,monospace;text-decoration:none}}';
+        document.head.appendChild(style);
+        const cta = document.createElement('a');
+        cta.id = 'dunno-mobile-download';
+        cta.href = 'https://github.com/Eumennn/Dunno/releases/latest/download/Dunno-setup.exe';
+        cta.textContent = 'dunno indir · ücretsiz';
+        cta.setAttribute('aria-label', 'Dunno uygulamasını indir');
+        document.body.appendChild(cta);
+      }
+      const footer = document.querySelector('footer');
+      if (footer && !footer.querySelector('[data-dunno-privacy]')) {
+        const privacy = document.createElement('p');
+        privacy.style.cssText = 'margin:14px 0 0;text-align:center;font-size:13px';
+        privacy.innerHTML = '<a data-dunno-privacy href="privacy.html" style="color:#2b1e2f;font-weight:700">gizlilik politikası</a>';
+        footer.appendChild(privacy);
+      }
+    }, 900);
   } catch (err) {
     setStatus('Error unpacking: ' + err.message);
     console.error('Bundle unpack error:', err);
