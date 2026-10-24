@@ -14,7 +14,7 @@ sitio: [eumennn.github.io/Dunno](https://eumennn.github.io/Dunno/)
 
 - **windows 10 / 11 (64-bit):** [Dunno-setup.exe](https://github.com/eumennn/dunno/releases/latest/download/Dunno-setup.exe)  
   no pide permisos de administrador, se instala en tu carpeta de usuario y ya.
-- **macOS (apple silicon & intel, macOS 11+):** [Dunno.dmg](https://github.com/eumennn/dunno/releases/latest/download/Dunno.dmg)  
+- **macOS (apple silicon & intel, macOS 11+):** [Dunno.dmg](https://github.com/Eumennn/Dunno/releases/download/v0.2.35/Dunno.dmg)
   abres el dmg, lo arrastras a aplicaciones y listo.
 - **todas las versiones:** [GitHub Releases](https://github.com/eumennn/dunno/releases)
 
